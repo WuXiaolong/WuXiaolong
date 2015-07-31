@@ -1,0 +1,9 @@
+title: Android下Context、Activity、Application之间有什么区别
+date: 2015-01-13 
+categories: [Android]
+tags: [Android]
+---
+
+在开发Android程序的时候，我们经常要跟Context、Activity、Application这三个类打交道，那么这个三个类之间有什么联系和区别呢？
+
+首先Activity和Application都是Context的子类。Context从字面上理解就是上下文的意思，在实际应用中它也确实是起到了管理上下文环境中各个参数和变量的总用，方便我们可以简单的访问到各种资源。虽然Activity和Application都是Context的子类，但是他们维护的生命周期不一样。前者维护一个Acitivity的生命周期，所以其对应的Context也只能访问该activity内的各种资源。后者则是维护一个Application的证明周期。

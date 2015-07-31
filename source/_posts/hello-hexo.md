@@ -1,4 +1,4 @@
-title: Hello World
+title: Hello hexo
 date: 2015-07-30 07:56:29 #发表日期，一般不改动
 categories: hexo #文章文类
 tags: hexo #文章标签，多于一项时用这种格式
