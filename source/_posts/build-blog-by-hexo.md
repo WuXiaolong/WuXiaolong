@@ -27,6 +27,17 @@ category: hexo
 ```js
 npm install -g hexo
 ```
+`问题`
+* npm ERR! registry error parsing json 错误
+
+可能需要设置npm代理,执行命令
+```js 
+npm config set registry http://registry.cnpmjs.org
+```
+
+* hexo:command not found
+删除刚刚安装的npm目录，重新执行命令npm install -g hexo安装hexo，
+
 
 ### 创建hexo文件夹
 安装完成后，在你喜爱的文件夹下（如H:\hexo），执行以下指令(在H:\hexo内点击鼠标右键，选择Git bash)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。
@@ -71,6 +82,14 @@ npm install hexo -server --save
 ![3](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-3.png)
 `注意`
 命名规则：你的github账号.github.io，我这里被坑了，之前是jekell写的，现在换成hexo，所以我是另建创库了。
+
+### 生成SSH密钥
+ssh-keygen -t rsa -C "你的邮箱地址"，按3个回车，密码为空。
+
+在C:\Users\Administrator.ssh下，得到两个文件id_rsa和id_rsa.pub。
+
+### 在GitHub上添加SSH密钥
+打开id_rsa.pub，复制全文。[https://github.com/settings/ssh](https://github.com/settings/ssh) ，Add SSH key，粘贴进去。
 
 ## hexo使用
 
