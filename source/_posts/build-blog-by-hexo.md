@@ -249,7 +249,22 @@ hexo deploy
 
 具体使用见[使用七牛作为github博客的图床](http://wuxiaolong.github.io/blog/2014/10/30/qiniu-photo-bed.html)
 
+## 域名
+### 将独立域名与GitHub Pages的空间绑定
+方法一：在站点source目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如wuxiaolong.me
+方法二：在Repository的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如wuxiaolong.me
 
+### DNS设置
+用[DNSpod](https://www.dnspod.cn/)，快，免费，稳定。
+注册DNSpod，添加域名，如下图设置。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/build-blog-by-hexo-1.png)
+其中A的两条记录指向的ip地址是github Pages的提供的ip
+如何知道你的github上项目的IP，如下：
+![](http://7q5c2h.com1.z0.glb.clouddn.com/build-blog-by-hexo-2.png)
+
+### 去Godaddy修改DNS地址
+更改godaddy的Nameservers为DNSpod的NameServers。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/build-blog-by-hexo-5.png)
 
 ## 总结
 之前用的jekell写的，[手把手教你建github技术博客by jekyll](http://wuxiaolong.github.io/2014/10/26/build-blog/)，也是折腾了几天才做成自己满意的，昨天决定换成hexo，也是花了一天半时间，为了追求更好，必须折腾！
