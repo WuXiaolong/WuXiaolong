@@ -73,13 +73,13 @@ npm install hexo -server --save
 * ### 注册账号
 地址：[https://github.com/](https://github.com/)  
 输入账号、邮箱、密码,然后点击注册按钮.
-![1](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-1.png)
+![1](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-1.png)
 
 ### 创建页面仓库
 这个仓库的名字需要和你的账号对应，格式: yourname.github.io
 输入基本信息，然后点击创建仓库.
-![2](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-2.png)
-![3](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-3.png)
+![2](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-2.png)
+![3](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-3.png)
 `注意`
 命名规则：你的github账号.github.io，我这里被坑了，之前是jekell写的，现在换成hexo，所以我是另建创库了。
 
