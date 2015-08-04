@@ -49,29 +49,29 @@ tags: [github,jekyll]
 * ### 注册账号
 地址：[https://github.com/](https://github.com/)  
 输入账号、邮箱、密码,然后点击注册按钮.
-![1](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-1.png)
+![1](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-1.png)
 
 * ### 创建页面仓库
 这个仓库的名字需要和你的账号对应，格式:`yourname`.github.io
 输入基本信息，然后点击创建仓库.
-![2](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-2.png)
-![3](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-3.png)
+![2](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-2.png)
+![3](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-3.png)
 
 * ### 项目设置
-![4](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-4.png)
+![4](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-4.png)
 
 * ### 页面生成器
-![5](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-5.png)
+![5](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-5.png)
 
 * ### 创建用户页面
-![6](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-6.png)
+![6](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-6.png)
 
 * ### 页面发布
-![7](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-7.png)
+![7](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-7.png)
 
 * ### 查看效果
 需要等待十分钟，自此，完成了github的博客创建，访问地址：yourname.github.io
-![8](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-8.png)
+![8](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-8.png)
 <a name="write-blog"/>
 
 ## 三、如何发布博客
@@ -90,7 +90,7 @@ tags: [github,jekyll]
 	* 最好保持默认的路径 C:\Ruby200-x64， 因为安装包明确提出 “请不要使用带有空格的文件夹 (如： Program Files)”。
 	* 勾选 “Add Ruby executables to your PATH”，这样执行程序会被自动添加至 PATH 而避免不必要的头疼。
 	
-![9](http://wuxiaolong.qiniudn.com/2014-10-26-build-blog-9.png)
+![9](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-9.png)
 	* 命令行ruby -v来检测Ruby是否成功安装	    
 	
 ```js 

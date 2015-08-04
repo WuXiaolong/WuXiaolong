@@ -20,5 +20,5 @@ Android应用攻城狮，后知后觉，学生时代，还不知何为程序猿�
 
 <h1> 小额赞助</h1>
 <font color="#000000">如果您喜欢此博客，读后受益匪浅，感觉对您的日后的工作有一定的帮助，不妨支付宝扫描以下二维码，小额赞助一下作者一杯咖啡费 #^_^#</font><br> 
-<img src="http://wuxiaolong.qiniudn.com/taobao_qrcode.jpg" /> 
+<img src="http://7q5c2h.com1.z0.glb.clouddn.com/taobao_qrcode.jpg" /> 
 
