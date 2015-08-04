@@ -38,7 +38,7 @@ icon_font: default
 # Code Highlight theme
 # Available value: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night eighties
+highlight_theme: night blue
 
 # MathJax Support
 mathjax:
@@ -56,7 +56,7 @@ sidebar: hide
 
 
 # Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: false
+scroll_to_more: true
 
 
 # Automatically add list number to toc.
