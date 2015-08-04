@@ -3,6 +3,10 @@ date: 2015-08-03 11:19:09
 tags: [Android,Palette]
 category: Android
 ---
+## 效果预览
+![](http://7q5c2h.com1.z0.glb.clouddn.com/paletteScreenshots.gif)
+<!-- more -->
+## 使用方法
 Palette可以提取的颜色如下
 * Vibrant （有活力的）
 * Vibrant dark（有活力的 暗色）
@@ -11,12 +15,11 @@ Palette可以提取的颜色如下
 * Muted dark（柔和的 暗色）
 * Muted light（柔和的 亮色）
 
-## 使用方法
 我们要想使用Palette，需要导入Palette的兼容库，Gradle 中添加下面依赖。
 ```js
 compile 'com.android.support:palette-v7:22.2.0'
 ```
-<!-- more -->
+
 ## 实例代码
 xml
 ```js

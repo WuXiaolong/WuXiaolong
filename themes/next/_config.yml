@@ -12,9 +12,11 @@ favicon: /favicon.ico
 avatar: /images/avatar.jpg
 
 # links name 
-#links_title: Links
-#links:
-  #MacTalk: http://macshuo.com/
+links_title: 友情链接
+links:
+    泡在网上的日子: http://www.jcodecraeer.com/
+    Android开发技术周报: http://androidweekly.cn/
+    androidweekly: http://androidweekly.net/
   
   
 # Set default keywords (Use a comma to separate)
@@ -54,7 +56,7 @@ sidebar: hide
 
 
 # Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: true
+scroll_to_more: false
 
 
 # Automatically add list number to toc.
