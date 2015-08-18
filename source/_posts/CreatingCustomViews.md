@@ -3,11 +3,11 @@ date: 2015-04-28
 categories: [Android]
 tags: [Android]
 ---
->
-最近好烦，发现代码是写过不少，也做过十来个大大小小的项目，不过只是实现功能罢了，没有停下来多看看代码，我这样写再多都是妄劳，只不过复制粘贴代码。行吧，停止写代码，抓抓基础，整装待发。
->
 
-##一、自定义View
+>最近好烦，发现代码是写过不少，也做过十来个大大小小的项目，不过只是实现功能罢了，没有停下来多看看代码，我这样写再多都是妄劳，只不过复制粘贴代码。行吧，停止写代码，抓抓基础，整装待发。
+
+
+## 一、自定义View
 
 1、[【官网】Creating Custom Views](http://developer.android.com/training/custom-views/index.html)
 
@@ -23,11 +23,11 @@ tags: [Android]
 
 <!-- more -->
 
-##二、必看开源库
+## 二、必看开源库
 
 1、[android-async-http](https://github.com/loopj/android-async-http)
 
-2、[ndroid-Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader)
+2、[Android-Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader)
 
 3、[PhotoView](https://github.com/chrisbanes/PhotoView)
 
