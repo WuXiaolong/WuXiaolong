@@ -7,6 +7,19 @@ category: [Android]
 
 
 <!--more-->
+## 获取arrt的值
+不同主题下需要把颜色，数值写成attr属性
+xml里，我们可以简单的引用attr属性值
+```js
+android:background="?attr/colorPrimary"
+```
+
+代码获取
+```java
+TypedValue typedValue = new TypedValue();
+mContext.getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
+int colorPrimary = typedValue.data;//value.data里面存储着的就是获取到的colorPrimary的值
+```
 
 ## 拨号盘拨打电话
 ```java
