@@ -10,9 +10,7 @@ category: App
 <!--more-->
 
 ## 应用下载
-[fir.im](https://fir.im/jinriqinggan)
-[小米应用商店](http://app.mi.com/detail/30499)
-[魅族应用中心](http://app.meizu.com/apps/public/detail?package_name=com.android.xiaomolongstudio.danhuaer)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/TodayEmotionAppDownload.png)
 
 
 ## 应用介绍
