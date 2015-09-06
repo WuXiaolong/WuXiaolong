@@ -1,18 +1,16 @@
 title: Android更换主题
 date: 2015-08-19 11:05:53
-tags: [Android,Theme]
+tags: [Android,Theme,WeiYan]
 category: Android
 ---
 >来自开源项目：[https://github.com/lguipeng/Notes](https://github.com/lguipeng/Notes)，其中有改变主题的功能，我做了部分修改，并应用到我的APP中。感谢lguipeng的开源。
 
 ## 效果预览
-![](http://7q5c2h.com1.z0.glb.clouddn.com/HuaChangeThemeScreenshots.gif)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanAppScreenshots.gif)
 <!--more-->
 
 ## 实例APK
-[魅族应用中心](http://app.meizu.com/apps/public/detail?package_name=com.android.xiaomolongstudio.hua)
-
-[360手机助手](http://zhushou.360.cn/detail/index/soft_id/759825?recrefer=SE_D_%E8%8A%B1%E5%A7%91%E5%A8%98)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanAppDownload.png)
 
 ## 颜色定义
 color.xml
