@@ -1,4 +1,4 @@
-title: AndroidMVPSample
+title: Android MVP 实例
 date: 2015-09-23 16:28:22
 tags: [Android,MVP]
 category: Android
