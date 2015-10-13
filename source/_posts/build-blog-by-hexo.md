@@ -86,7 +86,7 @@ npm install hexo -server --save
 ### 生成SSH密钥
 ssh-keygen -t rsa -C "你的邮箱地址"，按3个回车，密码为空。
 
-在C:\Users\Administrator.ssh下，得到两个文件id_rsa和id_rsa.pub。
+在C:\Users\Administrator\.ssh下，得到两个文件id_rsa和id_rsa.pub。
 
 ### 在GitHub上添加SSH密钥
 打开id_rsa.pub，复制全文。[https://github.com/settings/ssh](https://github.com/settings/ssh) ，Add SSH key，粘贴进去。
@@ -182,7 +182,8 @@ deploy:
   branch: master
 ```
 `注意`
-配置文件的冒号“:”后面有一个空格
+* 配置文件的冒号“:”后面有一个空格
+* repo: 刚刚github创库地址.git
 
 ### hexo命令行使用
 
