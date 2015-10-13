@@ -33,4 +33,6 @@ tags: [Android]
 
 4、[android-volley](https://github.com/mcxiaoke/android-volley)
 
+5、[picasso](https://github.com/square/picasso)
+
 PS：循序渐进，慢慢看，一天进步一点点。
