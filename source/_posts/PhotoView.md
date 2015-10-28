@@ -1,7 +1,7 @@
 title: github之PhotoView使用
 date: 2015-09-14 11:12:47
 tags: [Android,PhotoView,github]
-category: Android
+category: github
 ---
 >PhotoView使用在ViewPager中,github地址：[https://github.com/chrisbanes/PhotoView](https://github.com/chrisbanes/PhotoView)
 ```js

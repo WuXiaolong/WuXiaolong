@@ -1,6 +1,6 @@
 title: github之Font-Awesome使用
 date: 2015-10-08 15:31:38
-tags: github,Font-Awesome
+tags: [github,Font-Awesome]
 category: github
 ---
 >github地址：[https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)，一直知道这个项目，但是却不知道如何使用它，现在有个[博客](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0925/3518.html)介绍，感谢博主。我这里做个记录。

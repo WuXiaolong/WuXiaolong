@@ -7,6 +7,33 @@ category: [Android]
 
 
 <!--more-->
+
+## Fragment设置隐藏或显示某个Fragment
+MainFragment点击
+```java
+public void onItemClick(AdapterView<?> adapterView, View view,
+                            int position, long id) {
+       
+        ((MainActivity) getActivity()).showImageFragment(true, mData.get(position).get("title").toString(), mData.get(position).get("imgUrl").toString());
+        
+    }
+```
+MainActivity
+```java
+public void showImageFragment(boolean show, String imgTxt, String imgUrl) {
+        // showActionbarWithTabs(!show);
+        if (show) {
+            getSupportFragmentManager().beginTransaction()
+                    .show(imageDetailFragment).commit();
+            imageDetailFragment.setImgData(imgTxt, imgUrl);
+        } else {
+            getSupportFragmentManager().beginTransaction()
+                    .hide(imageDetailFragment).commit();
+        }
+
+    }
+```
+
 ## 获取arrt的值
 不同主题下需要把颜色，数值写成attr属性
 xml里，我们可以简单的引用attr属性值
