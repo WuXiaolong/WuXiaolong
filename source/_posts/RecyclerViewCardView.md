@@ -6,7 +6,7 @@ category: Android
 >RecyclerView和CardView使用
 
 ## 实例App
-![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanAppScreenshots.gif)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanScreenshots.gif)
 
 <!--more-->
 
@@ -86,10 +86,13 @@ public class DayTextAdapter extends RecyclerView.Adapter<DayTextAdapter.ViewHold
 ```
 ## day_text_item.xml
 ```js
-<?xml version="1.0" encoding="utf-8"?><!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:card_view="http://schemas.android.com/apk/res-auto"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:descendantFocusability="blocksDescendants"--><!--android:orientation="vertical">-->
-
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<android.support.v7.widget.CardView 
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -98,6 +101,7 @@ public class DayTextAdapter extends RecyclerView.Adapter<DayTextAdapter.ViewHold
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
+	android:foreground="?attr/selectableItemBackground"
     card_view:cardBackgroundColor="?attr/itemBackgroundColor"
     card_view:cardCornerRadius="10dp"
     card_view:cardElevation="5dp">
@@ -134,6 +138,7 @@ public class DayTextAdapter extends RecyclerView.Adapter<DayTextAdapter.ViewHold
     </LinearLayout>
 </android.support.v7.widget.CardView>
 
+</LinearLayout>
 ```
 说明：
 CardView中android:layout_marginBottom发现在5.0以上和以下效果不一样的。

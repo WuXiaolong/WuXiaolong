@@ -6,7 +6,7 @@ category: Android
 >来自开源项目：[https://github.com/lguipeng/Notes](https://github.com/lguipeng/Notes)，其中有改变主题的功能，我做了部分修改，并应用到我的APP中。感谢lguipeng的开源。
 
 ## 效果预览
-![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanAppScreenshots.gif)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanScreenshots.gif)
 <!--more-->
 
 ## 实例APK

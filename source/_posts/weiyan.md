@@ -11,7 +11,7 @@ tags: [Android,Life,WeiYan]
 >PS:万事开头难，没有行动之前，什么都觉得难！其实没想象的那么难，选准方向，勇往直前吧。
 
 ## 效果预览
-![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanAppScreenshots.gif)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanScreenshots.gif)
 
 <!--more-->
 

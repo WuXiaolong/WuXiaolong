@@ -18,6 +18,13 @@ Gradle 中添加下面依赖
  compile 'com.android.support:design:22.2.0'
 ```
 
+## 使用style
+```js
+ <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+</style>
+```
 ## xml布局
 ```js
 <LinearLayout
@@ -34,7 +41,7 @@ Gradle 中添加下面依赖
             app:layout_scrollFlags="scroll|enterAlways"
             app:tabBackground="?attr/colorPrimary"
             app:tabSelectedTextColor="@color/white"
-            app:tabTextColor="?attr/cursorTextColor" />
+			app:tabTextColor="?attr/cursorTextColor" />
 
    
     <android.support.v4.view.ViewPager
@@ -130,6 +137,7 @@ class ViewPagerAdapter extends FragmentPagerAdapter {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);//适合很多tab
         //tabLayout.setTabMode(TabLayout.MODE_FIXED);//tab均分,适合少的tab
+		//tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);//tab均分,适合少的tab,TabLayout.GRAVITY_CENTER
     }
 ```
 ## 定义TabLayout的样式
