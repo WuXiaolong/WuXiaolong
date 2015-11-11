@@ -15,9 +15,6 @@ tags: [Android,Life,WeiYan]
 
 <!--more-->
 
-## 应用下载
-![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanAppDownload.png)
-
 ## 应用介绍
 微言,一款让你每天都有所心得的精微语言应用。
 
@@ -26,6 +23,13 @@ tags: [Android,Life,WeiYan]
 微言囊括每日一文、经典语录、人生感悟，为人处世、职场励志、成功励志等等栏目，汇集各类高人经典心得和言论总结，给你无比深刻的智慧启发和人生启迪。
 
 精短良言，微言大义，陶冶情操，励志你我。
+
+## 二维码下载
+![](http://7q5c2h.com1.z0.glb.clouddn.com/weiyanAppDownload.png)
+
+## 应用市场
+[小米应用市场](http://app.mi.com/detail/25323)
+[魅族应用市场](http://app.meizu.com/apps/public/detail?package_name=com.android.xiaomolongstudio.weiyan)
 
 ## 更新日志
 v3.5

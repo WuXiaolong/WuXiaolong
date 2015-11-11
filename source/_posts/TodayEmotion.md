@@ -1,6 +1,6 @@
 title: 今日情感
 date: 2015-08-04 16:27:21
-tags: [Android,App]
+tags: [Android,Life,App]
 category: App
 ---
 
@@ -9,16 +9,19 @@ category: App
 
 <!--more-->
 
-## 应用下载
-![](http://7q5c2h.com1.z0.glb.clouddn.com/TodayEmotionAppDownload.png)
-
-
 ## 应用介绍
 【今日情感】专注于分享情感故事、情感美文、情感语录；情感是人适应生存的心理工具，也是人际通信交流的重要手段。 
 ★ 内容 
 情感文章栏目主要内容有情感美文、情侣恋爱技巧与爱情知识、爱情文章故事、朋友间的友情，家庭亲情中夫妻关系、子女关系、父母关系相处技巧。 
 ★寄语 
 偶遇今日情感，希望您在这里找到共鸣。
+
+## 二维码下载
+![](http://7q5c2h.com1.z0.glb.clouddn.com/TodayEmotionAppDownload.png)
+
+## 应用市场
+[魅族应用市场](http://app.meizu.com/apps/public/detail?package_name=com.android.xiaomolongstudio.danhuaer)
+[小米应用市场](http://app.mi.com/detail/30499)
 
 ## 更新日志
 * v3.8
