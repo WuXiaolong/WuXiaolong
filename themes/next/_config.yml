@@ -4,6 +4,7 @@ menu:
   categories: /categories
   archives: /archives
   tags: /tags
+  friendslinks: /friendslinks
   about: /about
   #commonweal: /404.html
 
@@ -12,11 +13,11 @@ favicon: /favicon.ico
 avatar: /images/avatar.jpg
 
 # links name 
-links_title: 友情链接
-links:
-    泡在网上的日子: http://www.jcodecraeer.com/
-    Android开发技术周报: http://androidweekly.cn/
-    androidweekly: http://androidweekly.net/
+# links_title: 友情链接
+# links:
+#     泡在网上的日子: http://www.jcodecraeer.com/
+#     Android开发技术周报: http://androidweekly.cn/
+ #    androidweekly: http://androidweekly.net/
   
   
 # Set default keywords (Use a comma to separate)

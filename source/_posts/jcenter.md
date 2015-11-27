@@ -171,6 +171,13 @@ compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.1'
 一般来说，我们需要知道library的字符串形式，包含3部分
 GROUP_ID:ARTIFACT_ID:VERSION
 上面的例子中，GROUP_ID是com.wuxiaolong.pullloadmorerecyclerview ，即配置library中group的值；ARTIFACT_ID是library，配置library中没有写到，是library项目的名字；VERSION是1.0.1。
+查看bintray上库：
+http://jcenter.bintray.com/com/wuxiaolong/pullloadmorerecyclerview/library/1.0.1/
+
+## 剩者为王
+我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
+剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
+
 ## 附录
 以下博客有的地方行不通或不够详细，酌情参考。
 [如何使用Android Studio把自己的Android library分享到jCenter和Maven Central](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0623/3097.html)

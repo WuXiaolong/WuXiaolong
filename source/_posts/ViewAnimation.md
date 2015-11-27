@@ -1,25 +1,25 @@
-title: Android ViewAnimation之translate、scale、alpha、rotate
+title: Android之视图动画Animation
 date: 2015-09-08 14:14:05
-tags: [Android,Animation]
+tags: Animation
 category: Android
 ---
 官网说明见：[http://developer.android.com/intl/zh-cn/guide/topics/graphics/view-animation.html](http://developer.android.com/intl/zh-cn/guide/topics/graphics/view-animation.html)
 View Animation主要有两种动画模式：
-一种是tweened animation(渐变动画)
+一种是tweened animation(渐变动画):
+XML中：alpha
+JavaCode：AlphaAnimation
 
-| XML中      | JavaCode          | 
-| :----:     | :----:            |
-| alpha      |   AlphaAnimation  |
-| scale      |   ScaleAnimation  | 
+XML中：scale
+JavaCode：ScaleAnimation
 
 一种是frame by frame(画面转换动画)
+XML中：translate
+JavaCode：TranslateAnimation
 
-| XML中       | JavaCode              | 
-| :----:      | :----:                |
-| translate   |   TranslateAnimation  |
-| rotate      |   RotateAnimation     | 
+XML中：rotate
+JavaCode：RotateAnimation
 <!--more-->
-## 透明度控制动画效果 alpha 
+##  alpha透明度控制动画效果
 文件名:my_alpha_action.xml
 ```js
 <?xml version="1.0" encoding="utf-8"?>
@@ -66,7 +66,7 @@ myAnimation_Alpha.setDuration(5000);
 如何使用Java代码中的动画效果
 public void startAnimation (Animation animation)
 
-## 旋转动画效果 rotate
+## rotate旋转动画效果
 文件名: my_rotate_action.xml
 ```js
 <?xml version="1.0" encoding="utf-8"?>
@@ -127,13 +127,12 @@ myAnimation_Rotate.setDuration(3000);
 如何使用Java代码中的动画效果
 public void startAnimation (Animation animation)
 
-## 尺寸伸缩动画效果 scale
+## scale尺寸伸缩动画效果 
 文件名: my_scale_action.xml
 ```js
 <?xml version="1.0" encoding="utf-8"?>
    <scale xmlns:android="http://schemas.android.com/apk/res/android">
-android:interpolator="@android:anim/accelerate_decelerate_interpolator"
-          
+android:interpolator="@android:anim/accelerate_decelerate_interpolator"         
           android:fromXScale="0.0"
           android:toXScale="1.4"
           
@@ -212,7 +211,7 @@ myAnimation_Scale.setDuration(700);
 如何使用Java代码中的动画效果
 public void startAnimation (Animation animation)
 
-## 位置转移动画效果 translate
+## translate位置转移动画效果 
 文件名: my_translate_action.xml
 ```js
 <?xml version="1.0" encoding="utf-8"?>
@@ -253,3 +252,7 @@ myAnimation_Translate.setDuration(2000);
 //设置时间持续时间为 2000毫秒
 如何使用Java代码中的动画效果
 public void startAnimation (Animation animation)
+
+## 剩者为王
+我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
+③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>

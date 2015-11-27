@@ -6,11 +6,11 @@ tags: [Android,jarsigner]
 
 发布过Android应用的朋友们应该都知道，Android APK的发布是必需要签名，本签名指南演示如何使用WoSign安卓代码签名证书，签名安卓 .apk 程序。
 
-1、签名证书
+## 签名证书
 
 制作证书，证书文件名：android.keystore, 证书别名：android.keystore
  
-2、 安装签名环境JDK包
+## 安装签名环境JDK包
 
 签名工具包可以在JDK官方网站下载：[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html)，也可以直接点击这里下载JDK工具包(请使用JDK 1.6版本)。
 文件包下载安装完成后，然后就开始进入jdk的签名根目录，具体如下：
@@ -18,7 +18,7 @@ tags: [Android,jarsigner]
 开始-> 运行-> cmd->cd 到您安装的jdk的目录这里我是D:\Program Files\Java\jdk1.6.0\bin
  
 <!-- more -->
-3、签名
+## 签名
 
 在D:\Program Files\Java\jdk1.6.0\bin 找到工具 jarsigner.exe，并把证书android.keystore 文件放入当前目录。签名命令：
 
@@ -31,13 +31,12 @@ jarsigner -verbose -keystore android.keystore -signedjar Last_gongs_sign.apk Bef
 3）-signedjar Last_gongs_sign.apk Before_sign.apk 表示给 Before_sign.apk文件签名，签名后的文件名称为Last_gongs_sign.apk；
 
 4）最后面的android.keystore 表示证书的别名
+![](http://7q5c2h.com1.z0.glb.clouddn.com/2014-12-05-jarsigner-0.png)
  
-如下图所示：
-
 ![](http://wuxiaolong.qiniudn.com/2014-12-05-jarsigner-1.png)
-
+如上图所示，签名成功。
  
-4、验证签名
+## 验证签名
 
 使用命令验证已经签名的apk文件：jarsigner –verify Last_gongs_sign.apk
 
@@ -52,3 +51,7 @@ jarsigner -verbose -keystore android.keystore -signedjar Last_gongs_sign.apk Bef
 上面的命令, 使用 -certs 参数, 将显示 "CN=" 行, 描述是谁签名了APK文件.
 
 原文：[http://feelyou.info/trying_to_manually_sign_android_package_with_jarsigner_but_install_failed/](http://feelyou.info/trying_to_manually_sign_android_package_with_jarsigner_but_install_failed/)
+
+## 剩者为王
+我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
+剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>

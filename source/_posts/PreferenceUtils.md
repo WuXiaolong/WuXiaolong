@@ -1,6 +1,6 @@
 title: PreferenceUtils
 date: 2015-08-19 09:28:49
-tags: [Android,SharedPreferences]
+tags: [Android,SharedPreferences,PreferenceUtils]
 category: Android
 ---
 

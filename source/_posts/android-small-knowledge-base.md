@@ -7,6 +7,26 @@ category: [Android]
 
 
 <!--more-->
+## activity生命周期
+android onpostcreate()什么情况下执行：
+当Activity彻底运行起来之后回调onPostCreate方法，从官方解释可以看出 "Called when activity start-up is complete (after onStart() and onRestoreInstanceState(Bundle) have been called)."
+通用生命周期流程如下：
+正常启动 onCreate onStart onPostCreate onResume onPostResume
+转向下一个activity onPause onStop
+从下一个activity返回当前（按机器返回键）onRestart onStart onResume onPostResume
+转向上一个activity（按机器返回键）onPause onStop onDestory
+屏幕待机（黑掉）onPause
+屏幕变亮 onResume onPostResume
+Home键退出 onPause onStop
+Home键导航返回 onRestart onStart onResume onPostResume
+旋转屏幕 onPause onStop onDestory onCreate onStart onPostCreate onResume onPostResume
+
+## onFinishInflate()
+view的onFinishInflate()何时调用的？
+当View中所有的子控件均被映射成xml后触发；
+MyView mv = (MyView)View.inflate (context,R.layout.my_view,null);
+当加载完成xml后，就会执行那个方法；
+我们一般使用View的流程是在onCreate中使用setContentView来设置要显示Layout文件或直接创建一个View，在当设置了ContentView之后系统会对这个View进行解析，然后回调当前视图View中的onFinishInflate方法。只有解析了这个View我们才能在这个View容器中获取到拥有Id的组件，同样因为系统解析完View之后才会调用onFinishInflate方法，所以我们自定义组件时可以onFinishInflate方法中获取指定子View的引用。
 
 ## Fragment设置隐藏或显示某个Fragment
 MainFragment点击

@@ -1,7 +1,7 @@
 title: 微言
 date: 2015-04-23
-categories: [App]
-tags: [Android,Life,WeiYan]
+categories: App
+tags: [Life,WeiYan]
 ---
 >微言算我第一个个人App，当初的初衷，想通过这个App达到练手，并熟悉Android项目的创建到发布上线的整个流程。
 >现在我想达到了预期甚至超过了，至今我还在维护这个项目。
