@@ -17,7 +17,7 @@ Palette可以提取的颜色如下
 
 我们要想使用Palette，需要导入Palette的兼容库，Gradle 中添加下面依赖。
 ```js
-compile 'com.android.support:palette-v7:22.2.0'
+compile 'com.android.support:palette-v7:21.0.+'
 ```
 
 ## 实例代码
@@ -194,4 +194,33 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
+```
+
+或者
+```java
+public static int getPaletteColor(Bitmap bitmap) {
+        int color = -12417291;
+        Palette palette = Palette.from(bitmap).generate();
+        Palette.Swatch vibrant = palette.getVibrantSwatch();
+        Palette.Swatch vibrantdark = palette.getDarkVibrantSwatch();
+        Palette.Swatch vibrantlight = palette.getLightVibrantSwatch();
+        Palette.Swatch Muted = palette.getMutedSwatch();
+        Palette.Swatch Muteddark = palette.getDarkMutedSwatch();
+        Palette.Swatch Mutedlight = palette.getLightMutedSwatch();
+
+        if (vibrant != null) {
+            color = vibrant.getRgb();
+        } else if (vibrantdark != null) {
+            color = vibrantdark.getRgb();
+        } else if (vibrantlight != null) {
+            color = vibrantlight.getRgb();
+        } else if (Muted != null) {
+            color = Muted.getRgb();
+        } else if (Muteddark != null) {
+            color = Muteddark.getRgb();
+        } else if (Mutedlight != null) {
+            color = Mutedlight.getRgb();
+        }
+        return color;
+    }
 ```

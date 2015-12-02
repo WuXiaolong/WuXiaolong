@@ -17,5 +17,11 @@ Alt+insert
 * 自动导包
 ![](http://wuxiaolong.qiniudn.com/2014-10-21-Android-Studio-shortcut-keys-arranged-like-Eclipse-3.png)
 
-* 联想
+* 联想 
 Class Name Completion，AS快捷键是Ctrl+Alt+Space（空格键），Eclipse的快捷键Alt+/
+
+* 其他快捷键
+ctrl+shift+t 找某个类
+alt+选择代码块复制
+ctrl+f，可以选中代码块替换
+Alt+Shift+M选择代码块，生成一个方法

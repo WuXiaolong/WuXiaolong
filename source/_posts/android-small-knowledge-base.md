@@ -7,6 +7,35 @@ category: [Android]
 
 
 <!--more-->
+## showPopupWindow
+```java
+    private void showPopupMenu(View v) {
+        final View bgView = View.inflate(DemoApplication.getContext(), R.layout.demo_popup_window_bg, null);
+        bgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hidePopupWindow();
+            }
+        });
+        if (mPopupBackground == null) {
+            mPopupBackground = new PopupWindow(bgView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        }
+        mPopupBackground.showAtLocation(v, Gravity.BOTTOM, 0, 0);
+    }
+```
+v：父布局
+demo_popup_window_bg.xml
+```js
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/aliwx_common_alpha_black">
+
+</LinearLayout>
+
+```
+
 ## activity生命周期
 android onpostcreate()什么情况下执行：
 当Activity彻底运行起来之后回调onPostCreate方法，从官方解释可以看出 "Called when activity start-up is complete (after onStart() and onRestoreInstanceState(Bundle) have been called)."
