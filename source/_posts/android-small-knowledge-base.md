@@ -7,6 +7,14 @@ category: [Android]
 
 
 <!--more-->
+## 代码设置textView颜色和drawableTop
+```java
+ textView.setTextColor(Color.parseColor("#FFFFFF"));
+ 
+ Drawable drawable = getResources().getDrawable(R.drawable.demo_tab_icon_message_normal);
+ drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
+ textView.setCompoundDrawables(null, drawable, null, null);
+```
 ## showPopupWindow
 ```java
     private void showPopupMenu(View v) {

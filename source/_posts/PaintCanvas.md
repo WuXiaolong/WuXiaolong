@@ -1,5 +1,5 @@
 title: Android之画笔Paint和画布Canvas
-date: 2015-11-30 10:45:38
+date: 2015-11-19 10:45:38
 tags: [Paint,Canvas]
 category: Android
 ---
@@ -25,7 +25,7 @@ category: Android
 
 * PathEffect  setPathEffect(PathEffect effect)  
 设置路径效果
-
+<!--more-->
 * Rasterizer  setRasterizer(Rasterizer rasterizer) 
 设置光栅化
 

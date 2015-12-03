@@ -151,10 +151,11 @@ app:menu
 ```java
 private NavigationView navigationView;
 private void initNavigationViewHeader() {
-        navigationView = (NavigationView) findViewById(R.id.navigation);
-       //设置头像，布局app:headerLayout所指定的头布局
+        navigationView = (NavigationView) findViewById(R.id.navigation);       
        View view = navigationView.inflateHeaderView(R.layout.drawer_header);
-        TextView userName = (TextView) view.findViewById(R.id.userName);
+	   //navigationView.addHeaderView(view);hear的高度不好控制，推荐设置头像，布局app:headerLayout所指定的头布局
+	   View header = navigationView.getHeaderView(0);
+        TextView userName = (TextView) header.findViewById(R.id.userName);
         userName.setText("小尛龙");
 	  //菜单点击事件
         navigationView.setNavigationItemSelectedListener(new NavigationItemSelected());
