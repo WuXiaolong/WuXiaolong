@@ -1,29 +1,34 @@
-title: AndroidÖ®emulator: ERROR: x86 emulation currently requires hardware acceleration
-date: 2015-11-19 10:45:38
+title: Androidä¹‹emulator ERROR x86 emulation currently requires hardware acceleration
+date: 2015-12-03 10:45:38
 tags: emulator
 category: Android
 ---
-ÔËĞĞAVD£¬±¨ÒÔÏÂ´íÎó£º
+ä¸€ç›´åœ¨ç”¨Genymotionæ¨¡æ‹Ÿå™¨ï¼Œè¯è¯´Android studioå°†å‡º2.0ï¼Œé€Ÿåº¦æé€Ÿ50å€ï¼Œè¿™æ˜¯è¦æ–­Genymotionçš„è·¯ï¼Œäºæ˜¯æˆ‘åœ¨å®¶é‡Œç”µè„‘è¿è¡ŒAVDï¼Œå´æŠ¥ä»¥ä¸‹é”™è¯¯ï¼š
 emulator: ERROR: x86 emulation currently requires hardware acceleration!
 Please ensure Intel HAXM is properly installed and usable.
 CPU acceleration status: HAX kernel module is not installed!
 
 <!--more-->
 
-½â¾ö·½°¸
+## è§£å†³æ–¹æ¡ˆ
+æŠ˜è…¾ä¸€ç•ªï¼Œè§£å†³æ–¹æ¡ˆå¦‚ä¸‹ï¼š
 
 * BIOS
-¿ª»ú°´F2»òdelete¼ü£¬½øÈëBIOS£¬CPUÑ¡Ïî£¬Ñ¡ÔñIntel Virtualization TechnologyÎªenable 
+å¼€æœºæŒ‰F2æˆ–deleteé”®ï¼Œè¿›å…¥BIOSï¼ŒCPUé€‰é¡¹ï¼Œé€‰æ‹©Intel Virtualization Technologyä¸ºenable 
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/emulatorError1.gif)
 
-* ÏÂÔØIntel x86 Emulator Accelerator  
- ´ò¿ª SDK Manager£¬Èç¹ûÃ»ÓĞIntel x86 Emulator Accelerator £¬ÏÂÔØ
+* ä¸‹è½½Intel x86 Emulator Accelerator  
+ æ‰“å¼€ SDK Managerï¼Œå¦‚æœæ²¡æœ‰Intel x86 Emulator Accelerator ï¼Œä¸‹è½½
   ![](http://7q5c2h.com1.z0.glb.clouddn.com/emulatorError3.png)
   
-* °²×°intelhaxm-android.exe
-ÄãµÄAndroid sdk°²×°Ä¿Â¼\extras\intel\Hardware_Accelerated_Execution_Manager
+* å®‰è£…intelhaxm-android.exe
+ä½ çš„Android sdkå®‰è£…ç›®å½•\extras\intel\Hardware_Accelerated_Execution_Manager
  ![](http://7q5c2h.com1.z0.glb.clouddn.com/emulatorError2.png)
 
-* ÖØÆô
-ÖØÆôAndroid Studio£¬ÔÙÊÔÏÂAVD
+* é‡å¯
+é‡å¯Android Studioï¼Œå†è¯•ä¸‹AVD
+
+## é™„å½•
+1. [Emulator: ERROR: x86 emulation currently requires hardware acceleration](http://stackoverflow.com/questions/29136173/emulator-error-x86-emulation-currently-requires-hardware-acceleration)
+2. [Error in launching AVD](http://stackoverflow.com/questions/26355645/error-in-launching-avd)
 
