@@ -44,20 +44,6 @@ demo_popup_window_bg.xml
 
 ```
 
-## activity生命周期
-android onpostcreate()什么情况下执行：
-当Activity彻底运行起来之后回调onPostCreate方法，从官方解释可以看出 "Called when activity start-up is complete (after onStart() and onRestoreInstanceState(Bundle) have been called)."
-通用生命周期流程如下：
-正常启动 onCreate onStart onPostCreate onResume onPostResume
-转向下一个activity onPause onStop
-从下一个activity返回当前（按机器返回键）onRestart onStart onResume onPostResume
-转向上一个activity（按机器返回键）onPause onStop onDestory
-屏幕待机（黑掉）onPause
-屏幕变亮 onResume onPostResume
-Home键退出 onPause onStop
-Home键导航返回 onRestart onStart onResume onPostResume
-旋转屏幕 onPause onStop onDestory onCreate onStart onPostCreate onResume onPostResume
-
 ## onFinishInflate()
 view的onFinishInflate()何时调用的？
 当View中所有的子控件均被映射成xml后触发；

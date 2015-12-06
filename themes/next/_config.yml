@@ -39,7 +39,7 @@ icon_font: default
 # Code Highlight theme
 # Available value: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night eighties
+highlight_theme: night blue
 
 # MathJax Support
 mathjax:

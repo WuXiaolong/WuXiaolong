@@ -19,9 +19,11 @@
     <main id="main" class="main">
         <div class="main-inner">
             <div id="content" class="content">
+				
                 {% block content %}{% endblock %}
+			
             </div>
-
+            
             {% if (theme.duoshuo_hotartical and page.title) %}
                 <!-- 多说热评文章-->
                 <p>热评文章</p>
@@ -80,7 +82,6 @@
 
 {% include '_scripts/mathjax.swig' %}
 {% block comment_system %}{% endblock %}
-
 
 {% include '_scripts/baidushare.swig' %}
 

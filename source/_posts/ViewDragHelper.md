@@ -5,7 +5,6 @@ category: Android
 ---
 ## 效果预览
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/ViewDragHelper.gif)
-原谅我无耻地打了小广告，嘿嘿
 
 ## ViewDragHelper创建
 ```java
