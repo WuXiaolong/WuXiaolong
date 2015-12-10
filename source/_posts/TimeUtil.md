@@ -107,5 +107,16 @@ public class TimeUtil {
         return null;
 
     }
+	 /**
+     * 毫秒格式化
+     *
+     * @param millisecond 如"1449455517602"
+     * @param format 如"yyyy-MM-dd HH:mm:ss"
+     * @return
+     */
+	 public static String millisecond2String(long millisecond, String format) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format, Locale.getDefault());
+        return simpleDateFormat.format(millisecond);
+    }
 }
 ```
