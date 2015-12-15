@@ -29,7 +29,7 @@ date: 2013-07-09
                 android:bottom="10dp" />
         </shape>
 ```
-
+<!--more-->
 对于上面， shape的定义
 * shape类型
 android:shape=["rectangle" | "oval" | "line" | "ring"]  
