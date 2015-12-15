@@ -567,115 +567,28 @@ android:windowSoftInputMode="adjustPan|stateAlwaysVisible"
 adjustUnspecified|stateHidden
 android:windowSoftInputMode="adjustUnspecified|stateHidden"
 ```
+windowSoftInputMode各值的含义：
+
+stateUnspecified：软键盘的状态并没有指定，系统将选择一个合适的状态或依赖于主题的设置
+
+stateUnchanged：当这个activity出现时，软键盘将一直保持在上一个activity里的状态，无论是隐藏还是显示
+
+stateHidden：用户选择activity时，软键盘总是被隐藏
+
+stateAlwaysHidden：当该Activity主窗口获取焦点时，软键盘也总是被隐藏的
+
+stateVisible：软键盘通常是可见的
+
+stateAlwaysVisible：用户选择activity时，软键盘总是显示的状态
+
+adjustUnspecified：默认设置，通常由系统自行决定是隐藏还是显示
+
+adjustResize：该Activity总是调整屏幕的大小以便留出软键盘的空间
+
+adjustPan：当前窗口的内容将自动移动以便当前焦点从不被键盘覆盖和用户能总是看到输入内容的部分
 
 ## 控件美化Shape
-```js
-<shape>
- <!-- 实心 -->
-            <solid android:color="#ff9d77"/>
-            <gradient//渐变
-               android:startColor="#ff8c00"
-               android:endColor="#FFFFFF"
-               android:angle="270" />
-            <stroke//边缘 描边
-               android:width="2dp"
-               android:color="#dcdcdc" />
-            <corners//拐角
-               android:radius="2dp" />
-            <padding
-               android:left="10dp"
-               android:top="10dp"
-               android:right="10dp"
-               android:bottom="10dp" />
-        </shape>
-```
-对于上面， shape的定义
-solid：实心，就是填充的意思，
-android:color指定填充的颜色
-
-渐变，在gradient中startColor属性为开始的颜色，
-endColor为渐变结束的颜色，
-angle是渐变角度，必须为45的整数倍。
-另外渐变默认的模式为android:type="linear"，即线性渐变，可以指定渐变为径向渐变，android:type="radial"，径向渐变需要指定半径android:gradientRadius="50"。；
-
-stroke可以理解为边缘android:width="2dp" 描边的宽度，android:color 描边的颜色。我们还可以把描边弄成虚线的形式，设置方式为：android:dashWidth="5dp" 
-android:dashGap="3dp"
-其中android:dashWidth表示'-'这样一个横线的宽度，android:dashGap表示之间隔开的距离。；
-
-corners为拐角这里radius属性为半径，android:radius为角的弧度，值越大角越圆。
-我们还可以把四个角设定成不同的角度，方法为：
-```js
-<corners 
-        android:topRightRadius="20dp"    右上角
-        android:bottomLeftRadius="20dp"    右下角
-        android:topLeftRadius="1dp"    左上角
-        android:bottomRightRadius="0dp"    左下角
- />
-```
-这里有个地方需要注意，bottomLeftRadius是右下角，而不是左下角，这个有点郁闷，不过不影响使用，记得别搞错了就行。
-最后是相对位置属性padding。
-对于一个Button完整的定义可以为（drawable下）
-```js
-  <?xmlversion="1.0" encoding="utf-8"?>
-<selector
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" >
-        <shape>
-            <gradient
-               android:startColor="#ff8c00"
-               android:endColor="#FFFFFF"
-               android:angle="270" />
-            <stroke
-               android:width="2dp"
-               android:color="#dcdcdc" />
-            <corners
-               android:radius="2dp" />
-            <padding
-               android:left="10dp"
-               android:top="10dp"
-               android:right="10dp"
-               android:bottom="10dp" />
-        </shape>
-    </item>
-   <item android:state_focused="true" >
-        <shape>
-            <gradient
-               android:startColor="#ffc2b7"
-               android:endColor="#ffc2b7"
-               android:angle="270" />
-            <stroke
-               android:width="2dp"
-               android:color="#dcdcdc" />
-            <corners
-               android:radius="2dp" />
-            <padding
-               android:left="10dp"
-               android:top="10dp"
-               android:right="10dp"
-               android:bottom="10dp" />
-        </shape>
-    </item>
-    <item>       
-        <shape>
-            <gradient
-               android:startColor="#ff9d77"
-               android:endColor="#ff9d77"
-               android:angle="270" />
-            <stroke
-               android:width="2dp"
-               android:color="#fad3cf" />
-            <corners
-               android:radius="2dp" />
-            <padding
-               android:left="10dp"
-               android:top="10dp"
-               android:right="10dp"
-               android:bottom="10dp" />
-        </shape>
-    </item>
-</selector>
-```
-以上几个item的区别主要是体现在state_pressed按下或state_focused获得焦点时，当当来判断显示什么类型，而没有state_xxx属性的item可以看作是常规状态下。
+[http://wuxiaolong.me/2013/07/09/shape/](http://wuxiaolong.me/2013/07/09/shape/)
 
 ## 获取版本名称 VersionName
 ```java

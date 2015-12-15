@@ -1,6 +1,6 @@
 title: Android之美化控件Shape
 categories: [Android]
-tags: [Android,Shape]
+tags: Shape
 date: 2013-07-09
 ---
 
@@ -30,40 +30,37 @@ date: 2013-07-09
         </shape>
 ```
 
-* solid：实心，就是填充的意思
+对于上面， shape的定义
+* shape类型
+android:shape=["rectangle" | "oval" | "line" | "ring"]  
+shape的形状，默认为矩形，可以设置为矩形（rectangle）、椭圆形(oval)、线性形状(line)、环形(ring)  
+下面的属性只有在android:shape="ring时可用：  
+android:innerRadius  尺寸，内环的半径。  
+android:innerRadiusRatio 浮点型，以环的宽度比率来表示内环的半径，  
 
-	android:color指定填充的颜色
+* solid
+实心，填充的意思
+android:color指定填充的颜色
 
-* gradient：渐变
+* gradient
+渐变
+android:startColor 开始的颜色
+android:endColor 渐变结束的颜色
+android:angle 渐变角度，必须为45的整数倍，当angle=0时，渐变色是从左向右。 然后逆时针方向转，当angle=90时为从下往上
+android:type="linear"，即线性渐变，可以指定渐变为径向渐变，android:type="radial"，径向渐变需要指定半径android:gradientRadius="50"
 
-	android:startColor和android:endColor分别为起始和结束颜色，ndroid:angle是渐变角度，必须为45的整数倍。
+* stroke
+描边缘
+android:width="2dp" 描边的宽度
+android:color 描边的颜色
+我们还可以把描边弄成虚线的形式，设置方式为：android:dashWidth="5dp" android:dashGap="3dp"
+其中android:dashWidth表示'-'这样一个横线的宽度，android:dashGap表示之间隔开的距离。
 
-	另外渐变默认的模式为android:type="linear"，即线性渐变，可以指定渐变为径向渐变，android:type="radial"，径向渐变需要指定半径android:gradientRadius="50"。
-
-* stroke：描边
-
-	android:width="2dp" 描边的宽度，android:color 描边的颜色。
-	我们还可以把描边弄成虚线的形式，设置方式为：
-	android:dashWidth="5dp" 
-	android:dashGap="3dp"
-	其中android:dashWidth表示'-'这样一个横线的宽度，android:dashGap表示之间隔开的距离。
-
-* corners：圆角
-	android:radius为角的弧度，值越大角越圆。
-	我们还可以把四个角设定成不同的角度，方法为：
-
-```java
-	<corners 
-        android:topRightRadius="20dp"    右上角
-        android:bottomLeftRadius="20dp"    右下角
-        android:topLeftRadius="1dp"    左上角
-        android:bottomRightRadius="0dp"    左下角
-	/>
-```
-	这里有个地方需要注意，bottomLeftRadius是右下角，而不是左下角，这个有点郁闷，不过不影响使用，记得别搞错了就行。
+* corners
+拐角，radius属性为半径，android:radius为角的弧度，值越大角越圆。
 
 * padding：间隔
-	这个就不用多说了，XML布局文件中经常用到。
+这个就不用多说了，XML布局文件中经常用到。
 
 ```java
 <?xml version="1.0" encoding="utf-8"?>

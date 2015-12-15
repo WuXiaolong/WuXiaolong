@@ -111,9 +111,9 @@ protected void onPostCreate(Bundle savedInstanceState) {
 onPause是在整个窗口被半遮盖或者半透明的时候会执行，Activity不会接受用户输入。而onStop则是在整个窗口被完全遮盖才会触发，此时Activity不可见，尽在后台运行。触发onStop的方法之前必定会触发onPause方法。
 
 ## onSaveInstanceState、 onRestoreInstanceState
-onSaveInstanceState字面理解就是恢复实例的状态， 需要注意的是，onSaveInstanceState方法和onRestoreInstanceState方法“不一定”是成对的被调用的，onRestoreInstanceState被调用的前提是，activity A“确实”被系统销毁了，而如果仅仅是停留在有这种可能性的情况下，则该方法不会被调用。
+onSaveInstanceState字面理解就是恢复实例的状态，需要注意的是，onSaveInstanceState方法和onRestoreInstanceState方法“不一定”是成对的被调用的，onRestoreInstanceState被调用的前提是，activity A“确实”被系统销毁了，而如果仅仅是停留在有这种可能性的情况下，则该方法不会被调用。
 
-长时间处于stopped形态，系统可能回收activity
+长时间处于stopped形态，系统可能回收activity，比如旋转屏幕
 onResume --> onSaveInstanceState() --> onDestory
 重新创建
 onCreate --> onRestoreIntanceState() --> onResume 
