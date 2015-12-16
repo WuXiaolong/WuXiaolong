@@ -4,12 +4,20 @@ tags: Toolbar
 category: Android
 ---
 在Material Design之中有一个名称为Toolbar，用来取代过去的ActionBar控件。
-## 基本用法
+# 基本用法
 可分为三步：
-### 新增ToolBar样式
+## 新增ToolBar样式
 value/styles.xml：
 ```js
  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+  <item name="colorPrimary">@color/colorPrimary</item>
+  <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+  <item name="colorAccent">@color/colorAccent</item>
+  <item name="android:textColorPrimary">@android:color/white</item>
+  <!--返回或更多(app:showAsAction="never")的按钮颜色-->
+  <item name="colorControlNormal">@android:color/white</item>
+  <!--菜单字体颜色-->
+  <item name="actionMenuTextColor">@android:color/white</item>
  </style>
 ```
 ```js
@@ -19,17 +27,18 @@ value/styles.xml：
  </style>
 ```
 <!--more-->
-### XML布局中新增ToolBar
+## XML布局中新增ToolBar
 ```js
 <android.support.v7.widget.Toolbar 
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
+    android:layout_height="wrap_content"
+    android:minHeight="?actionBarSize"
     android:background="?attr/colorPrimary"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
  </android.support.v7.widget.Toolbar>
 ```
-### 在程序中替代ActionBar
+## 在程序中替代ActionBar
 ```java
  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -68,13 +77,29 @@ res/menu/activity_main.xml
 
             case R.id.action_edit:
               return true;
+            case android.R.id.home:
+              super.onBackPressed();//返回
+              return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
 
     }
 ```
-### 单独使用而不与ActionBar进行关联
+## Fragment使用Toolbar
+```java
+ AppCompatActivity mAppCompatActivity = (AppCompatActivity) mActivity;
+ Toolbar toolbar = (Toolbar) mAppCompatActivity.findViewById(R.id.toolbar);
+        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.toolbarTitle);
+        mAppCompatActivity.setSupportActionBar(toolbar);
+        toolbarTitle.setText(title);
+        ActionBar actionBar = mAppCompatActivity.getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowTitleEnabled(false);
+        }
+```
+## 单独使用而不与ActionBar进行关联
 在前一节中设置与ActionBar进行关联，如果不进行关联也是可以使用。即执行方法：setSupportActionBar，那么Menu的操作也不用在onCreateOptionsMenu方法，直接使用ToolBar的inflateMenu方法，Menu的事件也是独立的，需要通过设置ToolBar的setOnMenuItemClickListener来实现。
 ```java
 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -115,12 +140,12 @@ private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItem
   }
 };
 ```
-## 自定义布局
+# 自定义布局
  title修改为居中
 ```js
 <android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/toolbar_actionbar"
+    android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?actionBarSize"
     android:background="@null">
@@ -146,6 +171,11 @@ private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItem
         }
   mTitleView.setText("");
 ```
-## 附录
+# 剩者为王
+我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
+剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
+
+# 附录
 [Android ToolBar Widget Usage](http://blog.hwangjr.com/2015/07/10/Android-ToolBar-Widget-Usage/)
 [ANDROID – TOOLBAR STEP BY STEP](http://blog.mosil.biz/2014/10/android-toolbar/)
+
