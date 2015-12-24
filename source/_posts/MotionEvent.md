@@ -8,7 +8,7 @@ category: Android
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/MotionEvent.png)
 角色：
 一个经理：MotionEventViewGroupA，最外层的ViewGroupA；
-一个组长：MotionEventViewGroupB，中间的ViewGroupA；
+一个组长：MotionEventViewGroupB，中间的ViewGroupB；
 一个你：MotionEventViewC，最底层的码农。
 模拟：
 经理分派任务，下属处理这个任务的过程。
