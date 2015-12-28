@@ -5,7 +5,7 @@ category: Android
 ---
 > Android 3.0之前已有动画框架Animation（详见：[Android之视图动画Animation](http://wuxiaolong.me/2015/09/08/ViewAnimation/)），但存在一些局限性，当某个元素发生视图动画后，其响应事件位置还在动画前的地方。于是3.0之后，Google提出了属性动画。
 
-## ObjectAnimator
+# ObjectAnimator
 ```java
 ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(imageView, "translationX", 300);
 objectAnimator1.setInterpolator(new AccelerateInterpolator());
@@ -36,6 +36,10 @@ alpha：控制view透明度，默认是1（不透明），0完全透明（不可
 ObjectAnimator.ofFloat(imageView, "alpha", 1f, 0.5f);
 ```
 x和y：描述view在容器最终位置
+
+## 可变数组参数
+可以有一个到N个，如果是一个值的话默认这个值是动画过渡值的结束值。如果有N个值，动画就在这N个值之间过渡。
+
 ## 动画监听
 ```java
  ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(imageView, "alpha", 0.5f, 1f);
@@ -71,7 +75,7 @@ x和y：描述view在容器最终位置
                     }
                 });
 ```
-## ValueAnimator 
+# ValueAnimator 
 ValueAnimator 本身不提供任何动画效果，像个数值 发生器，用来产生具有一点规律数字。
 ```java
 ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 100);
@@ -87,7 +91,7 @@ ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 100);
                 });
 ```
 
-## PropertyValuesHolder
+# PropertyValuesHolder
 针对同一个对象多个属性，同时作用多种动画
 ```java
 PropertyValuesHolder propertyValuesHolder1 = PropertyValuesHolder.ofFloat("translationX", 300f);
@@ -98,7 +102,7 @@ PropertyValuesHolder propertyValuesHolder1 = PropertyValuesHolder.ofFloat("trans
                         .setDuration(5000).start();
 ```
 
-## AnimatorSet 
+# AnimatorSet 
 与PropertyValuesHolder类似，但AnimatorSet多了playTogether（同时执行）、playSequentially（顺序执行）、play(objectAnimator1).with(objectAnimator2)、before、after这些方法协同工作。
 ```java
 ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(imageView, "alpha", 1f, 0.5f);
@@ -110,7 +114,7 @@ animatorSet.playTogether(objectAnimator1, objectAnimator2,objectAnimator3);
 animatorSet.start();
 ```
 
-## xml使用属性动画
+# xml使用属性动画
 res下建立animator文件夹，然后建立res/animator/set_animator.xml
 ```js
 <?xml version="1.0" encoding="utf-8"?>
@@ -145,7 +149,7 @@ set标签，有一个orderring属性设置为together，还有另一个值：seq
         android:valueTo="0.5" />
 </set>
 ```
-## View的animate方法
+# View的animate方法
 Android 3.0后，谷歌给View增加animate方法直接驱动属性动画。
 ```java
  imageView.animate()
@@ -168,7 +172,7 @@ Android 3.0后，谷歌给View增加animate方法直接驱动属性动画。
                 })
                 .start();
 ```
-## 布局动画
+# 布局动画
 设置子View过渡动画
 ```js
 <?xml version="1.0" encoding="utf-8"?>
@@ -195,6 +199,6 @@ Android 3.0后，谷歌给View增加animate方法直接驱动属性动画。
         parentLayout.setLayoutAnimation(layoutAnimationController);
 ```
 
-## 剩者为王
+# 剩者为王
 我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
 ③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>

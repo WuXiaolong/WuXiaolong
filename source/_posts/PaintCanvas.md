@@ -91,7 +91,7 @@ category: Android
 
 ## PorterDuffXfermode
 PorterDuffXfermode设置的是两个图层交集区域的显示方式（如下图），dst是先画的图形，而src是后画的图形。 
-当然，这些模式也不是经常使用的，用的最多的是，使用一张图片作为另一张图片的遮罩层，通过控制遮罩层的图形，来控制下面被遮罩图形的显示效果。其中最常用的就是通过DST_IN、SRC_IN模式来实现。
+当然，这些模式也不是经常使用的，用的最多的是，使用一张图片作为另一张图片的遮罩层，通过控制遮罩层的图形，来控制下面被遮罩图形的显示效果。其中最常用的就是通过SRC_IN（两层混合，保留重合部分的上面一层）、DST_IN（两层混合，保留重合部分的下面一层）模式来实现。其他模式如下图：
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/PaintCanvas1.png)
 
 ### 圆角
@@ -316,6 +316,9 @@ public class PaintCanvas extends View {
     }
 }
 ```
+### LinearGradient实现文字一闪一闪
+[](http://wuxiaolong.me/2015/12/06/PaintCanvas/)
+
 # 剩者为王
 我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
 剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>

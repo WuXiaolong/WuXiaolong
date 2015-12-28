@@ -80,6 +80,8 @@ Shader.TileMode tile: 渲染器平铺模式
         android:text="测试文字一闪一闪"
         android:textSize="30sp" />
 ```
+## Shimmer-android
+[Shimmer-android](https://github.com/RomainPiel/Shimmer-android)，github上，TextView一闪一闪动画效果
 
 ## 剩者为王
 我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
