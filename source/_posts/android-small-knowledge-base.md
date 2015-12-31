@@ -3,10 +3,14 @@ date: 2015-08-10 14:32:49
 tags: Android
 category: [Android]
 ---
->这份是我工作以来，总结的小知识库，有些知识点现在看来太LOW了，把还觉得有用的分享出来！
+> 这份是我工作以来，总结的小知识库，有些知识点现在看来太LOW了，把还觉得有用的分享出来！
 
 
 <!--more-->
+## adapter.getPositionForSelection()和getSectionForPosition()
+getPositionForSection()根据分类列的索引号获得该序列的首个位置
+getSectionForPosition()通过该项的位置，获得所在分类组的索引号
+
 ## 代码设置textView颜色和drawableTop
 ```java
  textView.setTextColor(Color.parseColor("#FFFFFF"));
