@@ -7,6 +7,15 @@ category: [Android]
 
 
 <!--more-->
+## Android studio头注释和方法注释
+File | Settings | Editor|File and Code Templates|Includes|File Header
+```java
+/**
+ * Created by ${USER} on ${DATE}.
+ */
+```
+输入我们想要设置的注释模板
+
 ## adapter.getPositionForSelection()和getSectionForPosition()
 getPositionForSection()根据分类列的索引号获得该序列的首个位置
 getSectionForPosition()通过该项的位置，获得所在分类组的索引号
