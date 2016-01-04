@@ -20,9 +20,11 @@ File | Settings | Editor|File and Code Templates|Includes|File Header
 getPositionForSection()根据分类列的索引号获得该序列的首个位置
 getSectionForPosition()通过该项的位置，获得所在分类组的索引号
 
-## 代码设置textView颜色和drawableTop
+## 代码设置textView颜色getResources().getColor(R.color.color_name) is deprecated和drawableTop
 ```java
  textView.setTextColor(Color.parseColor("#FFFFFF"));
+ //或者
+ ContextCompat.getColor(context, R.color.color_name)
  
  Drawable drawable = getResources().getDrawable(R.drawable.demo_tab_icon_message_normal);
  drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
