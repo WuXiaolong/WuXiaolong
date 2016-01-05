@@ -12,7 +12,10 @@ Android应用攻城狮，后知后觉，工作之前，还不知何为程序猿�
 # 作品展示
 [http://wuxiaolong.me/categories/App/](http://wuxiaolong.me/categories/App/)
 
-# 作者博客
+# github
+[https://github.com/WuXiaolong](https://github.com/WuXiaolong)
+
+# 微博
 [吴小龙同學](http://weibo.com/u/2175011601)
 
 # 剩者为王
