@@ -10,6 +10,8 @@ category: Android
 ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(imageView, "translationX", 300);
 objectAnimator1.setInterpolator(new AccelerateInterpolator());
 objectAnimator1.setDuration(2000);
+objectAnimator.setRepeatCount(ValueAnimator.INFINITE);//Animation.INFINITE 表示重复多次
+objectAnimator.setRepeatMode(ValueAnimator.RESTART);//RESTART表示从头开始，REVERSE表示从末尾倒播
 objectAnimator1.start();
 ```
 第一个参数：操纵的view
