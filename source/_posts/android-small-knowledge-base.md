@@ -7,6 +7,43 @@ category: [Android]
 
 
 <!--more-->
+
+# Android Studio设置默认的签名文件
+新浪微博SSO登录，微信分享这些都需要签名打包，才能看到效果，设置默认签名文件为自己的签名jks，这样就不需要打包了。
+在app目录下添加你的.jks，然后app的build.gradle文件中的增加以下内容：
+第一种：
+```java
+android {  
+    signingConfigs {  
+        debug {  
+            storeFile file("你的.jks")
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
+        }          
+    }  	
+}
+```
+第二种：
+```java
+android {  
+    signingConfigs {  
+        release {  
+            storeFile file("你的.jks")
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
+        }          
+    }  
+	buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }        
+    }
+}
+```
+这样编译出来的debug版本直接用的是你的正式签名
+
 # Fragment懒加载
 ```java
  protected boolean isVisible;
@@ -24,9 +61,15 @@ category: [Android]
     }
 
     protected void onVisible() {
+       lazyLoad();
+    }
+	
+    protected void lazyLoad() {
+        if (!isVisible) {
+            return;
+        }
         getData();
     }
-
 
     protected void onInvisible() {
     }
@@ -44,16 +87,13 @@ File | Settings | Editor|File and Code Templates|Includes|File Header
 getPositionForSection()根据分类列的索引号获得该序列的首个位置
 getSectionForPosition()通过该项的位置，获得所在分类组的索引号
 
-# 代码设置textView颜色getResources().getColor(R.color.color_name) is deprecated和drawableTop
+# getResources().getColor(R.color.color_name) is deprecated和drawableTop
 ```java
  textView.setTextColor(Color.parseColor("#FFFFFF"));
  //或者
  ContextCompat.getColor(context, R.color.color_name)
- 
- Drawable drawable = getResources().getDrawable(R.drawable.demo_tab_icon_message_normal);
- drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
- textView.setCompoundDrawables(null, drawable, null, null);
 ```
+
 # showPopupWindow
 ```java
     private void showPopupMenu(View v) {
@@ -901,14 +941,13 @@ android:background="@drawable/radio" 使用定义的样式
 %s   （表示字符串）
 txt.setText(String.format (“被替换%1$s”,”替换内容”));
 
-# TextView中嵌套图片
+# TextView中嵌套图片Drawable
 ```java
-Drawable draw = getResources().getDrawable(R.drawable.ji_dot_nor);
-textView.setCompoundDrawablesWithIntrinsicBounds(null, draw, null, null);  
-
- setCompoundDrawablesWithIntrinsicBounds(left, top, right, bottom)
-   意思是设置Drawable显示在text的左、上、右、下位置。
-  （Textview、Button都可以）
+Drawable drawable = getResources().getDrawable(R.drawable.ji_dot_nor);
+drawable.setBounds(0, 0, drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight());
+textView.setCompoundDrawablesWithIntrinsicBounds(null, drawable, null, null);  
+说明：setCompoundDrawablesWithIntrinsicBounds(left, top, right, bottom)
+意思是设置Drawable显示在text的左、上、右、下位置。(Textview、Button都可以)
 ```
 
 # TextView做成分割线
