@@ -7,6 +7,11 @@ category: [Android]
 
 
 <!--more-->
+# Android Studio 如何Debug
+单击F5(Step Over)，单行一个个方法执行
+单击F6(Step Into)，单行执行
+单击F7(Step Out)，不往下执行，回到上一行
+单击F8(Resume Program)，跳出当前断点
 
 # Android Studio设置默认的签名文件
 新浪微博SSO登录，微信分享这些都需要签名打包，才能看到效果，设置默认签名文件为自己的签名jks，这样就不需要打包了。
