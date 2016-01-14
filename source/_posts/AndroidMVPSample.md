@@ -9,6 +9,7 @@ category: Android
 # 效果预览
 ![](https://github.com/WuXiaolong/AndroidMVPSample/raw/master/screenshots.png)
 <!--more-->
+
 # 准备
 gradle文件
 ```java
@@ -34,8 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     private void initView() {
         text = (TextView) findViewById(R.id.text);
         mProgressBar = (ProgressBar) findViewById(R.id.mProgressBar);
-        mMainPresenter = new MainPresenter();
-        mMainPresenter.attachView(this);
+        mMainPresenter = new MainPresenter(this);       
         mMainPresenter.loadData();
     }
 
@@ -121,7 +121,10 @@ MainPresenter.java
 //业务具体处理
 public class MainPresenter implements Presenter<MainView> {
     private MainView mMainView;
-
+    public MainPresenter(MainView view){
+	attachView(view);
+	}
+	
     @Override
     public void attachView(MainView view) {
         this.mMainView = view;
@@ -196,8 +199,20 @@ public interface MainView {
 [https://github.com/WuXiaolong/AndroidMVPSample](https://github.com/WuXiaolong/AndroidMVPSample)
 
 # 总结
-使用mvp时，Activity和Fragment变成了view层的一部分而把绝大多数工作代理给了presenter。每一个Activity都有一个相应的presenter来处理数据进而获取model。
+## MVC模式
+视图（View）：用户界面。
+控制器（Controller）：业务逻辑
+模型（Model）：数据保存
+View 传送指令到 Controller
+Controller 完成业务逻辑后，要求 Model 改变状态
+Model 将新的数据发送到 View，用户得到反馈
 
-## 剩者为王
+## MVP模式
+使用MVP时，Activity和Fragment变成了MVC模式中View层，Presenter相当于MVC模式中Controller层，处理业务逻辑。每一个Activity都有一个相应的presenter来处理数据进而获取model。
+
+## MVVM模式
+将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。
+
+# 剩者为王
 我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
 剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
