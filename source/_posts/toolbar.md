@@ -159,10 +159,10 @@ private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItem
         }
   mTitleView.setText("");
 ```
-# Android 5.0实现将布局的内容延伸到状态栏
+# 实现将布局的内容延伸到状态栏
 style
 ```js 
- <item name="android:windowTranslucentStatus" tools:targetApi="21">true</item>
+ <item name="android:windowTranslucentStatus" tools:targetApi="19">true</item>
 ```
 Toolbar增加一个paddingTop:
 ```js
@@ -178,7 +178,7 @@ values/dimens.xml
 ```js
 <dimen name="status_bar_height">0dp</dimen>
 ```
-values-v21/dimens.xml
+values-v19/dimens.xml
 ```js
 <dimen name="status_bar_height">25dp</dimen>
 ```

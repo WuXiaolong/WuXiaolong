@@ -257,24 +257,22 @@ int [] nums = {0,1,2,3,4,5,6,7,8,9};
 
 # Fragment.isAdded()
 ```java
-public void switchFragment(Fragment newFragment, Fragment oldFragment) {
-FragmentTransaction fragmentTransaction = getSupportFragmentManager()
-.beginTransaction();
-mCurrentFragment = newFragment;
-if (newFragment.isAdded()) {
-Log.i("wxl", oldFragment + "isAdded");
-fragmentTransaction.hide(oldFragment).show(newFragment).commit();
+Fragment mBeforeFragment = new Fragment();
+public void switchFragment(Fragment currentFragment) {
+if (currentFragment.isAdded()) {
+getSupportFragmentManager().beginTransaction().hide(mBeforeFragment).show(currentFragment).commit();
 } else {
-Log.i("wxl", newFragment + "not isAdded");
-fragmentTransaction.hide(oldFragment)
-.add(R.id.container, newFragment).commit();
-
+getSupportFragmentManager().beginTransaction().hide(mBeforeFragment).add(R.id.container, currentFragment).commit();
 }
+mBeforeFragment = currentFragment;
 }
 ```
 调用：
 ```java
-switchFragment(HomeFragment.newInstance(), mCurrentFragment); 
+switchFragment(HomeFragment.newInstance()); 
+```
+HomeFragment
+```java
 public static HomeFragment homeFragment = null;
 
 public static HomeFragment newInstance() {
