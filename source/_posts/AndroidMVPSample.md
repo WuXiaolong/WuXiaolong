@@ -11,18 +11,52 @@ category: Android
 <!--more-->
 
 # 准备
-gradle文件
+## MVP流程
+![](http://7q5c2h.com1.z0.glb.clouddn.com/androidmvpsample2.png)
+说明：
+步骤1：UI实现View方法，引用Presenter
+步骤2：Presenter调用Model，走Model具体逻辑
+步骤3：Model逻辑实现，回调Presenter方法
+步骤4：Presenter回调View，即回到UI，回调View方法
+
+## gradle文件
 ```java
  compile 'com.loopj.android:android-async-http:1.4.9'
 ```
 说明：请求网络使用async-http
 
-MainActivity
+## 目录结构
+![](http://7q5c2h.com1.z0.glb.clouddn.com/androidmvpsample3.png)
+
+# MVP之V
+
+MainView.java
+
 ```java
+/**
+ * Created by WuXiaolong on 2015/9/23.
+ * 处理业务需要哪些方法
+ */
+public interface MainView {
+    void showData(MainModelBean mainModelBean);
+
+    void showProgress();
+
+    void hideProgress();
+}
+```
+
+MainActivity
+
+```java
+/**
+ * Created by WuXiaolong on 2015/9/23.
+ * 由Activity/Fragment实现View里方法，包含一个Presenter的引用
+ */
 public class MainActivity extends AppCompatActivity implements MainView {
-    ProgressBar mProgressBar;
-    TextView text;
-    MainPresenter mMainPresenter;
+    private ProgressBar mProgressBar;
+    private TextView text;
+    private MainPresenter mMainPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +69,15 @@ public class MainActivity extends AppCompatActivity implements MainView {
     private void initView() {
         text = (TextView) findViewById(R.id.text);
         mProgressBar = (ProgressBar) findViewById(R.id.mProgressBar);
-        mMainPresenter = new MainPresenter(this);       
-        mMainPresenter.loadData();
+        mMainPresenter = new MainPresenter(this);
+        //制造延迟效果
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mMainPresenter.loadData();
+            }
+        }, 2000);
+
     }
 
     @Override
@@ -46,11 +87,12 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     @Override
-    public void showData(MainModel mainModel) {
-        text.setText("城市：" + mainModel.getCity()
-                + "\n风向：" + mainModel.getWd()
-                + "\n风级：" + mainModel.getWs()
-                + "\n发布时间：" + mainModel.getTime());
+    public void showData(MainModelBean mainModelBean) {
+        String showData = getResources().getString(R.string.city) + mainModelBean.getCity()
+                + getResources().getString(R.string.wd) + mainModelBean.getWd()
+                + getResources().getString(R.string.ws) + mainModelBean.getWs()
+                + getResources().getString(R.string.time) + mainModelBean.getTime();
+        text.setText(showData);
     }
 
 
@@ -64,107 +106,56 @@ public class MainActivity extends AppCompatActivity implements MainView {
         mProgressBar.setVisibility(View.GONE);
     }
 
+
 }
+
 ```
-
-# MVP之M
-MainModel 
-```java
-public class MainModel {
-    String city;
-    String wd;
-    String ws;
-    String time;
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getWd() {
-        return wd;
-    }
-
-    public void setWd(String wd) {
-        this.wd = wd;
-    }
-
-    public String getWs() {
-        return ws;
-    }
-
-    public void setWs(String ws) {
-        this.ws = ws;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-}
-```
-
-
 
 # MVP之P
 
 MainPresenter.java 
-
 ```java
-
-//业务具体处理
-public class MainPresenter implements Presenter<MainView> {
+/**
+ * Created by WuXiaolong on 2015/9/23.
+ * View和Model的桥梁，它从Model层检索数据后，返回给View层
+ */
+public class MainPresenter implements Presenter<MainView>, IMainPresenter {
     private MainView mMainView;
-    public MainPresenter(MainView view){
-	attachView(view);
-	}
-	
+    private MainModel mMainModel;
+
+    public MainPresenter(MainView view) {
+        attachView(view);
+        mMainModel = new MainModel(this);
+    }
+
     @Override
     public void attachView(MainView view) {
         this.mMainView = view;
-    }
-
-    public void loadData() {
-        mMainView.showProgress();
-        AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
-        asyncHttpClient.get("http://www.weather.com.cn/adat/sk/101010100.html", new JsonHttpResponseHandler() {
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                super.onSuccess(statusCode, headers, response);
-                try {
-                    MainModel mainModel = new MainModel();
-                    JSONObject weatherinfo = response.getJSONObject("weatherinfo");
-                    mainModel.setCity(weatherinfo.getString("city"));
-                    mainModel.setWd(weatherinfo.getString("WD"));
-                    mainModel.setWs(weatherinfo.getString("WS"));
-                    mainModel.setTime(weatherinfo.getString("time"));
-                    mMainView.showData(mainModel);
-                    mMainView.hideProgress();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
-                mMainView.hideProgress();
-            }
-        });
     }
 
     @Override
     public void detachView() {
         this.mMainView = null;
     }
+
+    public void loadData() {
+        mMainView.showProgress();
+        mMainModel.loadData();
+    }
+
+
+    @Override
+    public void loadDataSuccess(MainModelBean mainModelBean) {
+        mMainView.showData(mainModelBean);
+        mMainView.hideProgress();
+    }
+
+    @Override
+    public void loadDataFailure() {
+        mMainView.hideProgress();
+    }
 }
+
 ```
 
 Presenter
@@ -177,23 +168,74 @@ public interface Presenter<V> {
 
 }
 ```
-
-# MVP之V
-
-MainView.java
-
+IMainPresenter
 ```java
+/**
+ * Created by WuXiaolong on 2015/9/23.
+ * 此接口作用是连接Model
+ */
+public interface IMainPresenter {
+    void loadDataSuccess(MainModelBean mainModelBean);
 
-//处理业务需要哪些方法
-public interface MainView {
-    void showData(MainModel mainModel);
-
-    void showProgress();
-
-    void hideProgress();
+    void loadDataFailure();
 }
 
-``` 
+```
+# MVP之M
+MainModel 
+```java
+/**
+ * Created by WuXiaolong on 2015/9/23.
+ * 业务具体处理，包括负责存储、检索、操纵数据等
+ */
+public class MainModel {
+    IMainPresenter mIMainPresenter;
+
+    public MainModel(IMainPresenter iMainPresenter) {
+        this.mIMainPresenter = iMainPresenter;
+    }
+
+    public void loadData() {
+        AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
+        asyncHttpClient.get("http://www.weather.com.cn/adat/sk/101010100.html", new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    MainModelBean mainModelBean = new MainModelBean();
+                    JSONObject weatherinfo = response.getJSONObject("weatherinfo");
+                    mainModelBean.setCity(weatherinfo.getString("city"));
+                    mainModelBean.setWd(weatherinfo.getString("WD"));
+                    mainModelBean.setWs(weatherinfo.getString("WS"));
+                    mainModelBean.setTime(weatherinfo.getString("time"));
+                    mIMainPresenter.loadDataSuccess(mainModelBean);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                mIMainPresenter.loadDataFailure();
+            }
+        });
+    }
+
+
+}
+```
+MainModelBean
+```java
+public class MainModelBean {
+    private String city;
+    private String wd;
+    private String ws;
+    private String time;
+    //此处省略get和set方法    
+}
+```
 
 # 源码地址
 [https://github.com/WuXiaolong/AndroidMVPSample](https://github.com/WuXiaolong/AndroidMVPSample)

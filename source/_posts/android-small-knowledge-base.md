@@ -699,35 +699,36 @@ Log.i("wxl", "imei="+imei);
 
 # 自定义Log是否显示
 ```java
-public class Log {
-    private static final boolean LOG = true;
-    public static void i(String tag, String msg) {
-        if (LOGV)
-            android.util.Log.i(tag , msg);
+ public class Log {
+        private static final String TAG = "wxl";
+        private static final boolean LOG = true;
+        public static void i(String msg) {
+            if (LOG)
+                android.util.Log.i(TAG , msg);
+        }
+        public static void d(String msg) {
+            if (LOG)
+                android.util.Log.d(TAG , msg);
+        }
+        public static void w(String msg) {
+            if (LOG)
+                android.util.Log.w(TAG , msg);
+        }
+        public static void w(String msg, Throwable throwable) {
+            if (LOG)
+                android.util.Log.w(TAG , msg, throwable);
+        }
+        public static void v(String msg) {
+            if (LOG)
+                android.util.Log.v(TAG , msg);
+        }
+        public static void e(String msg) {
+            android.util.Log.e(TAG , msg);
+        }
+        public static void e(String msg, Throwable throwable) {
+            android.util.Log.e(TAG , msg, throwable);
+        }
     }
-    public static void d(String tag, String msg) {
-        if (LOGV)
-            android.util.Log.d(tag , msg);
-    }
-    public static void w(String tag, String msg) {
-        if (LOGV)
-            android.util.Log.w(tag , msg);
-    }
-    public static void w(String tag, String msg, Throwable tr) {
-        if (LOGV)
-            android.util.Log.w(tag , msg, tr);
-    }
-    public static void v(String tag, String msg) {
-        if (LOGV)
-            android.util.Log.v(tag , msg);
-    }
-    public static void e(String tag, String msg) {
-        android.util.Log.e(tag , msg);
-    }
-    public static void e(String tag, String msg, Throwable tr) {
-        android.util.Log.e( tag , msg, tr);
-    }
-}
 ```
 
 # 异步操作AsyncTask 

@@ -3,7 +3,7 @@ date: 2016-01-15 11:23:25
 tags: Retrofit 
 category: Android
 ---
-> 实例带你了解Retrofit 2.0的使用，并分享开发Retrofit遇到的坑和心得。
+> 实例带你了解Retrofit 2.0的使用，分享目前开发Retrofit遇到的坑和心得。
 
 # 添加依赖
 app/build.gradle
