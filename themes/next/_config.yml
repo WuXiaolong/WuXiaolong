@@ -15,8 +15,22 @@ avatar: /images/avatar.jpg
 # links name 
 links_title: 热门推荐
 links:
-    Android小知识库: http://wuxiaolong.me/2015/08/10/android-small-knowledge-base/
-  
+    Android小知识库: http://wuxiaolong.me/2015/08/10/android-small-knowledge-base/	   
+	
+    Android MVP实例: http://wuxiaolong.me/2015/09/23/AndroidMVPSample/    	
+	
+    Android Toolbar: http://wuxiaolong.me/2015/11/10/toolbar/
+	
+	
+#    androidweekly: http://androidweekly.net/
+	
+
+	
+
+
+	
+	
+	
 # Set default keywords (Use a comma to separate)
 keywords: "Hexo,next"
 
