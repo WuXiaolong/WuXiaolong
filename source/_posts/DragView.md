@@ -3,11 +3,11 @@ date: 2015-11-20 13:11:53
 tags: DragView
 category: Android
 ---
-## 效果预览
+# 效果预览
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/DragView.gif)
 
 <!--more-->
-## 获取坐标值方法
+# 获取坐标值方法
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/DragView.png)
 如图，要实现滑动效果，需要先了解以下方法。
 * View提供获取坐标方法
@@ -22,14 +22,119 @@ getY():获取点击点距离自身控件顶边距离，即视图坐标
 getRawX():获取点击点距离整个屏幕左边距离，即绝对坐标
 getRawY():获取点击点距离整个屏幕顶边距离，即绝对坐标
 
-## 实现DragView
+# 实现DragView
+## 方法一
 ```java
 public class DragView extends View {
-    private Scroller mScroller;
+    private int x, y;
 
     public DragView(Context context) {
         super(context);
 
+    }
+
+    public DragView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public DragView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int getX = (int) event.getX();
+        int getY = (int) event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                // 记录触摸点坐标
+                x = (int) event.getX();
+                y = (int) event.getY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                //计算偏移量
+                int offsetX = getX - x;
+                int offsetY = getY - y;
+                //在当前left、top、right、bottom的基础上加上偏移量
+                layout(getLeft() + offsetX,
+                        getTop() + offsetY,
+                        getRight() + offsetX,
+                        getBottom() + offsetY);
+
+                break;
+        }
+        return true;
+    }
+
+}
+```
+## 方法二
+```java
+public class DragView extends View {
+    private int x, y;
+    //这里省略构造方法
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int getX = (int) event.getX();
+        int getY = (int) event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                // 记录触摸点坐标
+                x = (int) event.getX();
+                y = (int) event.getY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                //计算偏移量
+                int offsetX = getX - x;
+                int offsetY = getY - y;
+                offsetLeftAndRight(offsetX);//同时对left和right偏移
+                offsetTopAndBottom(offsetY);//同时对top和bottom偏移
+                break;
+        }
+        return true;
+    }
+}
+```
+## 方法三
+```java
+```java
+public class DragView extends View {
+    private int x, y;
+    //这里省略构造方法
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int getX = (int) event.getX();
+        int getY = (int) event.getY();
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                // 记录触摸点坐标
+                x = (int) event.getX();
+                y = (int) event.getY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                //计算偏移量
+                int offsetX = getX - x;
+                int offsetY = getY - y;
+                ViewGroup.MarginLayoutParams marginLayoutParams = 
+                (ViewGroup.MarginLayoutParams) getLayoutParams();
+                marginLayoutParams.leftMargin = getLeft() + offsetX;
+                marginLayoutParams.topMargin = getTop() + offsetY;
+                setLayoutParams(marginLayoutParams);
+                break;
+        }
+        return true;
+    }
+}
+```
+## 方法四
+```java
+public class DragView extends View {
+    private int x, y;
+    private Scroller mScroller;
+
+    public DragView(Context context) {
+        super(context);
         initScroller(context);
     }
 
@@ -48,75 +153,36 @@ public class DragView extends View {
         mScroller = new Scroller(context);
     }
 
-    private int lastX, lastY;
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        int rawX = (int) event.getRawX();
-        int rawY = (int) event.getRawY();
-        /**
-         * 方法3
-         */
-//        int x = (int) event.getX();
-//        int y = (int) event.getY();
+        int getRawX = (int) event.getRawX();
+        int getRawY = (int) event.getRawY();
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 // 记录触摸点坐标
-                lastX = rawX;
-                lastY = rawY;
-                /**
-                 * 方法3
-                 */
-//                lastX = (int) event.getX();
-//                lastY = (int) event.getY();
+                x = (int) event.getRawX();
+                y = (int) event.getRawY();
                 break;
             case MotionEvent.ACTION_MOVE:
                 //计算偏移量
-                int offsetX = rawX - lastX;
-                int offsetY = rawY - lastY;
-                /**
-                 * 方法1
-                 */
-                //在当前left、top、right、bottom的基础上加上偏移量
-                //layout(getLeft() + offsetX,
-                //getTop() + offsetY,
-                //getRight() + offsetX,
-                //getBottom() + offsetY);
-                /**
-                 * 方法2
-                 */
-                //offsetLeftAndRight(offsetX);//同时对left和right偏移
-                //offsetTopAndBottom(offsetY);//同时对top和bottom偏移
-
-                /**
-                 *方法3
-                 */
+                int offsetX = getRawX - x;
+                int offsetY = getRawY - y;
                 ((View) getParent()).scrollBy(-offsetX, -offsetY);
-                //重新设置初始坐标,方法3不需要
-                lastX = rawX;
-                lastY = rawY;
-                /**
-                 * 方法4
-                 */
-//                int offsetX = x - lastX;
-//                int offsetY = y - lastY;
-//                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
-//                //LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getLayoutParams();
-//                marginLayoutParams.leftMargin = getLeft() + offsetX;
-//                marginLayoutParams.topMargin = getTop() + offsetY;
-//                setLayoutParams(marginLayoutParams);
+                //重新设置初始坐标
+                x = getRawX;
+                y = getRawY;
                 break;
             case MotionEvent.ACTION_UP:
                 /**
-                 * 实现拖动又返回，需配合方法1-3中任一方法
+                 * 实现拖动回弹回去，需配合方法一、二、四中任一方法
                  */
-//                View viewGroup = (View) getParent();
-//                mScroller.startScroll(viewGroup.getScrollX(),
-//                        viewGroup.getScrollY(),
-//                        -viewGroup.getScrollX(),
-//                        -viewGroup.getScrollY()
-//                );
-//                invalidate();
+                View viewGroup = (View) getParent();
+                mScroller.startScroll(viewGroup.getScrollX(),
+                        viewGroup.getScrollY(),
+                        -viewGroup.getScrollX(),
+                        -viewGroup.getScrollY()
+                );
+                invalidate();
                 break;
         }
         return true;
@@ -127,17 +193,16 @@ public class DragView extends View {
         super.computeScroll();
         //判断Scroller是否执行完毕
         if (mScroller.computeScrollOffset()) {
-            ((View) getParent()).scrollTo(mScroller.getCurrX(),
+            ((View) getParent()).scrollTo(
+                    mScroller.getCurrX(),
                     mScroller.getCurrY());
-            //
             invalidate();
         }
     }
 }
-
 ```
 xml调用
-```js
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -146,11 +211,19 @@ xml调用
 
     <com.wuxiaolong.apksample.DragView
         android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_height="100dp" 
+        android:background="@android:color/holo_red_light"/>
 </LinearLayout>
 
 ```
+## 方法五
+[属性动画](http://wuxiaolong.me/2015/11/23/Animator/)
 
-## 剩者为王
+## 方法六
+[ViewDragHelper](http://wuxiaolong.me/2015/12/04/ViewDragHelper/)
+
+以上内容来自《Android群英传》
+
+# 剩者为王
 我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
 剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>

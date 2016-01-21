@@ -8,7 +8,9 @@ category: Android
 
 ## ViewDragHelper创建
 ```java
- mViewDragHelper = ViewDragHelper.create(this, 1.0f, new DragHelperCallback());//创建ViewDragHelper的实例，第一个参数是ViewGroup，传自己，第二个参数就是滑动灵敏度的意思,可以随意设置，第三个是回调
+   //创建ViewDragHelper的实例，第一个参数是ViewGroup，传自己，
+   // 第二个参数就是滑动灵敏度的意思,可以随意设置，第三个是回调
+   mViewDragHelper = ViewDragHelper.create(this, 1.0f, new DragHelperCallback());
 ```
 <!--more-->
 这里列举常用的ViewDragHelper.Callback方法
@@ -39,9 +41,10 @@ class DragHelperCallback extends ViewDragHelper.Callback {
 
         /**
          * @param child
-         * @param left  代表你将要移动到的位置的坐标,返回值就是最终确定的移动的位置,
-         *              判断如果这个坐标在layout之内 那我们就返回这个坐标值，不能让他超出这个范围
-         *              除此之外就是如果你的layout设置了padding的话，也可以让子view的活动范围在padding之内的
+          * @param left  代表你将要移动到的位置的坐标,返回值就是最终确定的移动的位置,
+         *              判断如果这个坐标在layout之内,那我们就返回这个坐标值，
+         *              不能让他超出这个范围, 除此之外就是如果你的layout设置了padding的话，
+         *              让子view的活动范围在padding之内的
          * @param dx
          * @return
          */
@@ -130,7 +133,7 @@ public class ViewDragLayout extends LinearLayout {
      */
     private int mContentLayoutWidth;
 
-    ViewDragListener mViewDragListener;
+    private ViewDragListener mViewDragListener;
 
     private boolean isOpen = false;
 
@@ -150,13 +153,14 @@ public class ViewDragLayout extends LinearLayout {
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public ViewDragLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public ViewDragLayout(Context context, AttributeSet attrs,
+                          int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init();
     }
 
     /**
-     * View 中所有的子控件均被映射成xml后触发
+     * View中所有的子控件均被映射成xml后触发
      */
     @Override
     protected void onFinishInflate() {
@@ -185,44 +189,18 @@ public class ViewDragLayout extends LinearLayout {
 
 
     public interface ViewDragListener {
-        public void onOpen();
+        void onOpen();
 
-        public void onClose();
+        void onClose();
 
-        public void onDrag(float percent);
+        void onDrag(float percent);
 
     }
+
 
     /**
-     * 打开
-     */
-    public void open() {
-        if (mViewDragHelper.smoothSlideViewTo(mContentLayout, -mBehindLayoutWidth, 0)) {
-            ViewCompat.postInvalidateOnAnimation(this);
-        }
-        if (null != mViewDragListener)
-            mViewDragListener.onOpen();
-        isOpen = true;
-    }
-
-    /**
-     * 关闭
-     */
-    public void close() {
-        if (mViewDragHelper.smoothSlideViewTo(mContentLayout, 0, 0)) {
-            ViewCompat.postInvalidateOnAnimation(this);
-        }
-        if (null != mViewDragListener)
-            mViewDragListener.onClose();
-        isOpen = false;
-    }
-
-    public boolean isOpen() {
-        return isOpen;
-    }
-
-    /**
-     * 滑动时松手后以一定速率继续自动滑动下去并逐渐停止，类似于扔东西或者松手后自动滑动到指定位置
+     * 滑动时松手后以一定速率继续自动滑动下去并逐渐停止，
+     * 类似于扔东西或者松手后自动滑动到指定位置
      */
     @Override
     public void computeScroll() {
@@ -235,10 +213,13 @@ public class ViewDragLayout extends LinearLayout {
      * 初始化
      */
     private void init() {
-        mViewDragHelper = ViewDragHelper.create(this, 1.0f, new DragHelperCallback());//创建ViewDragHelper的实例，第一个参数是ViewGroup，传自己，第二个参数就是滑动灵敏度的意思,可以随意设置，第三个是回调
-        mGestureDetectorCompat = new GestureDetectorCompat(getContext(), new XScrollDetector());//手势操作，第二参数什么意思看下面
+        //创建ViewDragHelper的实例，第一个参数是ViewGroup，传自己，
+        // 第二个参数就是滑动灵敏度的意思,可以随意设置，第三个是回调
+        mViewDragHelper = ViewDragHelper.create(this, 1.0f, new DragHelperCallback());
+        //手势操作，第二参数什么意思看下面
+        mGestureDetectorCompat = new GestureDetectorCompat(getContext(), new XScrollDetector());
     }
-   
+
     class DragHelperCallback extends ViewDragHelper.Callback {
 
         /**
@@ -267,19 +248,23 @@ public class ViewDragLayout extends LinearLayout {
         /**
          * @param child
          * @param left  代表你将要移动到的位置的坐标,返回值就是最终确定的移动的位置,
-         *              判断如果这个坐标在layout之内 那我们就返回这个坐标值，不能让他超出这个范围
-         *              除此之外就是如果你的layout设置了padding的话，也可以让子view的活动范围在padding之内的
+         *              判断如果这个坐标在layout之内,那我们就返回这个坐标值，
+         *              不能让他超出这个范围, 除此之外就是如果你的layout设置了padding的话，
+         *              让子view的活动范围在padding之内的
          * @param dx
          * @return
          */
         @Override
         public int clampViewPositionHorizontal(View child, int left, int dx) {
-//            Log.d("wxl", "clampViewPositionHorizontal");
+//            Log.d("wxl", "clampViewPositionHorizontal left=" + left);
             if (child == mContentLayout) {
-                int newLeft = Math.min(Math.max((-getPaddingLeft() - mBehindLayoutWidth), left), 0);
+                int newLeft = Math.min(
+                        Math.max((-getPaddingLeft() - mBehindLayoutWidth), left), 0);
                 return newLeft;
             } else {
-                int newLeft = Math.min(Math.max(left, getPaddingLeft() + mContentLayoutWidth - mBehindLayoutWidth), getPaddingLeft() + mContentLayoutWidth + getPaddingRight());
+                int newLeft = Math.min(
+                        Math.max(left, getPaddingLeft() + mContentLayoutWidth - mBehindLayoutWidth),
+                        (getPaddingLeft() + mContentLayoutWidth + getPaddingRight()));
                 return newLeft;
             }
         }
@@ -295,8 +280,9 @@ public class ViewDragLayout extends LinearLayout {
          * @param dy
          */
         @Override
-        public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
-//            Log.d("wxl", "clampViewPositionHorizontal"+left);
+        public void onViewPositionChanged(
+                View changedView, int left, int top, int dx, int dy) {
+//            Log.d("wxl", "onViewPositionChanged left=" + left);
             mViewDragRange = left;
             float percent = Math.abs((float) left / (float) mContentLayoutWidth);
             if (null != mViewDragListener)
@@ -320,13 +306,15 @@ public class ViewDragLayout extends LinearLayout {
         public void onViewReleased(View releasedChild, float xvel, float yvel) {
             if (releasedChild == mContentLayout) {
                 if (xvel <= 0) {//向左滑动
-                    if (-mViewDragRange >= mBehindLayoutWidth / 2 && -mViewDragRange <= mBehindLayoutWidth) {
+                    if (-mViewDragRange >= mBehindLayoutWidth / 2
+                            && -mViewDragRange <= mBehindLayoutWidth) {
                         open();
                     } else {
                         close();
                     }
                 } else {//向右滑动
-                    if (-mViewDragRange >= 0 && -mViewDragRange <= mBehindLayoutWidth) {
+                    if (-mViewDragRange >= 0
+                            && -mViewDragRange <= mBehindLayoutWidth) {
                         close();
                     } else {
                         open();
@@ -337,14 +325,45 @@ public class ViewDragLayout extends LinearLayout {
     }
 
     /**
-     * 手势监听回调
+     * 打开
      */
-    class XScrollDetector extends GestureDetector.SimpleOnGestureListener {//SimpleOnGestureListener为了不用重写那么多监听的帮助类
+    public void open() {
+        if (mViewDragHelper.smoothSlideViewTo(
+                mContentLayout, -mBehindLayoutWidth, 0)) {
+            ViewCompat.postInvalidateOnAnimation(this);
+        }
+        if (null != mViewDragListener)
+            mViewDragListener.onOpen();
+        isOpen = true;
+    }
+
+    /**
+     * 关闭
+     */
+    public void close() {
+        if (mViewDragHelper.smoothSlideViewTo(mContentLayout, 0, 0)) {
+            ViewCompat.postInvalidateOnAnimation(this);
+        }
+        if (null != mViewDragListener)
+            mViewDragListener.onClose();
+        isOpen = false;
+    }
+
+    public boolean isOpen() {
+        return isOpen;
+    }
+
+    /**
+     * 手势监听回调,
+     * SimpleOnGestureListener为了不用重写那么多监听的帮助类
+     */
+    private class XScrollDetector extends GestureDetector.SimpleOnGestureListener {
 
         @Override
         public boolean onScroll(MotionEvent e1, MotionEvent e2,
                                 float distanceX, float distanceY) {
-            return Math.abs(distanceY) <= Math.abs(distanceX);//判断是否是滑动的x距离>y距离
+            //判断是否是滑动的x距离>y距离
+            return Math.abs(distanceY) <= Math.abs(distanceX);
         }
 
     }
@@ -357,7 +376,8 @@ public class ViewDragLayout extends LinearLayout {
      */
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        return mViewDragHelper.shouldInterceptTouchEvent(ev) && mGestureDetectorCompat.onTouchEvent(ev);
+        return mViewDragHelper.shouldInterceptTouchEvent(ev)
+                && mGestureDetectorCompat.onTouchEvent(ev);
     }
 
     /**
@@ -377,6 +397,7 @@ public class ViewDragLayout extends LinearLayout {
     }
 }
 
+
 ```
 xml引用
 ```js
@@ -393,14 +414,16 @@ xml引用
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
+             <TextView
                 android:id="@+id/text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:paddingLeft="5dp"
-                android:text="小尛龙\ngithub地址：https://github.com/WuXiaolong\n新浪微博：吴小龙同學"
+                android:text="小尛龙
+                \ngithub地址：https://github.com/WuXiaolong
+                \n新浪微博：吴小龙同學"
                 android:textColor="#202020"
                 android:textSize="16sp" />
 
