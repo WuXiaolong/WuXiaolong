@@ -5,7 +5,7 @@ category: Android
 ---
 ```java
 dependencies {
-  compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.1'
+  compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.4'
 }
 ```
 build.gradle文件中只写上如上一行，就能在Android Studio中引入你的library到项目中，这样岂不是酷比了。之前github上分享一个简单的库，这两天花了点时间研究了下，如何也能这样一行就能依赖我的那个库。
@@ -21,9 +21,9 @@ library项目最好分成两个module，一个Application Module，一个Library
 修改项目的build.gradle文件中的依赖部分
 ```java
 dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.0'
+        classpath 'com.android.tools.build:gradle:1.5.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.2'
-        classpath 'com.github.dcendents:android-maven-plugin:1.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
     }
 ```
 
@@ -43,17 +43,17 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 // 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version, 这个version影响后面的引用
-version = "1.0.1"
+version = "1.0.4"
 
 android {
-    compileSdkVersion 22
+    compileSdkVersion 23
     buildToolsVersion "22.0.1"
     resourcePrefix "PullLoadMoreRecyclerView"	//这个随便填
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 101
+        versionName "1.0.4"
     }
     buildTypes {
         release {
@@ -112,6 +112,7 @@ task sourcesJar(type: Jar) {
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    options.encoding = "UTF-8" //添加编码方式，才不会报编码错误
 }
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
@@ -166,19 +167,18 @@ BUILD SUCCESSFUL
 如上，网站上会给你一条通过信息，然后就OK了，大功告成。
 
 ```java
-compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.1'
+compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.4'
 ```
 一般来说，我们需要知道library的字符串形式，包含3部分
 GROUP_ID:ARTIFACT_ID:VERSION
-上面的例子中，GROUP_ID是com.wuxiaolong.pullloadmorerecyclerview ，即配置library中group的值；ARTIFACT_ID是library，配置library中没有写到，是library项目的名字；VERSION是1.0.1。
+上面的例子中，GROUP_ID是com.wuxiaolong.pullloadmorerecyclerview ，即配置library中group的值；ARTIFACT_ID是library，配置library中没有写到，是library项目的名字；VERSION是1.0.4。
 查看bintray上库：
-http://jcenter.bintray.com/com/wuxiaolong/pullloadmorerecyclerview/library/1.0.1/
+http://jcenter.bintray.com/com/wuxiaolong/pullloadmorerecyclerview/library/1.0.4/
 
 ## 剩者为王
 我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
 剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
 
 ## 附录
-以下博客有的地方行不通或不够详细，酌情参考。
 [如何使用Android Studio把自己的Android library分享到jCenter和Maven Central](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0623/3097.html)
 [将Library上传到Jcenter](http://www.jianshu.com/p/0ba8960f80a9)
