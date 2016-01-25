@@ -197,7 +197,10 @@ public int getStatusBarHeight() {
         return result;
     }
 ```
-`另外注意：`以上不能同时设置fitsSystemWindow="true"，它会使得屏幕上的可布局空间位于状态栏下方与导航栏上方。
+`另外注意：`toolbar所在的父布局不能同时设置fitsSystemWindow="true"，它会使得屏幕上的可布局空间位于状态栏下方与导航栏上方。
+
+因为这个带来了键盘挡住EditText的问题，解决方案：
+在EditText所在的父布局设置fitsSystemWindow="true"即可。
 
 # 剩者为王
 我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
