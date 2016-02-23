@@ -166,7 +166,5 @@ setHasOptionsMenu方法源码如下：
 # 单独使用而不与ActionBar进行关联
 多谢@XZoomEye提示，对于Fragment使用Toolbar思维被局限了，在[Android Toolbar](http://wuxiaolong.me/2015/11/10/toolbar/)一文中介绍了单独使用而不与ActionBar进行关联，直接使用ToolBar的inflateMenu方法，Menu的事件也是独立的，需要通过设置ToolBar的setOnMenuItemClickListener来实现，这样做就不会发生标题错乱。
 
-# 剩者为王
-我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
-剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
-
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)

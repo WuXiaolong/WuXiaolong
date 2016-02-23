@@ -27,12 +27,12 @@ requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
 ...
 ```
 如果targetSdkVersion 22，就不会发生这样的错误，下面就来实践下这个6.0运行的权限。
-
+<!--more-->
 # 效果预览
 按照惯例，先上效果图:
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/RuntimePermission1.png)
 说明：第一次请求授权，是没有“不再询问”，拒绝后，再次请求授权，就会出现“不再询问”。
-<!--more-->
+
 # 实践
 ## AndroidManifest.xml
 ```xml
@@ -170,9 +170,8 @@ shouldShowRequestPermissionRationale：判断用户是否拒绝过
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/RuntimePermission2.png)
 同一组的任何一个权限被授权了，其他权限也自动被授权。例如，一旦WRITE_CONTACTS被授权了，app也有READ_CONTACTS和GET_ACCOUNTS了。
 
-# 剩者为王
-我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
-[点击查看QQ群](http://wuxiaolong.me/qq/)
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)
 
 # 附录
 [Android M 新的运行时权限开发者需要知道的一切](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0830/3387.html)

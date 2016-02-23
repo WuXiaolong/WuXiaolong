@@ -7,6 +7,16 @@ category: [Android]
 
 
 <!--more-->
+# Genymotion下载虚拟镜像Connection timeout
+Add new device出现的问题：
+> Failed to deploy virtual device.
+> Unable to create virtual device.Connection timeout occurred.
+
+解决方案：
+1. 当选择Google Nexus 5 - 6.0.0 - API 23 - 1080x1920下载device失败后，到C:\Users\用户主目录\AppData\Local\Genymobile\Genymotion\ova下看到genymotion_vbox86p_6.0_160114_090449.ova，大小却是0KB，在C:\Users\用户主目录\AppData\Local\Genymobile\genymotion.log，打开该文件，找到类似“http://files2.genymotion.com/dists/6.0.0/ova/genymotion_vbox86p_6.0_160114_090449.ova”路径，即您想要下载的镜像文件URL；
+2. 用迅雷去下载，下载完成后放到C:\Users\用户主目录\AppData\Local\Genymobile\Genymotion\ova；
+3. 重新点击Google Nexus 5 - 6.0.0 - API 23 - 1080x1920去下载，验证安装后即会显示在设备列表中。
+
 # Android Studio 如何Debug
 单击F5(Step Over)，单行一个个方法执行
 单击F6(Step Into)，单行执行
@@ -1390,6 +1400,6 @@ Animation shake = AnimationUtils.loadAnimation(
 						MainActivity.this, R.anim.animlayout);
 				btn.setAnimation(shake);
 ```
-# 剩者为王
-我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
-剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
+
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)

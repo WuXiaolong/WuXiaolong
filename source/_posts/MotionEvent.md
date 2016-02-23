@@ -220,8 +220,5 @@ MotionEventViewGroupB onTouchEventB
 
 `是不是这样的分析让你对事件的传递不再是一头雾水了，大赞医生《Android群英传》。`
 
-# 剩者为王
-我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
-剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
-
-
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)

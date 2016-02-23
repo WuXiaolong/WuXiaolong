@@ -202,9 +202,8 @@ public int getStatusBarHeight() {
 因为这个带来了键盘挡住EditText的问题，解决方案：
 在EditText所在的父布局设置fitsSystemWindow="true"即可。
 
-# 剩者为王
-我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
-剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)
 
 # 附录
 [Android ToolBar Widget Usage](http://blog.hwangjr.com/2015/07/10/Android-ToolBar-Widget-Usage/)
