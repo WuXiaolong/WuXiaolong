@@ -19,7 +19,7 @@ Android应用攻城狮，后知后觉，工作之前，还不知何为程序猿�
 [吴小龙同學](http://weibo.com/u/2175011601)
 
 # AndroidProgrammer
-我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
+我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。公众号和博客将同步更新，欢迎微信扫一扫关注。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammr.jpg)
 
 # 剩者为王

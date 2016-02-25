@@ -317,7 +317,7 @@ public class PaintCanvas extends View {
 }
 ```
 ### LinearGradient实现文字一闪一闪
-[](http://wuxiaolong.me/2015/12/06/PaintCanvas/)
+[http://wuxiaolong.me/2015/12/06/PaintCanvas/](http://wuxiaolong.me/2015/12/06/PaintCanvas/)
 
 # 剩者为王
 我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
