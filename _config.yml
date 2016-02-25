@@ -15,7 +15,7 @@ timezone:
 url: http://wuxiaolong.me/
 root: /
 permalink: :year/:month/:day/:title/
-# permalink: :title/
+# permalink: :title/ 
 permalink_defaults:
 
 # Directory
