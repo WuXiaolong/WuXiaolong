@@ -6,6 +6,7 @@ category: RxJava
 # RxJava是什么
 a library for composing asynchronous and event-based programs using observable sequences for the Java VM（一个对于构成使用的Java虚拟机观察序列异步和基于事件的程序库）。
 github：[https://github.com/ReactiveX/RxJava](https://github.com/ReactiveX/RxJava)
+<!--more-->
 ## 观察者模式
 RxJava的世界里，我们有四种角色：
 Observable(被观察者)、Observer(观察者)
@@ -24,7 +25,7 @@ Observable调用这个方法发射数据，方法的参数就是Observable发射
 * onComplete
 正常终止，如果没有遇到错误，Observable在最后一次调用onNext之后调用此方法。
 
-<!--more-->
+
 # 创建操作
 ## create
 ```java

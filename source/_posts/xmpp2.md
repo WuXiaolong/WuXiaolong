@@ -3,6 +3,8 @@ date: 2016-02-25 19:34:53
 tags: [XMPP,Smack,openfire]
 category: XMPP
 ---
+> [Android基于XMPP开发（一）【openfire服务器配置】](http://wuxiaolong.me/2016/02/24/xmpp1/)
+
 # 准备阶段
 砍柴不误磨刀工，欲XMPP开发，先引入Smack，具体见[https://github.com/igniterealtime/Smack](https://github.com/igniterealtime/Smack)，引入方式如下：
 app/build.gradle
@@ -209,6 +211,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 ```
 # 源码地址
 [https://github.com/WuXiaolong/WoChat](https://github.com/WuXiaolong/WoChat)
+
+# AndroidProgrammer
+我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammr.jpg)
 
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)

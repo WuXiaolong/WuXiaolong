@@ -17,6 +17,7 @@ android {
     }
 }
 ```
+<!--more-->
 如何app/build.gradle是23的话，在6.0上运行一些权限，没有做处理，会直接崩溃：
 ```xml
 ...
@@ -27,7 +28,7 @@ requires android.permission.READ_CONTACTS or android.permission.WRITE_CONTACTS
 ...
 ```
 如果targetSdkVersion 22，就不会发生这样的错误，下面就来实践下这个6.0运行的权限。
-<!--more-->
+
 # 效果预览
 按照惯例，先上效果图:
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/RuntimePermission1.png)

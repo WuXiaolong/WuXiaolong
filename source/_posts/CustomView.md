@@ -5,6 +5,7 @@ category: Android
 ---
 # View工作流程
 View工作流程主要指measure、layout、draw这三个流程，即测量、布局和绘制，其中measure确定View的测量的宽/高，layout确定View的最终宽/高和四个顶点的位置，draw将View绘制到屏幕上。
+<!--more-->
 ## measure
 为了更好理解measure过程，先了解MeasureSpec，MeasureSpec代表一个32位int值，高2位代表SpecMode，低30位代表SpecSize（这句话不知道几个意思）。SpecMode指的测量模式，SpecSize指在某种测量模式下规格大小。
 SpecMode有三种：
@@ -12,7 +13,7 @@ SpecMode有三种：
 精确值模式，父容器已经检测出View所需要的精确大小，这时候View的最终大小就是SpecSize所指定的值。它对应代码LayoutParams（控件layout_width属性和layout_height属性）中match_parent和具体数值。
 * AT_MOST
 最大值模式，父容器指定了一个可用大小值，只要不超过父容器允许最大尺寸即可。它对应代码LayoutParams（控件layout_width属性和layout_height属性）中wrap_content。
-<!--more-->
+
 * UNSPECIFIED
 父容器不对View有任何限制，要多大给多大，这种情况一般用于系统内部，表示一种测量的状态。
 
