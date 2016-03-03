@@ -83,6 +83,7 @@ app/build.gradle
 ```java
 compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
 ```
+
 ## jsonschema2pojo
 访问[jsonschema2pojo](http://www.jsonschema2pojo.org/)，自动生成Java对象，如果你对gson还不熟悉，笔者建议你手动生成Java对象，感受下。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/retrofit1.png)
@@ -90,7 +91,14 @@ compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
 ```java
 compile 'org.glassfish:javax.annotation:10.0-b28'
 ```
-或者，你可以直接删除这个注解，完全没有问题。笔者懒，不想要这个依赖。
+或者，你可以直接删除这个注解，完全没有问题。笔者当然不会加这个依赖啦。
+
+## Gsonformat
+作用：Android studio插件，一般接口返回数据后要建立自己的bean，Gsonformat帮助你快速生成，不用一条一条去写。比jsonschema2pojo更加简单。
+安装步骤：Android studio-Settings-Plugins-搜Gsonformat-Install Plugin
+效果预览：
+![](http://7q5c2h.com1.z0.glb.clouddn.com/MyCodeHobby6.gif)
+
 ## 实例代码
 依旧演示上面的天气：http://www.weather.com.cn/adat/sk/101010100.html
 ```java
@@ -162,6 +170,8 @@ public class AppClient {
         });
     }
 ```
+经Gson转换器，```Call<ResponseBody>```换成自己要写的```Call<WeatherJson>```
+ 
 # RxJava
 依赖以下：
 ```xml
@@ -211,6 +221,13 @@ subscribe部分的代码在Schedulers.io被调用，需要把observeOn(AndroidSc
 # Retrofit源码解析
 [http://frodoking.github.io/2015/05/16/android-retrofit/](http://frodoking.github.io/2015/05/16/android-retrofit/)
 
+# AndroidProgrammer
+我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
+
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)
+
 # 附录
 [retrofit官方文档](http://square.github.io/retrofit/)
 [用 Retrofit 2 简化 HTTP 请求](https://realm.io/cn/news/droidcon-jake-wharton-simple-http-retrofit-2/)
@@ -218,7 +235,3 @@ subscribe部分的代码在Schedulers.io被调用，需要把observeOn(AndroidSc
 [Retrofit2 更新指南](http://zhaoshanshan.me/2015/10/12/Retrofit2-%E6%9B%B4%E6%96%B0%E6%8C%87%E5%8D%97/)
 [RESTful API 设计指南](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
 
-
-# 剩者为王
-我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
-剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
