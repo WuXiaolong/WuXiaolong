@@ -1,12 +1,14 @@
 title: 我的编码嗜好
-date: 2016-03-01 10:06:00
+date: 2016-03-13 10:06:00
 tags: code
 category: Life
 ---
-> 我的编码嗜好，内容包括Chrome插件、Android studio插件和快捷键使用、手机录屏软件。
+> 我的个人编码嗜好，内容包括Chrome插件、Android studio插件和快捷键使用、手机录屏软件等。
+
 # Chrome插件
 ## AdBlock/广告终结者
 作用：当你浏览网页时，被满屏的广告所扰，这个插件让你的网页更干净更清爽。
+<!--more-->
 下载地址：
 [AdBlock](https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom?utm_source=chrome-app-launcher-info-dialog)
 [广告终结者](https://chrome.google.com/webstore/detail/%E5%B9%BF%E5%91%8A%E7%BB%88%E7%BB%93%E8%80%85/fpdnjdlbdmifoocedhkighhlbchbiikl?utm_source=chrome-app-launcher-info-dialog)
@@ -49,7 +51,7 @@ category: Life
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/MyCodeHobby6.gif)
 
 # Android studio快捷键使用
-
+待补充
 # 手机录屏软件
 ## LICEcap
 作用：PC端动态截屏，小巧功能强大。
