@@ -5,8 +5,9 @@ category: Life
 ---
  本来我可以选择安逸的生活，过着朝九晚六的国企生活，为什么我还要出去？
 1、生于忧患，死于安乐
-![](http://7q5c2h.com1.z0.glb.clouddn.com/TheSecondResignation1.jpeg)
 <!-- more -->
+![](http://7q5c2h.com1.z0.glb.clouddn.com/TheSecondResignation1.jpeg)
+
 2、比你成功的、比你有钱的、比你聪明的人，往往都比你努力啊…
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/TheSecondResignation2.jpg)
 3、每天做点有意义的事，每天进步一点点！

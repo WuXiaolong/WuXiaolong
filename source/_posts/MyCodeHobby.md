@@ -3,7 +3,7 @@ date: 2016-03-13 10:06:00
 tags: code
 category: Life
 ---
-> 我的个人编码嗜好，内容包括Chrome插件、Android studio插件和快捷键使用、手机录屏软件等。
+> 如果有个好的工具或习惯，会让你编码效率事半功倍。我的个人编码嗜好，内容包括Chrome插件、Android studio插件和快捷键使用、手机录屏软件等。
 
 # Chrome插件
 ## AdBlock/广告终结者
@@ -51,10 +51,39 @@ category: Life
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/MyCodeHobby6.gif)
 
 # Android studio快捷键使用
-待补充
+Android studio出beta版，我就开始尝鲜，但快捷键还一时难以适应，于是就把Android studio的快捷键设置成eclipse（[Android Studio快捷键设置成跟Eclipse一样](http://wuxiaolong.me/2014/10/21/Android-Studio-shortcut-keys-arranged-like-Eclipse/)）。
+1. 注释
+Comment with Line Comment =>Ctrl+斜杠，改成Ctrl+Shift+c
+2. Alt+insert
+快捷设置set和get方法或实现某个方法
+3. Ctrl+alt+方向键下
+快速复制一行
+4. alt+方向键下
+内容下移一行
+5. ctrl+shift+t 
+找某个类
+6. alt+选择代码块进行复制
+7. ctrl+f
+可以选中代码块替换
+8. Ctrl+h
+全文搜索
+9. Shift+Alt+r
+更改变量名字
+10. Alt+Shift+M
+选择代码块，生成一个方法
+11. Editor标签-other选择勾选“show quick doc on mouse move”选项，像eclipse通过鼠标显示悬浮提示
+12. Editor标签下-Code Completion下-Case sensitive completion选择None，当输入代码，不区别大小写也能弹出代码提示
+
 # 手机录屏软件
 ## LICEcap
 作用：PC端动态截屏，小巧功能强大。
 下载地址：[LICEcap](http://www.cockos.com/licecap/)
 效果预览：
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/MyCodeHobby7.png)
+
+# 其他
+## Notepad++
+文本编辑器，我很喜欢。
+
+## SourceTree
+版本控制器，如果不喜欢命令行，这个还是不错的选择。
