@@ -57,6 +57,11 @@ CPU acceleration status: HAX kernel module is not installed!
 # 其他常用的软件
 安装自己平时常用的软件，将公司电脑环境变成自己的风格，详见我的博客：[我的编码嗜好](http://wuxiaolong.me/2016/03/13/MyCodeHobby/)
 
+# AndroidProgrammer
+我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
 
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)
 	
 
