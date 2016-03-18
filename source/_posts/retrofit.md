@@ -170,7 +170,7 @@ public class AppClient {
         });
     }
 ```
-经Gson转换器，```Call<ResponseBody>```换成自己要写的```Call<WeatherJson>```
+经Gson转换器，`Call<ResponseBody>`换成自己要写的`Call<WeatherJson>`
  
 # RxJava
 依赖以下：
@@ -219,7 +219,9 @@ subscribe部分的代码在Schedulers.io被调用，需要把observeOn(AndroidSc
 ```
 
 # Retrofit源码解析
-[http://frodoking.github.io/2015/05/16/android-retrofit/](http://frodoking.github.io/2015/05/16/android-retrofit/)
+另见白瓦力的博客，分析的很到位，解释了0、Retrofit 是什么，1、Retrofit 怎么用，2、Retrofit的原理是什么，3、一些总结。
+博客地址：[http://bxbxbai.github.io/2015/12/13/retrofit2/](http://bxbxbai.github.io/2015/12/13/retrofit2/)
+PS：十分感谢白瓦力，他教会我们如何去查看源码的一种有效方法，debug一步步去跟源码。
 
 # AndroidProgrammer
 我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
