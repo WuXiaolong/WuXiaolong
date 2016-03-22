@@ -1,7 +1,7 @@
 title: Android Design Support Library使用
 date: 2015-11-06 13:08:01
 tags: DesignSupportLibrary
-category: Android
+category: DesignSupportLibrary
 ---
 ## 效果预览
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/designsupportlibrarysample.gif)

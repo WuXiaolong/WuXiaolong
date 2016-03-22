@@ -270,9 +270,12 @@ hexo deploy
 ## 总结
 之前用的jekell写的，[手把手教你建github技术博客by jekyll](http://wuxiaolong.github.io/2014/10/26/build-blog/)，也是折腾了几天才做成自己满意的，昨天决定换成hexo，也是花了一天半时间，为了追求更好，必须折腾！
 
-## 剩者为王
-我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
-剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
+# AndroidProgrammer
+我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
+
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)
 
 ## 附录
 * [hexo系列教程：（一）hexo介绍](http://zipperary.com/2013/05/28/hexo-guide-1/)

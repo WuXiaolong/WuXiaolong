@@ -1,7 +1,7 @@
 title: Android Design Support Library之CollapsingToolbarLayout
 date: 2015-11-17 14:18:22
 tags: [DesignSupportLibrary,CollapsingToolbarLayout]
-category: Android
+category: DesignSupportLibrary
 ---
 ## 效果预览
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/designsupportlibrarysample.gif)

@@ -1,7 +1,7 @@
 title: Android Design Support Library之NavigationView
 date: 2015-11-17 13:31:07
 tags: [DesignSupportLibrary,NavigationView]
-category: Android
+category: DesignSupportLibrary
 ---
 ## 效果预览
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/designsupportlibrarysample.gif)

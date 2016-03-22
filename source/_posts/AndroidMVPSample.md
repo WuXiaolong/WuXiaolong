@@ -255,5 +255,9 @@ Model 将新的数据发送到 View，用户得到反馈
 ## MVVM模式
 将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。
 
+# AndroidProgrammer
+我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
+
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)
