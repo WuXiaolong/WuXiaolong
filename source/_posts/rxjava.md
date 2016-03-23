@@ -7,10 +7,11 @@ category: RxJava
 a library for composing asynchronous and event-based programs using observable sequences for the Java VM（一个对于构成使用的Java虚拟机观察序列异步和基于事件的程序库）。
 github：[https://github.com/ReactiveX/RxJava](https://github.com/ReactiveX/RxJava)
 <!--more-->
+
 ## 观察者模式
 RxJava的世界里，我们有四种角色：
 Observable(被观察者)、Observer(观察者)
-Subscriber(订阅)、Subject
+Subscriber(订阅者)、Subject
 Observable和Subject是两个“生产”实体，Observer和Subscriber是两个“消费”实体。Observable 和 Observer 通过 subscribe() 方法实现订阅关系，从而 Observable 可以在需要的时候发出事件来通知 Observer。
 
 ## 回调方法
@@ -25,6 +26,11 @@ Observable调用这个方法发射数据，方法的参数就是Observable发射
 * onComplete
 正常终止，如果没有遇到错误，Observable在最后一次调用onNext之后调用此方法。
 
+# 添加依赖
+```
+compile 'io.reactivex:rxandroid:1.1.0'
+compile 'io.reactivex:rxjava:1.1.0'
+```
 
 # 创建操作
 ## create
@@ -75,6 +81,7 @@ Observable调用这个方法发射数据，方法的参数就是Observable发射
         });
 ```
 ## from
+接受数组，返回一个按参数列表顺序发射这些数据的Observable。
 ```java
         String[] froms={"Hello","RxJava"};
         Observable.from(froms)
@@ -288,7 +295,7 @@ I/wxl: onCompleted
 仅处理一次，可以处理去除重复的数据
 
 ## ElementAt
-仅从一个序列中发射第n个元素然后就完成了
+仅从一个序列中发射第n个元素然后就完成了，这里是从0开始计的。
 ```java 
 Observable.just(1, 2, 3, 4, 5, 6)
                 .elementAt(3)
@@ -394,7 +401,52 @@ observeOn()：事件消费的线程，AndroidSchedulers.mainThread()，它指定
 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
 ```
 
-未完……
+# 完整示例
+```
+ Subscription subscription = Observable.just("Hello", "RxJava", "WuXiaolong")
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.i("wxl", "onCompleted");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(String s) {
+                        Log.i("wxl", "onNext=" + s);
+                    }
+                });
+addSubscription(subscription);
+```
+addSubscription方法可以放到父类：
+```
+ private CompositeSubscription mCompositeSubscription;
+
+    public void addSubscription(Subscription subscription) {
+        if (this.mCompositeSubscription == null) {
+            this.mCompositeSubscription = new CompositeSubscription();
+        }
+
+        this.mCompositeSubscription.add(subscription);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (this.mCompositeSubscription != null) {
+            this.mCompositeSubscription.unsubscribe();
+        }
+    }
+```
+
+
+# AndroidProgrammer
+我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
 
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)
