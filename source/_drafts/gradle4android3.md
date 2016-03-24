@@ -3,7 +3,7 @@ date: 2016-04-01 14:11:14
 tags: Gradle 
 category: Gradle 
 ---
-> 系列博客
+# 系列博客
 > [Gradle for Android（一）基本配置、依赖管理](http://wuxiaolong.me/2016/03/30/gradle4android1/)
 > [Gradle for Android（二）全局设置、自定义BuildConfig、混淆](http://wuxiaolong.me/2016/03/31/gradle4android2/)
 

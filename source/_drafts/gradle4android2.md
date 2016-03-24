@@ -3,7 +3,7 @@ date: 2016-03-31 14:11:14
 tags: Gradle 
 category: Gradle 
 ---
-> 系列博客
+# 系列博客
 > [Gradle for Android（一）基本配置、依赖管理](http://wuxiaolong.me/2016/03/30/gradle4android1/)
 > [Gradle for Android（三）多渠道打包、配置签名信息](http://wuxiaolong.me/2016/04/01/gradle4android3/)
 
@@ -50,8 +50,8 @@ ext {
     ]
 
     dependencies = [
-            "appcompat-v7": "com.android.support:appcompat-v7:23.2.1",
-            "design"      : "com.android.support:design:23.2.1"
+            appcompatV7': 'com.android.support:appcompat-v7:23.2.1',
+            design      : 'com.android.support:design:23.2.1'
 
     ]
 }
@@ -76,8 +76,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile rootProject.ext.dependencies["appcompat-v7"]
-    compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies.appcompatV7
+    compile rootProject.ext.dependencies.design
 }
 ```
 
@@ -119,4 +119,3 @@ minifyEnabled为true表示启用混淆，proguardFile是混淆使用的配置文
 
 # 完整配置
 [https://github.com/WuXiaolong/Gradle4Android](https://github.com/WuXiaolong/Gradle4Android)
-
