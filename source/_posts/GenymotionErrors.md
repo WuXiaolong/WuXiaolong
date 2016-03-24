@@ -7,8 +7,9 @@ category: Android
 
 # Android Studio初次启动卡在download Components
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/GenymotionErrors3.jpg)
-解决方案:
 <!--more-->
+解决方案:
+
 详见：[http://blog.csdn.net/u010302764/article/details/42889731](http://blog.csdn.net/u010302764/article/details/42889731)
 
 # Genymotion下载虚拟镜像Connection timeout
