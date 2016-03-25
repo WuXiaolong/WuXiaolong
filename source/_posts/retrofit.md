@@ -10,24 +10,6 @@ app/build.gradle
 ```java
 compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
 ```
-# 声明接口
-```java
- /**
- * Call<T> get();必须是这种形式,这是2.0之后的新形式
- * 如果不需要转换成Json数据,可以用了ResponseBody;
- * 你也可以使用Call<GsonBean> get();这样的话,需要添加Gson转换器
- */
-public interface ApiStores {
-    @GET("adat/sk/{cityId}.html")
-    Call<ResponseBody> getWeather(@Path("cityId") String cityId);
-}
-```
-<!--more-->
-如果链接是http://ip.taobao.com/service/getIpInfo.php?ip=202.202.33.33
-```java
- @GET("http://ip.taobao.com/service/getIpInfo.php")
-    Call<ResponseBody> getWeather(@Query("ip") String ip);
-```
 # 接口调用
 ```java
  Retrofit retrofit = new Retrofit.Builder()
@@ -76,6 +58,99 @@ call.enqueue(new Callback<ResponseBody>() {
 ```java
 call.cancel();
 ```
+# 接口参数
+## Path
+```java
+ /**
+ * Call<T> get();必须是这种形式,这是2.0之后的新形式
+ * 如果不需要转换成Json数据,可以用了ResponseBody;
+ * 你也可以使用Call<GsonBean> get();这样的话,需要添加Gson转换器
+ */
+public interface ApiStores {
+    @GET("adat/sk/{cityId}.html")
+    Call<ResponseBody> getWeather(@Path("cityId") String cityId);
+}
+```
+<!--more-->
+## Query
+如果链接是http://ip.taobao.com/service/getIpInfo.php?ip=202.202.33.33
+```java
+ @GET("http://ip.taobao.com/service/getIpInfo.php")
+    Call<ResponseBody> getWeather(@Query("ip") String ip);
+```
+## Body
+这是针对POST方式，如果参数是json格式，如：
+```
+{		
+    "apiInfo": {		
+        "apiName": "WuXiaolong",		
+        "apiKey": "666"		
+    }		
+}		
+
+```
+建立Bean
+```
+ public class ApiInfo {
+        private ApiInfoBean apiInfo;
+
+        public ApiInfoBean getApiInfo() {
+            return apiInfo;
+        }
+
+        public void setApiInfo(ApiInfoBean apiInfo) {
+            this.apiInfo = apiInfo;
+        }
+
+        public class ApiInfoBean {
+            private String apiName;
+            private String apiKey;
+            //省略get和set方法
+        }
+    }
+```
+代码调用
+```
+ private void getCarType() {
+        mRetrofit = new Retrofit.Builder()
+                .baseUrl("http://WuXiaolong.me/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ApiStores apiStores = mRetrofit.create(ApiStores.class);
+        ApiInfo apiInfo = new ApiInfo();
+        ApiInfo.ApiInfoBean apiInfoBean = apiInfo.new ApiInfoBean();
+        apiInfoBean.setApiKey("666");
+        apiInfoBean.setApiName("WuXiaolong");
+        apiInfo.setApiInfo(apiInfoBean);
+        Call<ResponseBody> call = apiStores.getCarType(apiInfo);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Response<ResponseBody> response) {
+                String body = null;//获取返回体的字符串
+                try {
+                    body = response.body().string();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Log.i("wxl", "get=" + body);
+            }
+
+            @Override
+            public void onFailure( Throwable t) {
+
+            }
+
+        });
+    }
+```
+ApiStores 
+```
+public interface ApiStores {
+        @POST("client/shipper/getCarType")
+        Call<ResponseBody> getCarType(@Body ApiInfo apiInfo);
+    }
+```
+
 # JSON解析库
 Retrofit 2现在支持许多种解析方式来解析响应数据，包括Moshi，一个由Square创建的高效JSON解析库。
 ## 添加gson依赖
