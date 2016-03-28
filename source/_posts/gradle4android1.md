@@ -109,7 +109,7 @@ include ':app',':library'
 ```
 dependencies {
        compile fileTree(dir: 'libs', include: ['*.jar'])//即添加所有在libs文件夹中的jar
-       //compile fileTree('libs/WuXiaolong.jar')//不需要这样一个个去写了
+       //compile files('libs/WuXiaolong.jar')//不需要这样一个个去写了
 }
 ```
 ### so包
@@ -170,7 +170,7 @@ dependencies {
 [https://github.com/WuXiaolong/Gradle4Android](https://github.com/WuXiaolong/Gradle4Android)
 
 # 系列博客
-Gradle for Android（二）全局设置、自定义BuildConfig、混淆
+[Gradle for Android（二）全局设置、自定义BuildConfig、混淆](http://wuxiaolong.me/2016/03/31/gradle4android2/)
 Gradle for Android（三）多渠道打包、配置签名信息
 
 
