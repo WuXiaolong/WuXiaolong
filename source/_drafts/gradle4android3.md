@@ -191,3 +191,7 @@ OK，打包成功的apk路径如：E:\AndroidStudioProjects\Gradle4Android\app\b
 # 完整配置
 [https://github.com/WuXiaolong/Gradle4Android](https://github.com/WuXiaolong/Gradle4Android)
 
+# 附录
+[Gradle for Android 第一篇( 从 Gradle 和 AS 开始 )](https://segmentfault.com/a/1190000004229002)
+[使用Gradle管理你的Android Studio工程](http://www.flysnow.org/2015/03/30/manage-your-android-project-with-gradle.html)
+
