@@ -4,7 +4,7 @@ tags: [RxJava,Android,RxBus]
 category: RxJava
 ---
 
-> 相信大多数开发者都使用过EventBus或者Otto(我还未实践过)，作为事件总线通信库，如果你的项目已经加入RxJava，不妨用RxBus代替EventBus或者Otto。
+> 相信大多数开发者都使用过EventBus或者Otto(我还未实践过)，作为事件总线通信库，如果你的项目已经加入RxJava和EventBus(或Otto)，那不妨用RxBus代替EventBus或者Otto，省去更多库的依赖。
 
 # RxJava
 之前已经分享过[RxJava](http://wuxiaolong.me/2016/01/18/rxjava/)知识，可以点击[RxJava](http://wuxiaolong.me/2016/01/18/rxjava/)，这里不再细说。
@@ -45,7 +45,7 @@ public class RxBus {
 }
 ```
 # 代码调用
-模拟一个订阅者和发送。
+先模拟一个订阅者，用hasObservers判断是否有订阅者，然后再发送。
 ```
 public class RxBusActivity extends AppCompatActivity {
     private CompositeSubscription mCompositeSubscription;
@@ -93,7 +93,7 @@ public class RxBusActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (this.mCompositeSubscription != null) {
-            this.mCompositeSubscription.unsubscribe();
+            this.mCompositeSubscription.unsubscribe();//取消注册，以避免内存泄露
         }
     }
 
@@ -109,8 +109,14 @@ public class RxBusActivity extends AppCompatActivity {
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)
 
-# 源码
+# 完整代码
 [https://github.com/WuXiaolong/AndroidSamples](https://github.com/WuXiaolong/AndroidSamples)
+
+# EventBus源码解析
+附上大牛们分析的EventBus源码，有兴趣可以看看
+[EventBus源码研读](http://kymjs.com/code/2015/12/12/01/) by kymjs张涛
+[EventBus 源码解析](http://a.codekk.com/detail/Android/Trinea/EventBus%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90) by Trinea
+
 
 # 附录
 [RxJava-Android-Samples](https://github.com/kaushikgopal/RxJava-Android-Samples/blob/master/app/src/main/java/com/morihacky/android/rxjava/rxbus/RxBus.java)
