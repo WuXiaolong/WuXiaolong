@@ -27,7 +27,7 @@ category: Life
 
 ## Vysor 
 作用：PC上直接同步你的手机，配合LICEcap（下文介绍）使用，效果更佳。
-下载地址：[Postman](https://chrome.google.com/webstore/detail/gidgenkbbabolejbgbpnhbimgjbffefm?utm_source=chrome-app-launcher-info-dialog)
+下载地址：[Vysor](https://chrome.google.com/webstore/detail/gidgenkbbabolejbgbpnhbimgjbffefm?utm_source=chrome-app-launcher-info-dialog)
 效果预览：
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/MyCodeHobby2.png)
 # Android studio插件
