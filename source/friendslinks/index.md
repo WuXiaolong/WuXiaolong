@@ -2,8 +2,9 @@ title: friendslinks
 date: 2015-11-27 09:28:39
 ---
 小伙伴们
-* [Drakeet](http://drakeet.me/)
 * [冯建](http://jayfeng.com/)
+* [咕咚](http://gudong.name/)
+* [Drakeet](http://drakeet.me/)
 * [Ailurus](http://www.easydone.cn/)
 * [汤奇](http://itangqi.me/)
 * [程序亦非猿](http://yifeiyuan.me/)
