@@ -5,7 +5,7 @@ category: Gradle
 ---
 # 系列博客
 > [Gradle for Android（一）基本配置、依赖管理](http://wuxiaolong.me/2016/03/30/gradle4android1/)
-> Gradle for Android（三）多渠道打包、配置签名信息
+> [Gradle for Android（三）多渠道打包、配置签名信息](http://wuxiaolong.me/2016/04/01/gradle4android3/)
 
 # 全局设置
 如果有很多项目，可以设置全局来统一管理版本号或依赖库，根目录下build.gradle下：
