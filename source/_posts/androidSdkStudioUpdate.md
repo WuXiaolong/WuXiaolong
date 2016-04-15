@@ -1,28 +1,22 @@
-title: 【译】Android SDK、Android Studio在线更新
-date: 2016-04-10 20:23:25
+title: 【译】Android Studio、Android SDK在线更新
+date: 2016-04-08 20:23:25
 tags: [SDK,Android Studio]
 category: Android
 ---
 > 重点介绍网站http://www.androiddevtools.cn/，收集整理Android开发所需的Android SDK、开发中用到的工具、Android开发教程、Android设计规范，免费的设计素材等。感谢脉脉不得语，分享这么棒的AndroidTools！
 
+# 号外
+![](http://7q5c2h.com1.z0.glb.clouddn.com/as2.0.png)
+就在今天，Android Studio终于迎来了2.0正式版更新（此版本最重要的两个更新是：即时运行和 GPU Profiler。同时还有全新的 Android 开发套件，速度强行提升 50 倍），之前Android Studio Preview和Beta版本还存在很多bug，因此不建议更新。
 
+升级注意问题
+1、点击Check for Update不能出现上面的`增量升级`提示，多点击几次Check for Update
+2、升级完成，默认配置gradle1.5，进入后会报错，会有提示，做相应gradle同步
+<!--more-->
 # 前言
 > 原文地址:[http://android-mirror.bugly.qq.com:8080/include/usage.html](http://android-mirror.bugly.qq.com:8080/include/usage.html)
 
-`新手必知技能`：由于墙内，您有么有为无法更新SDk以及Android Studio无法更新版本而烦恼呢，这里分享一篇教程帮您解决此烦恼，原文是英文，我适当做了翻译（我本身英文是渣渣，基本是意译）。
-
-# Android SDK在线更新镜像服务器
-
-1、 打开 Android SDK Manager  
-![](http://7q5c2h.com1.z0.glb.clouddn.com/sdk_manager.png)
-2、配置用户自定义网站
-点击 "User Defined Sites"，新建，添加http://android-mirror.bugly.qq.com:8080/android/repository/addon.xml  
-![](http://7q5c2h.com1.z0.glb.clouddn.com/site.png)
-3、配置端口
-勾上 Force https://... sources to be fetched using http://... 
- ![](http://7q5c2h.com1.z0.glb.clouddn.com/proxy.png)
-
-笔者：重新打开Android SDK Manager，发现居然能在线更新 
+`新手必知技能`：您去更新升级Android Studio时却提示 Connection failed. Please check your network connection and try again，shit，由于墙内，您也无法更新Android SDK，这里分享一篇教程帮您解决此烦恼，原文是英文，我适当做了翻译（本身我英文是渣渣，基本是意译）。
 
 # Android Studio在线更新
 
@@ -46,6 +40,19 @@ category: Android
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/restart.png)
 
 笔者：到此，Android Studio更新版本完成。
+
+# Android SDK在线更新镜像服务器
+
+1、 打开 Android SDK Manager  
+![](http://7q5c2h.com1.z0.glb.clouddn.com/sdk_manager.png)
+2、配置用户自定义网站
+点击 "User Defined Sites"，新建，添加http://android-mirror.bugly.qq.com:8080/android/repository/addon.xml  
+![](http://7q5c2h.com1.z0.glb.clouddn.com/site.png)
+3、配置端口
+勾上 Force https://... sources to be fetched using http://... 
+ ![](http://7q5c2h.com1.z0.glb.clouddn.com/proxy.png)
+
+笔者：重新打开Android SDK Manager，发现居然能在线更新 
 
 # AndroidProgrammer
 我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。

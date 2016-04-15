@@ -73,6 +73,8 @@ Comment with Line Comment =>Ctrl+斜杠，改成Ctrl+Shift+c
 选择代码块，生成一个方法
 11. Editor标签-other选择勾选“show quick doc on mouse move”选项，像eclipse通过鼠标显示悬浮提示
 12. Editor标签下-Code Completion下-Case sensitive completion选择None，当输入代码，不区别大小写也能弹出代码提示
+13. Ctrl+G/Ctrl+鼠标
+查看某个方法或变量哪里使用到了，Ctrl+鼠标功能类似
 
 # 手机录屏软件
 ## LICEcap
