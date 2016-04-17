@@ -7,6 +7,11 @@ category: [Android]
 
 
 <!--more-->
+# Android Studio获取SHA1
+1、全局配置jdk1.8.0_45\bin（或cd进入bin目录）
+2、keytool -v -list -keystore 你的keystore路径
+3、输入秘钥库口令：如果没设置，这里就是空，直接回车就进去了。
+
 # Genymotion下载虚拟镜像Connection timeout
 Add new device出现的问题：
 > Failed to deploy virtual device.
