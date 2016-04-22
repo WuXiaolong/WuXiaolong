@@ -128,9 +128,9 @@ app
            └── WuXiaolong.so
 ```
 ### aar文件
-library库输出文件是.aar文件，在library工程build/output/aar/下
+library库输出文件是.aar文件，包含了Android 资源文件，在library工程build/output/aar/下
 
-直接依赖library
+直接依赖library库
 ```
 dependencies {
        compile project(':library名字')
@@ -140,19 +140,19 @@ dependencies {
 
 依赖.aar文件
 创建一个aars文件夹，然后把.aar文件拷贝到该文件夹里面，然后添加该文件夹作为依赖库：
+app/bulid.gradle
 ```
 repositories {
     flatDir {
         dirs 'aars' 
     }
 }
-```
-或者：
-```
- dependencies {
+dependencies {
        compile(name:'libraryname', ext:'aar')
 }
 ```
+注意：如果你的library依赖了第三方库，须app再次依赖。
+
 ## 远程仓库
 ```
 dependencies {

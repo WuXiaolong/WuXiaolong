@@ -7,6 +7,11 @@ category: [Android]
 
 
 <!--more-->
+# The APK file does not exist on disk.Error while Installing APK
+解决方案：
+![](http://i.stack.imgur.com/2KSyU.png)
+
+
 # Android Studio获取SHA1
 1、全局配置jdk1.8.0_45\bin（或cd进入bin目录）
 2、keytool -v -list -keystore 你的keystore路径
