@@ -135,6 +135,7 @@ private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItem
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
+	android:layout_height="wrap_content"
     android:background="@mipmap/bg_title"
     android:minHeight="?actionBarSize">
 
@@ -151,13 +152,16 @@ private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItem
 ```java
  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-  TextView  mTitleView = (TextView) toolbar.findViewById(R.id.toolbar_title);
+  if (toolbar != null) {
+            TextView toolbaTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+            toolbaTitle.setText("");
+        }
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
              actionBar.setDisplayShowTitleEnabled(false);
         }
-  mTitleView.setText("");
+
 ```
 # 实现将布局的内容延伸到状态栏
 style

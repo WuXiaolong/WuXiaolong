@@ -5,8 +5,6 @@ category: AndroidSource
 ---
 # 写在前面
 首先推荐下近期小伙伴们一起组织发起的Android SDK源码解析，旨在帮助初学者更好的学习Android！工程很宏大，包括Android SDK中控件、系统工具类、支持库等，如果您也是开源爱好者，欢迎去认领。
-我认领了Toast（自认为Toast应该是最简单的吧），真正去做源码分析，发现很多人已经写了，不乏不错的博文，好像自己再写没什么意思，其实错了，在我走完一篇Toast源码，深感很多东西需要去学习。
-第一步就遇到了困难，源码某些类或方法是隐藏的，于是谷歌和咨询基友，得以解决（后续会分享如何阅读源码）。
 我准备按照What-How-Why，知其然知其所以然，沿着这个3W思路来探探Toast源码，正式进入主题，let's go。
 
 # Toast简介
@@ -41,7 +39,7 @@ toast_view.xml
 </LinearLayout>
 ```
 # Toast源码分析
-Toast使用多了，肯定会好奇它是如何实现了？它的出现位置能不能自己改？如果有多个Toast，好像都是按照次序一个个展示的？带着这些疑问，我们一探Toast源码。Toast源码分析有两个目标，知道Toast源码在哪里体现了Toast显示，又在哪里体现了Toast消失。首先从Toast的基本使用，作为入口。
+Toast源码分析有两个目标，知道Toast源码在哪里体现了Toast显示，又在哪里体现了Toast消失。首先从Toast的基本使用，作为入口。
 ```
  Toast.makeText(ToastActivity.this,"Toast源码解析",Toast.LENGTH_LONG).show();
 ```
@@ -508,11 +506,10 @@ private final class WorkerHandler extends Handler
         }
     }
 ```
-`到这里，知道了Toast是如何消失的。`
-Toast核心显示和消失源码分析完毕，其他一些比如duration、gravity等设置，不难，一看就明白。
+`到这里，知道了Toast是如何消失的。`Toast核心显示和消失源码分析完毕。
 
 # 总结
-Toast代码调用只有一行，了解这行代码的背后，了解Toast是怎样显示，又是怎样消失的。自定义Toast时，需要调用setView，不然show会抛异常，这个从show方法就能得知。至此，Toast源码解析告一段落，今后应该会有更多的这样的常用的组件的源码分析，知其然知其所以然。
+Toast代码调用只有一行，了解这行代码的背后，有个ToastQueue，进入队列之前，会做一些合法性判断，使用进程间通信进行回调，Handler机制显示和消失。自定义Toast时，需要调用setView，不然show会抛异常，这个从show方法就能得知。至此，Toast源码解析告一段落。
 
 
 
