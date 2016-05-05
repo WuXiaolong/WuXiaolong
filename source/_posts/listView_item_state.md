@@ -1,59 +1,61 @@
 title: 刷新RecyclerView/ListView某个item状态
 date: 2015-07-08
 categories: [Android]
-tags: [Android,SQLite]
+tags: [RecyclerView,ListView]
 ---
+> 本文是实际开发遇到的问题，结合情景，给出解决方案，很有启示作用。
 
-### 1、比如列表有收藏按钮，当前页面收藏
+# 1、比如列表有收藏按钮，当前页面收藏
 
 ```java
 private List<Map<String, String>> mList = new ArrayList<>();
 ...
-走收藏接口，在成功后
+  //走收藏接口，在成功后，只更改刚刚点击的item的收藏按钮状态
   mList.get(position).put("favorites", "1");
   notifyDataSetChanged();
 ```
 
 <!-- more -->
 
-### 2、比如列表有收藏按钮，下个页面进行收藏
+# 2、比如列表有收藏按钮，下个页面也有收藏功能
 
-这种情况下，收藏成功后，返回需要刷新上一个页面状态
+这种情况下，下个页面收藏成功后，按照常理最好返回列表页刷新以下收藏按钮的状态（话说新浪微博没有这样做）。
 
 DataAdapter
 
 ```java
- Intent intent = new Intent(activity, NextActivity.class); 
- intent.putExtra("userhead", doctorList.get(position) .getHeadImg()); 
- intent.putExtra("username", doctorList.get(position) .getName()); 
- intent.putExtra("userId", doctorList.get(position) .getUserinfo_djid()); 
- intent.putExtra("position", position); startActivityForResult(intent,AppConfig.REQUEST_CODE_DIALOGUE);
+ //点击跳转下个页面
+ Intent intent = new Intent(activity, NextActivity.class);  
+ intent.putExtra("position", position);
+ startActivityForResult(intent,AppConfig.REQUEST_CODE_DIALOGUE);
 ```
 
 NextActivity.class
 
 ```java
-收藏成功后，返回
+//收藏成功后，返回列表页
 Intent intent;
 intent = new Intent();
 Bundle bundle = new Bundle();
 bundle.putInt("position", position);
+bundle.putString("isCollection", "1";//isCollection:0代表未收藏，1代表已收藏。
 intent.putExtras(bundle);
 setResult(RESULT_OK, intent);
- finish();
+finish();
 ```
 
 onActivityResult
-
+回到上页面的onActivityResult方法
 ```java
 public void onActivityResult(int requestCode, int resultCode, Intent data) {
             if (requestCode == AppConfig.REQUEST_CODE_DIALOGUE
                 && resultCode == RESULT_OK) {
             int position = data.getExtras().getInt("position");
+            String isCollection = data.getExtras().getString("isCollection ");
             Object object = dataAdapter.getItem(position);
             if (object instanceof DoctorList) {
                 DoctorList doctorList = (DoctorList) object;
-                doctorList.setUnreadnum("0");
+                doctorList.setIsCollection(isCollection);
                 dataAdapter.notifyDataSetChanged();
             }
         }
@@ -68,21 +70,15 @@ class DialogueBean {
     private String result;
     private ArrayList<DoctorList> doctorList;
 public class DoctorList implements Serializable {
-        private String userinfo_djid;
-        private String headImg;
-        private String name;
-        private String unreadnum;
-        private String infoContent;
-        private String sendDate;
-        private String ky_flag;
-        private String tobewritten;
+        private String isCollection;       
 }
 }
 ```
 
-### 3、以上只是未重新请求接口下刷新View，未真正局部刷新 
+# 3、以上只是未重新请求接口下刷新View，未真正局部刷新 
+以上应该是大部分人会使用的一种解决思路，但是很抱歉，使用notifyDataSetChanged方法，未做到局部刷新。
 
-* ListView局部刷新
+## ListView局部刷新
 
 ```java
    private List<Map<String, Object>> mData;
@@ -171,7 +167,9 @@ public class DoctorList implements Serializable {
             View view = mListView.getChildAt(index);
             //从view中取得holder
             MyAdapter.ViewHolder holder = (MyAdapter.ViewHolder) view.getTag();
+            //更改状态
             holder.textview.setText("测试数据");
+            //直接更改数据源
             mData.get(index).put("title", "测试数据");
         }
     }
@@ -195,13 +193,15 @@ listview_item.xml
 </LinearLayout>
 ```
 
-* RecyclerView局部刷新
+## RecyclerView局部刷新
 
 RecyclerView已经替代了ListView，局部刷新很有必要知道
 
 ```java
-收藏成功后
-mList.get(position).put("favorites", "0");
-ViewHolder viewHolder = (ViewHolder) mRecyclerView.findViewHolderForAdapterPosition(position);
-viewHolder.mCheck.setBackgroundResource(R.mipmap.collect_normal);
+//收藏成功后
+mList.get(position).put("favorites", "0");//直接更改数据源
+ViewHolder viewHolder = (ViewHolder) mRecyclerView.findViewHolderForAdapterPosition(position); //得到要更新的item的view
+viewHolder.mCheck.setBackgroundResource(R.mipmap.collect_normal);//更改状态
 ```
+	
+
