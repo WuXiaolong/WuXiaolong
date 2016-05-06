@@ -1,7 +1,7 @@
 title: Android library分享到jcenter
 date: 2015-11-12 15:30:50
 tags: jcenter
-category: Android
+category: jcenter
 ---
 ```java
 dependencies {
@@ -33,7 +33,7 @@ bintray.user=your_user_name
 bintray.apikey=your_apikey
 ```
 bintray username 放在第一行， API Key放在第二行， API Key为你bintray的账户的apikey，可以点击进入你的账户信息里再点击Edit即有查看API Key的选项，把他复制下来。
-这些信息时比较敏感的，不应该到处分享。幸而local.properties文件就已经被添加到.gitignore了。因此这些敏感数据不会被误传到git服务器。
+这些信息比较重要，幸而local.properties文件就已经被添加到.gitignore了。因此这些敏感数据不会被误传到git服务器。
 
 ## 配置library
 很多，具体配置可参考我的开源库[PullLoadMoreRecyclerView](https://github.com/WuXiaolong/PullLoadMoreRecyclerView/blob/master/library/build.gradle)。
@@ -157,7 +157,7 @@ BUILD SUCCESSFUL
 gradlew bintrayUpload
 ```
 
-如果显示如下你就大喊一声eureka吧！
+如果显示如下说明成功了！
 ```js
 BUILD SUCCESSFUL
 ```
@@ -173,11 +173,14 @@ compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.4'
 GROUP_ID:ARTIFACT_ID:VERSION
 上面的例子中，GROUP_ID是com.wuxiaolong.pullloadmorerecyclerview ，即配置library中group的值；ARTIFACT_ID是library，配置library中没有写到，是library项目的名字；VERSION是1.0.4。
 查看bintray上库：
-http://jcenter.bintray.com/com/wuxiaolong/pullloadmorerecyclerview/library/1.0.4/
+http://jcenter.bintray.com/com/wuxiaolong/
 
-## 剩者为王
-我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
-剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
+# AndroidProgrammer
+我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
+
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)
 
 ## 附录
 [如何使用Android Studio把自己的Android library分享到jCenter和Maven Central](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0623/3097.html)
