@@ -103,6 +103,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true//是否启动混淆
+			shrinkResources true //是否移除无用资源文件，shrinkResources依赖于minifyEnabled，必须和minifyEnabled一起用
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
    }
