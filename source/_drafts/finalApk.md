@@ -7,6 +7,9 @@ category:
 # drawable
 res下面drawable，mipmap-hdpi，mipmap-mdpi这些，了解知道他们之间有什么区别，继而做成APP更加精致。
 [Android drawable微技巧，你所不知道的drawable的那些细节](http://blog.csdn.net/guolin_blog/article/details/50727753)
+[Android样式的开发:drawable汇总篇](http://keeganlee.me/post/android/20150916)
+
+# 边界处理
 
 # APK瘦身
 最后打包，发现APK十多M，哎呀，握草，该压压。

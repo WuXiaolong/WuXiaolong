@@ -1,7 +1,7 @@
 title: Android调用系统相机和相册
 date: 2014-11-10 
 categories: [Android]
-tags: [Android]
+tags: [Camera，Album]
 ---
 
 > 拍照和相册的功能在实际开发中是最常见的功能，这里记录下。
