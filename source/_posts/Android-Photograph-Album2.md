@@ -1,14 +1,17 @@
-title: Android调用系统相机和相册-坑篇
+title: Android调用系统相机和相册-填坑篇
 date: 2016-05-24 08:56:59
 categories: [Android]
 tags: [Camera，Album]
 ---
 
-> 之前分享了[Android调用系统相机和相册](http://wuxiaolong.me/2014/11/10/Android-Photograph_Album/)，但是由于国内Android机型繁多，各家都自己的room，调用系统的还是会出现不少问题：
+> 之前分享了[Android调用系统相机和相册](http://wuxiaolong.me/2014/11/10/Android-Photograph_Album/)，但是由于国内Android机型繁多，各家都自己的rom，调用系统的还是会出现不少问题：
 
-# 一、拍照后照片被旋转
+# 拍照后照片被旋转
 这种情况是使用Camera拍照以后，得到的照片会被自动旋转（90°、180°、270°）。解决方案：
+
 1、读取图片的旋转属性
+<!--more-->
+```java 
 /**
  * 读取图片的旋转的角度
  *
@@ -16,7 +19,6 @@ tags: [Camera，Album]
  *            图片绝对路径
  * @return 图片的旋转角度
  */
-```java 
 private int getBitmapDegree(String path) {
     int degree = 0;
     try {
@@ -43,6 +45,7 @@ private int getBitmapDegree(String path) {
 }
 ```
 2、将图片按照某个角度进行旋转
+```java
 /**
  * 将图片按照某个角度进行旋转
  *
@@ -52,7 +55,7 @@ private int getBitmapDegree(String path) {
  *            旋转角度
  * @return 旋转后的图片
  */
-```java
+
 public static Bitmap rotateBitmapByDegree(Bitmap bm, int degree) {
     Bitmap returnBm = null;
   
@@ -75,7 +78,7 @@ public static Bitmap rotateBitmapByDegree(Bitmap bm, int degree) {
 ```
 详见博客：https://www.baidufe.com/item/4bb733d9999c53cb8fed.html
 
-# 二、调用系统相册，拿不到绝对路径
+# 调用系统相册，拿不到绝对路径
 上篇的方法，我在大部分手机测试是可行，但是一些机型还是拿不到，解决方案：
 ```java
 public class AbsolutePathUtil {
@@ -198,12 +201,12 @@ public class AbsolutePathUtil {
 ```
 详见stackoverflow：http://stackoverflow.com/questions/13209494/how-to-get-the-full-file-path-from-uri
 
-# 三、裁剪
+# 裁剪
 拿到图片的绝对路径，有可能需要对它进行裁剪，这里当然也可以调用系统的裁剪，不过我推荐UCrop，功能好强大，简单的使用方法：
+```java
 /**
  * 启动裁剪
  */
-```java
 public static String startUCrop(Activity activity, String sourceFilePath, int requestCode, float aspectRatioX, float aspectRatioY) {
     Uri sourceUri = Uri.fromFile(new File(sourceFilePath));
     File outDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
@@ -225,3 +228,10 @@ public static String startUCrop(Activity activity, String sourceFilePath, int re
 }
 ```
 详见github：https://github.com/Yalantis/uCrop
+
+# AndroidProgrammer
+我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
+
+# 关于作者
+[点击查看](http://wuxiaolong.me/about/)
