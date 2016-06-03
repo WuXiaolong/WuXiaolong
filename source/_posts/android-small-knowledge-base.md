@@ -275,6 +275,16 @@ nums[i] = i;
 int [] nums = {0,1,2,3,4,5,6,7,8,9};
 3、int [] nums = new int[]{0,1,2,3,4,5,6,7,8,9};
 
+4、数组增加元素
+//增加ruby
+List list = new ArrayList();
+for (int i=0; i
+list.add(str[i]);
+}
+list.add(2, "ruby"); //list.add("ruby")
+System.out.println();
+String[] newStr = list.toArray(new String[1]); //返回一个包含所有对象的指定类型的数组
+
 # Fragment.isAdded()
 ```java
 Fragment mBeforeFragment = new Fragment();
