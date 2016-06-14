@@ -1,5 +1,5 @@
 title: Android Retrofit 2.0 使用-补充篇
-date: 2016-06-14 08:48:53
+date: 2016-06-18 08:48:53
 tags: Retrofit 
 category: Retrofit 
 ---
@@ -12,27 +12,30 @@ category: Retrofit
 
 > 之前分享的[Android Retrofit 2.0 使用](http://wuxiaolong.me/2016/01/15/retrofit/)，属于基本的使用，实际开发还远远不够，因此对其补充，主要在Retrofit配置和接口参数。
 
-# 添加依赖
+<!--more-->
+# Retrofit配置
+
+
+## 添加依赖
 app/build.gradle
-```
+```java
  compile 'com.squareup.retrofit2:retrofit:2.0.2'
 ```
 
-# Retrofit配置
 首先Builder()，得到OkHttpClient.Builder对象builder 
-```
+```java
  OkHttpClient.Builder builder = new OkHttpClient.Builder();
 ```
 ## Log信息拦截器
 Debug可以看到，网络请求，打印Log信息，发布的时候就不需要这些log
 1、添加依赖
 app/build.gradle
-```
+```java
  compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
 ```
 
 2、Log信息拦截器
-```
+```java
 if (BuildConfig.DEBUG) {
     // Log信息拦截器
     HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
@@ -43,7 +46,7 @@ if (BuildConfig.DEBUG) {
 ```
 ## 缓存机制
 无网络时，也能显示数据
-```
+```java
 File cacheFile = new File(DemoApplication.getContext().getExternalCacheDir(), "WuXiaolongCache");
 Cache cache = new Cache(cacheFile, 1024 * 1024 * 50);
 Interceptor cacheInterceptor = new Interceptor() {
@@ -79,7 +82,7 @@ builder.cache(cache).addInterceptor(cacheInterceptor);
 
 ## 公共参数
 可能接口有某些参数是公共的，不可能一个个接口都去加吧
-```
+```java
 //公共参数
 Interceptor addQueryParameterInterceptor = new Interceptor() {
     @Override
@@ -103,7 +106,7 @@ builder.addInterceptor(addQueryParameterInterceptor);
 
 ## 设置头
 有的接口可能对请求头要设置
-```
+```java
 Interceptor headerInterceptor = new Interceptor() {
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -124,18 +127,18 @@ builder.addInterceptor(headerInterceptor );
 ## 设置cookie
 服务端可能需要保持请求是同一个cookie，主要看各自需求
 1、app/build.gradle
-```
+```java
  compile 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
 ```
 2、设置cookie
-```
+```java
 CookieManager cookieManager = new CookieManager();
 cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
 builder.cookieJar(new JavaNetCookieJar(cookieManager));
 ```
 ## 设置超时和重连
 希望超时时能重连
-```
+```java
  //设置超时
  builder.connectTimeout(15, TimeUnit.SECONDS);
  builder.readTimeout(20, TimeUnit.SECONDS);
@@ -145,7 +148,7 @@ builder.cookieJar(new JavaNetCookieJar(cookieManager));
 ```
 
 最后将这些配置设置给retrofit：
-```
+```java
 OkHttpClient okHttpClient = builder.build();
 Retrofit retrofit = new Retrofit.Builder()
         .baseUrl(ApiStores.API_SERVER_URL)
@@ -157,7 +160,7 @@ Retrofit retrofit = new Retrofit.Builder()
         .build();
 ```
 ## 完整配置
-```
+```java
 public class AppClient {
     public static Retrofit retrofit = null;
 
@@ -201,30 +204,35 @@ public class AppClient {
     }
 }
 ```
+
 # 接口参数
+
 ## Path
 类似这样链接：http://wuxiaolong.me/2016/01/15/retrofit/
-```
+```java
  @GET("2016/01/15/{retrofit}")
  Call<ResponseBody> getData(@Path("retrofit") String retrofit);
 ```
 即您传的参数retrofit内容会替换大括号里的内容。
+
 ## Query
 类似这样链接：http://wuxiaolong.me/v1?ip=202.202.33.33&name=WuXiaolong
-```
+```java
 @GET("v1")
 Call<ResponseBody> getData(@Query("ip") String ip,@Query("name") String name);
 ```
-# Field
+
+## Field
 表单提交，如登录
-```
+```java
  @FormUrlEncoded
  @POST("v1/login")
  Call<ResponseBody> userLogin(@Field("phone") String phone, @Field("password") String password);
 ```
-# 传json格式
+
+## 传json格式
 如果参数是json格式，如：
-```
+```java
 {		
     "apiInfo": {		
         "apiName": "WuXiaolong",		
@@ -233,8 +241,9 @@ Call<ResponseBody> getData(@Query("ip") String ip,@Query("name") String name);
 }		
 
 ```
+
 建立Bean
-```
+```java
  public class ApiInfo {
         private ApiInfoBean apiInfo;
 
@@ -253,13 +262,16 @@ Call<ResponseBody> getData(@Query("ip") String ip,@Query("name") String name);
         }
     }
 ```
+ 
+ 
 ApiStores
-```
+```java
 @POST("client/shipper/getCarType")
 Call<ResponseBody> getData(@Body ApiInfo apiInfo);
 ```       
+
 代码调用
-```
+```java
 ApiInfo apiInfo = new ApiInfo();
 ApiInfo.ApiInfoBean apiInfoBean = apiInfo.new ApiInfoBean();
 apiInfoBean.setApiKey("666");
@@ -269,27 +281,29 @@ apiInfo.setApiInfo(apiInfoBean);
 getData(apiInfo);
 ```
 
-# 传数组
-```
+## 传数组
+```java
 @GET("v1/enterprise/find")
 Call<ResponseBody> getData(@Query("id") String id, @Query("linked[]") String... linked);
 ```
+
 代码调用
-```
+```java
 String id="WuXiaolong"；
 String[] s = new String[]{"WuXiaolong"};
- //调接口
+//调接口
 getData(id, s);
 ```
 
-# 传文件-单个
-```
+## 传文件-单个
+```java
 @Multipart
 @POST("v1/create")
 Call<ResponseBody> create(@Part("pictureName") RequestBody pictureName,  @Part MultipartBody.Part picture);
 ```
+
 代码调用
-```
+```java
 RequestBody pictureNameBody = RequestBody.create(MediaType.parse(AppConstants.CONTENT_TYPE_FILE), "pictureName");
 File picture= new File(path);
 RequestBody requestFile = RequestBody.create(MediaType.parse(AppConstants.CONTENT_TYPE_FILE), picture);
@@ -299,14 +313,15 @@ MultipartBody.Part picturePart = MultipartBody.Part.createFormData("picture", pi
 create(pictureNameBody, picturePart);
 ```
 
-# 传文件-多个
-```
+## 传文件-多个
+```java
 @Multipart
 @POST("v1/create")
 Call<ResponseBody> create(@Part("pictureName") RequestBody pictureName,   @PartMap Map<String, RequestBody> params);
 ```
+
 代码调用
-```
+```java
 RequestBody pictureNameBody = RequestBody.create(MediaType.parse(AppConstants.CONTENT_TYPE_FILE), "pictureName");
 File picture= new File(path);
 RequestBody requestFile = RequestBody.create(MediaType.parse(AppConstants.CONTENT_TYPE_FILE), picture);
@@ -315,6 +330,7 @@ params.put("picture\"; filename=\"" + picture.getName() + "", requestFile);
 //调接口
 create(pictureNameBody, params);
 ```
+
 # AndroidProgrammer
 我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/AndroidProgrammerLogo.jpg)
