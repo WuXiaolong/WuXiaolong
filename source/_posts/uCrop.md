@@ -80,10 +80,10 @@ void setMaxScaleMultiplier(@FloatRange(from = 1.0, fromInclusive = false) float 
 void setImageToCropBoundsAnimDuration(@IntRange(from = 100) int durationMillis)
 //设置图片压缩最大值
 void setMaxBitmapSize(@IntRange(from = 100) int maxBitmapSize)
-//
-void setDimmedLayerColor(@ColorInt int color)
-//
+//是否显示椭圆裁剪框阴影
 void setOvalDimmedLayer(boolean isOval) 
+//设置椭圆裁剪框阴影颜色
+void setDimmedLayerColor(@ColorInt int color)
 //是否显示裁剪框
 void setShowCropFrame(boolean show)
 //设置裁剪框边的宽度
