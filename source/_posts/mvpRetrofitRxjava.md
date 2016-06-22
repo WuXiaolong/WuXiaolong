@@ -18,7 +18,7 @@ category: Android
 按照之前的文章，每个Presenter都得初始化和销毁，我新加MvpActivity(MvpFragment)，加了抽象方法`protected abstract P createPresenter();`这样做的目的在需要使用MVP的地方，可以继承MvpActivity(MvpFragment)，然后初始化和销毁就不用手动一个个去加了。
 
 2、接口请求等还是放到MVP的P中
-![](http://7q5c2h.com1.z0.glb.clouddn.com/androidmvpsample2.png)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/androidmvpsample2.png?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 这个图片，在当时写MVP文章时给出的，实际开发中，我发现每个都这样写，实在是增加了不少代码，然接口请求放到P中，还有个好处，就是MVP绑定Activity（Fragment）生命周期，当onDestroy时取消RXJava注册，以避免内存泄露。
 
 # 代码
