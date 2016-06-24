@@ -15,11 +15,11 @@ avatar: /images/avatar.jpg
 # links name 
 links_title: 热门推荐
 links:
-    Android小知识库: http://wuxiaolong.me/2015/08/10/android-small-knowledge-base/	   
+    Android Retrofit 2.0 使用-补充篇: http://wuxiaolong.me/2016/06/18/retrofits/	   
 	
-    Android MVP实例: http://wuxiaolong.me/2015/09/23/AndroidMVPSample/    	
+    Android MVP+Retrofit+RxJava实践小结: http://wuxiaolong.me/2016/06/12/mvpRetrofitRxjava/   	
 	
-    Android Toolbar: http://wuxiaolong.me/2015/11/10/toolbar/
+    Android小知识库: http://wuxiaolong.me/2015/08/10/android-small-knowledge-base/
 	
 	
 #    androidweekly: http://androidweekly.net/
