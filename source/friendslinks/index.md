@@ -10,6 +10,8 @@ date: 2015-11-27 09:28:39
 * [Tikitoo](http://tikitoo.me/)
 * [kaedea](http://kaedea.com/)
 * [Coding and Living](http://www.woaitqs.cc/)
+* [江清清的技术专栏](http://www.lcode.org/)
+* [GeorgeYang'Blog](http://georgeyang.cn)
 
 `互换友链，可以联系我（QQ1413129987）`
 
