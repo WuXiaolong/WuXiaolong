@@ -1,7 +1,7 @@
 title: about
 date: 2015-07-31 09:28:39
 ---
-![](http://7q5c2h.com1.z0.glb.clouddn.com/me.JPG)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/me.JPG?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 你必须足够的努力，才能看起来毫不费力！专注！精致！
 
 # 关于自己
