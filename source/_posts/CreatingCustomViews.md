@@ -1,7 +1,7 @@
 title: Android Creating Custom Views
 date: 2015-04-28 
-categories: [Android]
-tags: [Android]
+categories: CustomView
+tags: CustomView
 ---
 
 >最近好烦，发现代码是写过不少，也做过十来个大大小小的项目，不过只是实现功能罢了，没有停下来多看看代码，我这样写再多都是妄劳，只不过复制粘贴代码。行吧，停止写代码，抓抓基础，整装待发。

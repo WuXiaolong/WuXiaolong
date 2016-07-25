@@ -1,7 +1,7 @@
 title: Android Design Support Library之TabLayout 
 date: 2015-08-03 09:26:54
-tags: [DesignSupportLibrary,TabLayout]
-category: DesignSupportLibrary
+tags: TabLayout
+category: SupportLibrary
 ---
 ## 效果预览
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/TabLayout1.gif)

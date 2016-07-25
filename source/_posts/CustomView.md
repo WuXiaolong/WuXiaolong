@@ -1,13 +1,14 @@
 title: Android CustomView
 date: 2016-01-01 15:40:16
 tags: CustomView
-category: Android 
+category: CustomView 
 ---
 # View工作流程
 View工作流程主要指measure、layout、draw这三个流程，即测量、布局和绘制，其中measure确定View的测量的宽/高，layout确定View的最终宽/高和四个顶点的位置，draw将View绘制到屏幕上。
 <!--more-->
 ## measure
 为了更好理解measure过程，先了解MeasureSpec，MeasureSpec代表一个32位int值，高2位代表SpecMode，低30位代表SpecSize（这句话不知道几个意思）。SpecMode指的测量模式，SpecSize指在某种测量模式下规格大小。
+
 SpecMode有三种：
 * EXACTLY
 精确值模式，父容器已经检测出View所需要的精确大小，这时候View的最终大小就是SpecSize所指定的值。它对应代码LayoutParams（控件layout_width属性和layout_height属性）中match_parent和具体数值。
@@ -36,6 +37,7 @@ SpecMode有三种：
         }
     }
 ```
+setMeasuredDimension方法会设置View宽/高的测量值
 ## layout
 layout的作用是ViewGroup用来确定子元素的位置，当ViewGroup的位置被确定后，他在onLayout会遍历所有子元素并调用其layout方法。
 layout方法大致流程：首先通过setFrame设定View四个顶点位置，View四个顶点一旦确定，那么它在父容器中位置也就确定了。
@@ -137,7 +139,9 @@ public class CustomView extends View {
 </RelativeLayout>
 ```
 布局文件添加schemas声明： xmlns:circle="http://schemas.android.com/apk/res-auto" ，这里circle是自定义前缀，名字随便取。但与下面CustomView中自定义属性circle:circle_color=""前缀一致。另外也可以声明 xmlns:circle="http://schemas.android.com/apk/res/包名" ，效果是一样的。
+
 感谢《Android群英传》《Android开发艺术探索》。
+
 # 剩者为王
 我的Android技术交流群，群名寓意很简单，经过时间洗礼，最终剩下的才是王者，欢迎“剩友”。
 剩者为王③群：370527306 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>

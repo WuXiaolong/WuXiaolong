@@ -1,11 +1,11 @@
 title: Android事件传递机制分析
 date: 2015-12-19 16:17:02
 tags: MotionEvent
-category: Android
+category: CustomView
 ---
 # 准备阶段
 为了方便了解整个事件传递的机制，我们设计一个场景：
-![](http://7q5c2h.com1.z0.glb.clouddn.com/MotionEvent.png)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/MotionEvent.png?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 角色：
 一个经理：MotionEventViewGroupA，最外层的ViewGroupA；
 一个组长：MotionEventViewGroupB，中间的ViewGroupB；

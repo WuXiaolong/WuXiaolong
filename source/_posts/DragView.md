@@ -1,14 +1,14 @@
 title: Android之滑动view
 date: 2015-11-20 13:11:53
 tags: DragView
-category: Android
+category: CustomView
 ---
 # 效果预览
-![](http://7q5c2h.com1.z0.glb.clouddn.com/DragView.gif)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/DragView.gif?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 
 <!--more-->
 # 获取坐标值方法
-![](http://7q5c2h.com1.z0.glb.clouddn.com/DragView.png)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/DragView.png?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 如图，要实现滑动效果，需要先了解以下方法。
 * View提供获取坐标方法
 getTop():获取View自身顶边到其父布局顶边的距离

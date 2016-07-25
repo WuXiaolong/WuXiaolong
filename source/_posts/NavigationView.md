@@ -1,7 +1,7 @@
 title: Android Design Support Library之NavigationView
 date: 2015-11-17 13:31:07
-tags: [DesignSupportLibrary,NavigationView]
-category: DesignSupportLibrary
+tags: NavigationView
+category: SupportLibrary
 ---
 # 效果预览
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/designsupportlibrarysample.gif)
@@ -10,8 +10,8 @@ category: DesignSupportLibrary
 
 # 使用方法
 Gradle 中添加下面依赖
-```js
- compile 'com.android.support:design:24.0.0'
+```xml
+compile 'com.android.support:design:23.1.0'
 ```
 
 # NavigationView
