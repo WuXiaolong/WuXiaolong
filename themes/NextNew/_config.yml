@@ -29,8 +29,8 @@ menu:
   categories: /categories
   archives: /archives
   tags: /tags
-  about: /about
   friendslinks: /friendslinks
+  about: /about
   #commonweal: /404.html
 
 
@@ -142,8 +142,10 @@ social_icons:
 # in site  directory(source/uploads): /uploads/avatar.jpg
 avatar: /images/avatar.jpg
 
-reward_comment: 小额赞赏
-wechatpay: /path/to/wechat-reward-image/wechatpay.JPG
+# 赞赏
+reward_comment: 
+wechatpay: /path/to/pay/wechatpay.JPG
+alipay: /path/to/pay/aliPay.png
 
 # title 友链
 #links_title: Links
@@ -215,7 +217,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night blue
 
 
 # Automatically scroll page to section which is under <!-- more --> mark.
@@ -327,7 +329,8 @@ busuanzi_count:
   site_pv_footer:
   # custom pv span for one page only
   page_pv: true
-  page_pv_header: <i class="fa fa-file-o"></i>
+  page_pv_header: 阅读
+  #<i class="fa fa-file-o"></i>
   page_pv_footer:
 
 # Tencent analytics ID

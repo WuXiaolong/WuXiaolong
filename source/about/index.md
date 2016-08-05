@@ -27,5 +27,5 @@ Android应用攻城狮，后知后觉，工作之前，还不知何为程序猿�
 [点击查看QQ群](http://wuxiaolong.me/qq/)
 
 # 小额赞助
-如果您喜欢此博客，读后受益匪浅，不妨支付宝扫描以下二维码，小额赞助一下。
-<img src="http://7q5c2h.com1.z0.glb.clouddn.com/taobao_qrcode.jpg" /> 
+如果您喜欢此博客，读后受益匪浅，不妨微信扫描以下二维码，小额赞助一下。
+<img src="http://wuxiaolong.me/path/to/wechat-reward-image/wechatpay.JPG" /> 
