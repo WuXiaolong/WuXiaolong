@@ -97,14 +97,14 @@ social:
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 #creative_commons: by-nc-sa
 
-# 站点起始时间
-since: 2013
+
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 # theme: landscape
-theme: next
+#theme: next
+theme: NextNew
 
 # =============================================================================
 # End NexT Theme configuration
