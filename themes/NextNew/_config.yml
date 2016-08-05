@@ -51,17 +51,8 @@ menu_icons:
   #commonweal: heartbeat
 
 
-# title
-links_title: Links
-links:
-  MacTalk: http://macshuo.com/
-  Title: http://example.com/
 
-# Wechat Subscriber
-wechat_subscriber:
-enabled: true
-qcode: /uploads/wechat-qcode.jpg
-description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
+
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
@@ -151,9 +142,20 @@ social_icons:
 # in site  directory(source/uploads): /uploads/avatar.jpg
 avatar: /images/avatar.jpg
 
-reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+reward_comment: 小额赞赏
 wechatpay: /path/to/wechat-reward-image/wechatpay.JPG
 
+# title 友链
+#links_title: Links
+#links:
+#  MacTalk: http://macshuo.com/
+#  Title: http://example.com/
+
+# Wechat Subscriber
+#wechat_subscriber:
+#enabled: true
+#qcode: /uploads/wechat-qcode.jpg
+#description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
 
   
 # Table Of Contents in the Sidebar
