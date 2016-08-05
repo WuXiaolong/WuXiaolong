@@ -234,6 +234,12 @@ tags: [hexo,github] #文章标签，多于一项时用这种格式
 hexo generate
 hexo deploy
 ```
+hexo deploy问题：Deployer not found: git
+执行
+```java
+npm install hexo-deployer-git --save
+```
+重新deploy即可
 
 以下提示说明部署成功
 ```js
