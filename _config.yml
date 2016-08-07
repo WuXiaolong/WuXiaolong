@@ -75,23 +75,6 @@ deploy:
 # NexT Theme configuration
 # =============================================================================
 
-# 多说社会化评论
-duoshuo_shortname: wuxiaolong
-
-# 多说 分享服务（必须启用多说）
-duoshuo_share: true
-
-# 百度统计 ID，此 ID 是百度统计提供脚本中 hm.js? 后面那串字符，非百度统计帐号
-baidu_analytics: 0e1dc2030f397dfa0d60ad22b374430d
-
-# 官网https://swiftype.com/
-swiftype_key: ywBn2eRCzfb494KCWJw3
-
-# 社交链接，将在侧栏中显示
-social:
-  GitHub: https://github.com/WuXiaolong
-  Weibo: http://weibo.com/u/2175011601  
-  QQ: /qq
   
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/

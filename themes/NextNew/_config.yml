@@ -121,7 +121,11 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 #social:
   #LinkLabel: Link
-
+# 社交链接，将在侧栏中显示
+social:
+  GitHub: https://github.com/WuXiaolong
+  Weibo: http://weibo.com/u/2175011601  
+  QQ: /qq
 
 # Social Links Icons
 # Icon Mapping:
@@ -135,7 +139,7 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
-
+  QQ: qq
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
@@ -252,12 +256,20 @@ mathjax:
 
 # Swiftype Search API Key
 #swiftype_key:
+# 官网https://swiftype.com/
+swiftype_key: ywBn2eRCzfb494KCWJw3
 
 # Baidu Analytics ID
 #baidu_analytics:
+# 百度统计 ID，此 ID 是百度统计提供脚本中 hm.js? 后面那串字符，非百度统计帐号
+baidu_analytics: 0e1dc2030f397dfa0d60ad22b374430d
 
 # Duoshuo ShortName
+# 多说社会化评论
 duoshuo_shortname: wuxiaolong
+
+# 多说 分享服务（必须启用多说）
+duoshuo_share: true
 
 # Disqus
 #disqus_shortname:
