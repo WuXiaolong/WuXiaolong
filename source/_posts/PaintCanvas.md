@@ -1,7 +1,7 @@
-title: Android之画笔Paint和画布Canvas及实例练习圆角、刮刮卡、圆形头像、倒影效果
+title: Android 画笔Paint和画布Canvas
 date: 2015-12-06 10:45:38
 tags: [Paint,Canvas,PorterDuffXfermode,Shader]
-category: Android
+category: CustomView
 ---
 > 先了解画笔Paint和画布Canvas一些基本方法，然后学习画笔特效处理的高级属性PorterDuffXfermode、Shader、PathEffect，并实现圆角、刮刮卡、圆形头像、倒影效果
 
@@ -20,6 +20,12 @@ category: Android
 
 * void  setColor(int color)  
 设置颜色，这里Android内部定义的有Color类包含了一些常见颜色定义
+
+*  void setStyle(Style style)
+设置画笔样式为描边,画笔样式分三种：
+1.Paint.Style.STROKE：描边
+2.Paint.Style.FILL_AND_STROKE：描边并填充
+3.Paint.Style.FILL：填充
 
 * void  setFakeBoldText(boolean fakeBoldText)  
 设置伪粗体文本
@@ -52,40 +58,78 @@ category: Android
 设置下划线
 
 # Canvas
-
-* void drawRect(RectF rect, Paint paint) 
-绘制矩形，参数一为RectF一个区域
-
-* void drawRoundRect(@NonNull RectF rect, float rx, float ry, @NonNull Paint paint)
-绘制圆角矩形
-
-* void drawPath(Path path, Paint paint) 
-绘制一个路径，参数一为Path路径对象
-
-* void  drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint)  
-贴图，参数一就是我们常规的Bitmap对象，参数二是源区域(这里是bitmap)，参数三是目标区域(应该在 canvas的位置和大小)，参数四是Paint画刷对象，因为用到了缩放和拉伸的可能，当原始Rect不等于目标Rect时性能将会有大幅损失。
-
-* void  drawLine(float startX, float startY, float stopX, float stopY, Paint paint) 
-画线，参数一起始点的x轴位置，参数二起始点的y轴位置，参数三终点的x轴水平位置，参数四y轴垂直位置，最后一个参数为Paint画刷对象。
-
+## 绘制点
 * void  drawPoint(float x, float y, Paint paint) 
 画点，参数一水平x轴，参数二垂直y轴，第三个参数为Paint对象。
 
+* void drawPoints (float[] pts, Paint paint)
+绘制一组点，坐标位置由float数组指定
+
+## 绘制直线
+* void  drawLine(float startX, float startY, float stopX, float stopY, Paint paint) 
+画线，参数一起始点的x轴位置，参数二起始点的y轴位置，参数三终点的x轴水平位置，参数四y轴垂直位置，最后一个参数为Paint对象。
+
+void drawLines (float[] pts,  Paint paint)
+绘制一组线 ，坐标位置由float数组指定
+
+## 绘制矩形        
+* void drawRect(Rect r, Paint paint) 
+绘制矩形，参数一为Rect一个区域
+
+* void drawRect (float left, float top, float right,float bottom, Paint paint)
+绘制矩形，四个数值(矩形左上角和右下角两个点的坐标)来确定一个矩形
+
+*  void drawRect (RectF rect,Paint paint)
+绘制矩形，参数一为RectF 一个区域
+
+## 绘制圆角矩形
+* void drawRoundRect(@NonNull RectF rect, float rx, float ry, @NonNull Paint paint)
+绘制圆角矩形，rx, ry分别是圆弧的圆心 和 半径，其中圆心用于确定位置，而半径用于确定大小
+
+* void drawRoundRect (float left,float top,  float right, float bottom,  float rx, float ry, Paint paint)
+API level 21才添加的
+
+## 绘制椭圆
+* void drawOval(@NonNull RectF oval, @NonNull Paint paint) 
+绘制椭圆
+
+* drawOval(float left, float top, float right, float bottom, Paint paint)
+
+## 绘制圆
+* drawCircle(float cx, float cy, float radius, @NonNull Paint paint) 
+绘制圆，cx，cy是圆心坐标，radius是半径，paint是画笔对象
+
+# 绘制路径
+* void drawPath(Path path, Paint paint) 
+绘制一个路径，参数一为Path路径对象
+
+## 绘制图片
+* void  drawBitmap(Bitmap bitmap, Rect src, Rect dst, Paint paint)  
+参数一就是我们常规的Bitmap对象，参数二是源区域(这里是bitmap)，参数三是目标区域(应该在 canvas的位置和大小)，参数四是Paint画刷对象，因为用到了缩放和拉伸的可能，当原始Rect不等于目标Rect时性能将会有大幅损失。
+
+## 绘制文本
 * void drawText(String text, float x, float y, Paint paint)  
-渲染文本，Canvas类除了上面的还可以描绘文字，参数一是String类型的文本，参数二x轴，参数三y轴，参数四是Paint对象。
+绘制文本，Canvas类除了上面的还可以描绘文字，参数一是String类型的文本，参数二x轴，参数三y轴，参数四是Paint对象。
 
 * void  drawTextOnPath(String text, Path path, float hOffset, float vOffset, Paint paint) 
 在路径上绘制文本，相对于上面第二个参数是Path路径对象
 
-* void drawOval(@NonNull RectF oval, @NonNull Paint paint) 
-绘制椭圆
-
-* drawCircle(float cx, float cy, float radius, @NonNull Paint paint) 
-绘制圆
-
-* void drawArc(@NonNull RectF oval, float startAngle, float sweepAngle, boolean useCenter,
-            @NonNull Paint paint)
+## 绘制弧形
+* void drawArc(@NonNull RectF oval, float startAngle, float sweepAngle, boolean useCenter,@NonNull Paint paint)
 绘制弧形、扇形
+
+## 画布变换
+
+translate(float dx, float dy)
+位移
+
+scale(float sx, float sy, float px, float py)
+缩放
+
+void rotate(float degrees)
+旋转,默认旋转中心为原点
+void rotate(float degrees, float px, float py)
+第一个参数是旋转角度，后两个参数依旧是控制旋转中心点 
 
 # 实例练习
 
