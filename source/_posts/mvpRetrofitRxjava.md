@@ -190,9 +190,9 @@ public class BasePresenter<V> implements Presenter<V> {
 # 总结
 三者结合使用，重点还是对MVP的优化，Retrofit只贴出最简单的（后续会写Retrofit详情使用），Rxjava可能我是对它认识尚浅，实际运用最多还是RxBus。
 
-# AndroidProgrammer
-我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/AndroidProgrammerLogo.jpg)
+# 微信公众号
+欢迎微信扫一扫关注：不止于技术分享，每天进步一点点。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
 
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)
