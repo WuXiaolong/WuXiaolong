@@ -21,9 +21,9 @@ category: Life
 
 时刻提醒自己：`不忘初心，方得始终。 不用太在乎别人的看法，因为过得好不好，自己最清楚。`
 
-# AndroidProgrammer
-我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
+# 微信公众号
+我的微信公众号：吴小龙同学，不止于技术分享，每天进步一点点，欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
 
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)

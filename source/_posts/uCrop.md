@@ -397,9 +397,9 @@ public class BitmapCropTask extends AsyncTask<Void, Void, Throwable> {
 }
 ```
 
-# AndroidProgrammer
-我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/AndroidProgrammerLogo.jpg)
+# 微信公众号
+我的微信公众号：吴小龙同学，不止于技术分享，每天进步一点点，欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
 
 # 总结
 uCrop功能强大，对于我来说，有很多东西值得学习，难点如Rect包含问题（其实这块还不是很理解），新知识如ExifInterface操作图片，BitmapFactory显示图片的知识点温故等，还有自定义左右滑的标尺，都是不错的学习源码。抛砖引玉至此，over。

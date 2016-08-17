@@ -1,11 +1,12 @@
 title: Android 画笔Paint
-date: 2016-08-16 17:26:15
+date: 2015-12-16 17:26:15
 tags: Paint
 category: CustomView
 ---
-> 关于Android CustomView，Aige《自定义控件其实很简单》系列博客已经写的很棒了，引用他的话“很多时候你压根不需要了解太多原理，只需站在巨人的丁丁上即可”，所谓前人种树后人好乘凉，这里记录下我的实践下。
+> 关于Android CustomView，Aige《自定义控件其实很简单》系列博客已经写的很棒了，引用他的话“很多时候你压根不需要了解太多原理，只需站在巨人的丁丁上即可”，所谓前人种树后人好乘凉，这里记录下我的实践结果。
 
 我们可以通过Paint中setter方法来为画笔设置属性：
+<!--more-->
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/paint1.jpg?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/paint2.jpg?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/paint3.jpg?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)

@@ -74,6 +74,6 @@ __老婆，你比我想象中更加坚强__。
 我希望我们就像电视剧里一样，__从此我们一家三口过上了幸福的生活__。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/myHappyWay3.jpg?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 
-# AndroidProgrammer
-我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/AndroidProgrammerLogo.jpg)
+# 微信公众号
+我的微信公众号：吴小龙同学，不止于技术分享，每天进步一点点，欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
