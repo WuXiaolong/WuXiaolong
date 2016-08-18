@@ -3,6 +3,7 @@ date: 2016-08-20 17:26:15
 tags: Paint
 category: CustomView
 ---
+
 > 了解Android Paint，一篇就够。引用Aige《[自定义控件其实很简单](http://blog.csdn.net/aigestudio)》系列博客的话“很多时候你压根不需要了解太多原理，只需站在巨人的丁丁上即可”，所谓前人种树后人好乘凉，这里记录下我的实践结果。
 
 我们可以通过Paint中setter方法来为画笔设置属性：
@@ -610,11 +611,10 @@ public class PaintCanvas extends View {
 
 # 例子源码
 [https://github.com/WuXiaolong/AndroidSamples/blob/master/app/src/main/java/com/wuxiaolong/androidsamples/paintcanvas/PaintCanvas.java](https://github.com/WuXiaolong/AndroidSamples/blob/master/app/src/main/java/com/wuxiaolong/androidsamples/paintcanvas/PaintCanvas.java)
+
 # 微信公众号
 我的微信公众号：吴小龙同学，不止于技术分享，每天进步一点点，欢迎微信扫一扫关注。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
-
-
 
 # 最后
 这篇文章真长，从开始写到最后的校对，花了很长时间，每段代码运行都截图上传。只能说实践是检验真理的唯一标准，不一定知道每个原理，都必须知道每个是什么样子的效果，记录完成方便自己日后查找，也方便大家哦，如果您能读到这篇文章的话。最后的最后，萨摩耶有话说：我只想安静做一只可爱的狗狗！
