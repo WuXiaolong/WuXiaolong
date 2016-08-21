@@ -17,7 +17,7 @@ http://www.ituring.com.cn/article/504
 Markdown语法介绍完毕，通篇都是以我的公众号示例，看样子你有必要关注一下，哈哈哈。
 
 
-> Markdown是什么，我还真不知道，嘿嘿，Markdown 的语法全由一些符号所组成，目标易读易写。本文主要分享我平时经常使用的Markdown语法（非全部）。
+> Markdown是什么，我还真不知道，嘿嘿，Markdown的语法全由一些符号所组成，易读易写。本文主要分享我平时经常使用的Markdown语法（非全部）。
 
 # 引用
 ## 单引用
@@ -120,7 +120,8 @@ public class PaintCanvas extends View {
 ---------------------------------------
 
 
-
+# 最后
+Markdown语法介绍完毕，通篇都是以我的公众号示例，看样子你有必要关注一下，哈哈哈。
 
 
 

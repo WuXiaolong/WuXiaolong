@@ -123,6 +123,7 @@ font:
   #LinkLabel: Link
 # 社交链接，将在侧栏中显示
 social:
+  wechat: http://weixin.sogou.com/weixin?type=1&query=%E5%90%B4%E5%B0%8F%E9%BE%99%E5%90%8C%E5%AD%A6
   GitHub: https://github.com/WuXiaolong
   Weibo: http://weibo.com/u/2175011601  
   QQ: /qq
@@ -136,6 +137,7 @@ social_icons:
   enable: true
   # Icon Mappings.
   # KeyMapsToSocalItemKey: NameOfTheIconFromFontAwesome
+  wechat: weixin
   GitHub: github
   Twitter: twitter
   Weibo: weibo
