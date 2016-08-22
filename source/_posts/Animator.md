@@ -201,9 +201,5 @@ Android 3.0后，谷歌给View增加animate方法直接驱动属性动画。
         parentLayout.setLayoutAnimation(layoutAnimationController);
 ```
 
-# AndroidProgrammer
-我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
-
 # 关于作者
 [点击查看](http://wuxiaolong.me/about/)

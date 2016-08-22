@@ -192,6 +192,7 @@
 
     <div>
       {% if not is_index %}
+	    {% include 'gongzhonghao.swig' %}
         {% include 'reward.swig' %}
       {% endif %}
     </div>
@@ -231,5 +232,4 @@
       {% endif %}
     </footer>
   </article>
-
 {% endmacro %}

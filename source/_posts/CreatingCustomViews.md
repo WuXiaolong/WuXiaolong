@@ -37,9 +37,10 @@ tags: CustomView
 # 罗升阳
 [老罗的Android之旅](http://blog.csdn.net/Luoshengyang/)
 
-# 总结
-循序渐进，慢慢看，一天进步一点点。
 
 # 微信公众号
 我的微信公众号：吴小龙同学，不止于技术分享，每天进步一点点，欢迎微信扫一扫关注。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
+
+# 总结
+循序渐进，慢慢看，一天进步一点点。

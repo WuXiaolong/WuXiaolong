@@ -276,9 +276,6 @@ npm install hexo-deployer-git --save
 ## 总结
 之前用的jekell写的，[手把手教你建github技术博客by jekyll](http://wuxiaolong.github.io/2014/10/26/build-blog/)，也是折腾了几天才做成自己满意的，昨天决定换成hexo，也是花了一天半时间，为了追求更好，必须折腾！
 
-## AndroidProgrammer
-我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_AndroidProgrammer.jpg)
 
 ## 关于作者
 [点击查看](http://wuxiaolong.me/about/)
