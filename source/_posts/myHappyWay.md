@@ -13,8 +13,9 @@ category: Life
 # 恋爱
 
 __恋爱应该是最开心的一段时光__，有时间我们就出来玩，去公园，爬山，吃饭啥的。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/myHappyWay1.png?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 <!--more-->
+![](http://7q5c2h.com1.z0.glb.clouddn.com/myHappyWay1.png?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
+
 女票很喜欢吃辣，我一开始不怎么吃，到后来我吃辣也是杠杠的。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/myHappyWay2.jpg?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 就这样__无忧无虑__过了一年，我毕业了，尽管刚刚实习薪资才1500，但我们依旧过得十分开心，那段时光是值得永久保存的。
