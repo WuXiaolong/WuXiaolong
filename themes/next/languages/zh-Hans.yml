@@ -3,13 +3,16 @@ title:
   category: 分类
   tag: 标签
 
+author: 博主
+
 menu:
   home: 首页
   archives: 归档
   categories: 分类
   tags: 标签
-  friendslinks: 小伙伴
   about: 关于
+  friendslinks: 小伙伴
+  search: 搜索
   commonweal: 公益404
 
 
@@ -18,8 +21,10 @@ sidebar:
   toc: 文章目录
 
 post:
+  sticky: 置顶
   posted: 发表于
   in: 分类于
+  visitors: 阅读次数
   read_more: 阅读全文
   untitled: 未命名
   toc_empty: 此文章未包含目录
@@ -63,7 +68,7 @@ cheers:
   great: 非常好
   excellent: 太棒了
 
-keep_on: 好记忆不如烂笔头，继续努力！
+keep_on: 继续努力。
 
 symbol:
   comma: '， '

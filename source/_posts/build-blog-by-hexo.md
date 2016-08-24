@@ -3,7 +3,7 @@ date: 2015-07-31 14:22:35
 tags: [github,hexo]
 category: hexo
 ---
-## 适合人群
+# 适合人群
 
 * 喜欢写Blog的人
 * 有一定的编程基础
@@ -14,15 +14,15 @@ category: hexo
 
 <!-- more -->
 
-## 环境准备
+# 环境准备
 
-### 安装Git
+## 安装Git
 下载 [msysgit](http://msysgit.github.io/) 并执行即可完成安装。
 
-### 安装Node.js
+## 安装Node.js
 在 Windows 环境下安装 [Node.js](http://nodejs.org/) 非常简单，仅须下载安装文件并执行即可完成安装。
 
-### 安装hexo
+## 安装hexo
 利用 npm 命令即可安装。（在任意位置点击鼠标右键，选择Git bash）
 ```js
 npm install -g hexo
@@ -39,18 +39,18 @@ npm config set registry http://registry.cnpmjs.org
 删除刚刚安装的npm目录，重新执行命令npm install -g hexo安装hexo，
 
 
-### 创建hexo文件夹
+## 创建hexo文件夹
 安装完成后，在你喜爱的文件夹下（如H:\hexo），执行以下指令(在H:\hexo内点击鼠标右键，选择Git bash)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。
 ```js
 hexo init
 ```
 
-### 安装依赖包
+## 安装依赖包
 ```js
 npm install
 ```
 
-### 本地查看
+## 本地查看
 
 现在我们已经搭建起本地的hexo博客了，执行以下命令(在H:\hexo)，然后到浏览器输入localhost:4000看看。
 ```js
@@ -68,14 +68,14 @@ npm install hexo -server --save
 ```
 安装此server后再试，问题解决
 
-## github 创建博客
+# github 创建博客
 
-* ### 注册账号
+* ## 注册账号
 地址：[https://github.com/](https://github.com/)  
 输入账号、邮箱、密码,然后点击注册按钮.
 ![1](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-1.png)
 
-### 创建页面仓库
+## 创建页面仓库
 这个仓库的名字需要和你的账号对应，格式: yourname.github.io
 输入基本信息，然后点击创建仓库.
 ![2](http://7q5c2h.com1.z0.glb.clouddn.com/2014-10-26-build-blog-2.png)
@@ -83,17 +83,17 @@ npm install hexo -server --save
 `注意`
 命名规则：你的github账号.github.io，我这里被坑了，之前是jekell写的，现在换成hexo，所以我是另建创库了。
 
-### 生成SSH密钥
+## 生成SSH密钥
 ssh-keygen -t rsa -C "你的邮箱地址"，按3个回车，密码为空。
 
 在C:\Users\Administrator\.ssh下，得到两个文件id_rsa和id_rsa.pub。
 
-### 在GitHub上添加SSH密钥
+## 在GitHub上添加SSH密钥
 打开id_rsa.pub，复制全文。[https://github.com/settings/ssh](https://github.com/settings/ssh) ，Add SSH key，粘贴进去。
 
-## hexo使用
+# hexo使用
 
-### 目录结构
+## 目录结构
 
 .
 ├── .deploy       #需要部署的文件
@@ -107,12 +107,12 @@ ssh-keygen -t rsa -C "你的邮箱地址"，按3个回车，密码为空。
 ├── _config.yml   #全局配置文件
 └── package.json
 
-### 全局配置 _config.yml
+## 全局配置 _config.yml
 
 ```js
 # Hexo Configuration
-## Docs: http://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
+# Docs: http://hexo.io/docs/configuration.html
+# Source: https://github.com/hexojs/hexo/
 # Site #站点信息
 title:  #标题
 subtitle:  #副标题
@@ -185,7 +185,7 @@ deploy:
 * 配置文件的冒号“:”后面有一个空格
 * repo: 刚刚github创库地址.git
 
-### hexo命令行使用
+## hexo命令行使用
 
 常用命令：
 
@@ -209,7 +209,7 @@ hexo s == hexo server
 hexo d == hexo deploy
 ```
 
-### 编辑文章
+## 编辑文章
 
 新建文章
 
@@ -227,7 +227,7 @@ tags: [hexo,github] #文章标签，多于一项时用这种格式
 ```
 编辑完后保存，hexo server 预览
 
-## hexo部署
+# hexo部署
 
 执行下列指令即可完成部署。
 ```js
@@ -247,7 +247,7 @@ npm install hexo-deployer-git --save
 ```
 点击 Github 上项目的 Settings，GitHub Pages，提示Your site is published at http://wuxiaolong.me (这是我买的域名)
 
-## 图床
+# 图床
 1.墙裂推荐七牛云储存,[注册地址](https://portal.qiniu.com/signup?code=3lk4saqepkdhu)。
 
 2.七牛云储存提供10G的免费空间,以及每月10G的流量.存放个人博客图片最好不过了
@@ -256,12 +256,12 @@ npm install hexo-deployer-git --save
 
 具体使用见[使用七牛作为github博客的图床](http://wuxiaolong.github.io/blog/2014/10/30/qiniu-photo-bed.html)
 
-## 域名
-### 将独立域名与GitHub Pages的空间绑定
+# 域名
+## 将独立域名与GitHub Pages的空间绑定
 方法一：在站点source目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如wuxiaolong.me
 方法二：在Repository的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如wuxiaolong.me
 
-### DNS设置
+## DNS设置
 用[DNSpod](https://www.dnspod.cn/)，快，免费，稳定。
 注册DNSpod，添加域名，如下图设置。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/build-blog-by-hexo-1.png)
@@ -269,18 +269,61 @@ npm install hexo-deployer-git --save
 如何知道你的github上项目的IP，如下：
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/build-blog-by-hexo-2.png)
 
-### 去Godaddy修改DNS地址
+## 去Godaddy修改DNS地址
 更改godaddy的Nameservers为DNSpod的NameServers。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/build-blog-by-hexo-5.png)
 
-## 总结
+# RSS、sitemap插件
+> 2016.08.20更新
+
+## 安装插件
+安装插件：npm install 插件名 –save
+卸载插件：npm uninstall 插件名
+更新插件和博客框架：npm update
+
+执行以下命令安装 RSS 插件
+```
+npm install hexo-generator-feed --save
+```
+生成站点地图
+```
+npm install hexo-generator-sitemap --save
+```
+生成百度站点地图
+```
+npm install hexo-generator-baidu-sitemap --save
+```
+## 开启网站 RSS支持 、sitemap网站地图
+根目录下的 _config.yml，添加以下代码:
+```
+# RSS
+feed:
+type: atom
+path: atom.xml
+limit: 20
+
+# sitemap
+# 提交给谷歌搜素引擎
+sitemap:
+    path: sitemap.xml
+# 提交百度搜索引擎   
+baidusitemap:
+    path: baidusitemap.xml  
+```
+当你执行hexo g，你会发现public目录下多了atom.xml，baidusitemap.xml，sitemap.xml，说明配置成功了。
+[Hexo Seo优化让你的博客在google搜索排名第一](http://www.jianshu.com/p/86557c34b671)
+[搭建 Hexo 博客--增强篇](http://www.jianshu.com/p/2640561e96f8)
+
+
+
+# 总结
 之前用的jekell写的，[手把手教你建github技术博客by jekyll](http://wuxiaolong.github.io/2014/10/26/build-blog/)，也是折腾了几天才做成自己满意的，昨天决定换成hexo，也是花了一天半时间，为了追求更好，必须折腾！
 
 
-## 关于作者
+# 关于作者
 [点击查看](http://wuxiaolong.me/about/)
 
-## 附录
+# 参考文献
 * [hexo系列教程：（一）hexo介绍](http://zipperary.com/2013/05/28/hexo-guide-1/)
 * [使用Hexo搭建博客](http://blog.lmintlcx.com/post/blog-with-hexo.html)
 * [如何搭建一个独立博客——简明Github Pages与Hexo教程](http://blog.csdn.net/poem_of_sunshine/article/details/29369785)
@@ -288,6 +331,7 @@ npm install hexo-deployer-git --save
 * [GoDaddy优惠码](http://www.dute.me/)
 * [Godaddy购买域名及配置](http://blog.csdn.net/poem_of_sunshine/article/details/29369785)
 * [GitHub配置域名（Godaddy）](http://blog.csdn.net/yuguiyang1990/article/details/39523005)
+* [hexo你的博客](http://ibruce.info/2013/11/22/hexo-your-blog/)
 
 
 

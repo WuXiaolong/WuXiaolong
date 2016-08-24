@@ -1,23 +1,20 @@
 # Hexo Configuration
-## Docs: http://hexo.io/docs/configuration.html
+## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
 title: 吴小龙同學
 subtitle: 党要我帅，我不得不帅！
-#description: 党要我帅，我不得不帅！
 description: 我的微信公众号：吴小龙同学
 author: 吴小龙同學
 language: zh-Hans
 timezone:
-
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://wuxiaolong.me/
 root: /
 permalink: :year/:month/:day/:title/
-# permalink: :title/ 
 permalink_defaults:
 
 # Directory
@@ -43,7 +40,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: true
+  auto_detect: false
   tab_replace:
 
 # Category & Tag
@@ -60,51 +57,33 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 10
+per_page: 8
 pagination_dir: page
 
 # RSS
-plugins:
-- hexo-generator-feed
-
 feed:
     type: atom
     path: atom.xml
     limit: 20
 
-#sitemap
+# sitemap网站地图
+# 提交给谷歌搜素引擎
 sitemap:
-        path: sitemap.xml
+    path: sitemap.xml
+# 提交百度搜索引擎   
 baidusitemap:
-        path: baidusitemap.xml        
+    path: baidusitemap.xml     
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+
+
 # Deployment
-## Docs: http://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repository: https://github.com/WuXiaolong/WuXiaolong.github.io.git
+  #repository: https://git.coding.net/wuxiaolongtongxue/WuXiaolong.git
   branch: master
-  #repository: https://gitcafe.com/WuXiaolong/WuXiaolong.git
-  #branch: gitcafe-pages
-  
-# =============================================================================
-# NexT Theme configuration
-# =============================================================================
-
-  
-# Creative Commons 4.0 International License.
-# http://creativecommons.org/
-# Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-#creative_commons: by-nc-sa
-
-
-
-# Extensions
-## Plugins: http://hexo.io/plugins/
-## Themes: http://hexo.io/themes/
-# theme: landscape
-#theme: next
-theme: NextNew
-
-# =============================================================================
-# End NexT Theme configuration
-# =============================================================================

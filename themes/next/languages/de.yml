@@ -3,14 +3,16 @@ title:
   category: Kategorie
   tag: Tag
 
+author: Author
+
 menu:
   home: Startseite
   archives: Archiv
   categories: Kategorien
   tags: Tags
-  friendslinks: 小伙伴
   about: Über
   feed: RSS
+  search: Suche
 
 sidebar:
   overview: Übersicht
