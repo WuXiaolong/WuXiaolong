@@ -332,35 +332,30 @@ baidusitemap:
 
 # HTML压缩
 html_minifier:
-  enable: true
   exclude:     
 # css压缩
-css_minifier:
-  enable: true
+clean_css:
   exclude: 
-    - '*.min.css'
+	- '*.min.css'
 # js压缩   
-js_minifier:
-  enable: true
+uglify:
   mangle: true
   output:
   compress:
   exclude: 
-    - '*.min.js'
+	- '*.min.js'
 # image压缩    
-image_minifier:
-  enable: true
-  interlaced: false
-  multipass: false
+imagemin:
+  enable     : true
+  interlaced : false
+  multipass  : false
   optimizationLevel: 2
-  pngquant: false
-  progressive: false   
+  pngquant   : false
+  progressive: false     
 ```
 package.json可以看安装了哪些插件。
 
 [Hexo Seo优化让你的博客在google搜索排名第一](http://www.jianshu.com/p/86557c34b671)
-[搭建 Hexo 博客--增强篇](http://www.jianshu.com/p/2640561e96f8)
-
 
 
 # 总结
