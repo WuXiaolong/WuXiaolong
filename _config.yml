@@ -73,6 +73,33 @@ sitemap:
 # 提交百度搜索引擎   
 baidusitemap:
     path: baidusitemap.xml     
+
+# HTML压缩
+html_minifier:
+  enable: true
+  exclude:     
+# css压缩
+css_minifier:
+  enable: true
+  exclude: 
+    - '*.min.css'
+# js压缩   
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+# image压缩    
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false    
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -85,5 +112,5 @@ theme: next
 deploy:
   type: git
   repository: https://github.com/WuXiaolong/WuXiaolong.github.io.git
-  #repository: https://git.coding.net/wuxiaolongtongxue/WuXiaolong.git
+  #repository: https://git.oschina.net/xiaomolong/WuXiaolong.git
   branch: master

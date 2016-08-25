@@ -273,7 +273,7 @@ npm install hexo-deployer-git --save
 更改godaddy的Nameservers为DNSpod的NameServers。
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/build-blog-by-hexo-5.png)
 
-# RSS、sitemap插件
+# 插件
 > 2016.08.20更新
 
 ## 安装插件
@@ -293,7 +293,15 @@ npm install hexo-generator-sitemap --save
 ```
 npm install hexo-generator-baidu-sitemap --save
 ```
-## 开启网站 RSS支持 、sitemap网站地图
+SEO优化
+```
+npm install hexo-generator-seo-friendly-sitemap
+```
+HTML, CSS, JS 和 imagages压缩
+```
+npm install hexo-all-minifier --save
+```
+## 插件开启配置
 根目录下的 _config.yml，添加以下代码:
 ```
 # RSS
@@ -303,14 +311,40 @@ path: atom.xml
 limit: 20
 
 # sitemap
-# 提交给谷歌搜素引擎
+# 提交给谷歌搜素引擎,SEO优化开启配置是一样的
 sitemap:
     path: sitemap.xml
 # 提交百度搜索引擎   
 baidusitemap:
-    path: baidusitemap.xml  
+    path: baidusitemap.xml 
+
+# HTML压缩
+html_minifier:
+  enable: true
+  exclude:     
+# css压缩
+css_minifier:
+  enable: true
+  exclude: 
+    - '*.min.css'
+# js压缩   
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+# image压缩    
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false   
 ```
-当你执行hexo g，你会发现public目录下多了atom.xml，baidusitemap.xml，sitemap.xml，说明配置成功了。
+node_modules目录可以看安装了哪些插件。
 [Hexo Seo优化让你的博客在google搜索排名第一](http://www.jianshu.com/p/86557c34b671)
 [搭建 Hexo 博客--增强篇](http://www.jianshu.com/p/2640561e96f8)
 
@@ -332,6 +366,7 @@ baidusitemap:
 * [Godaddy购买域名及配置](http://blog.csdn.net/poem_of_sunshine/article/details/29369785)
 * [GitHub配置域名（Godaddy）](http://blog.csdn.net/yuguiyang1990/article/details/39523005)
 * [hexo你的博客](http://ibruce.info/2013/11/22/hexo-your-blog/)
+* [hexo官网](https://hexo.io/zh-cn/)
 
 
 

@@ -7,7 +7,9 @@
 
 <html class="{{ html_class | lower }}">
 <head>
-  <meta name="baidu_union_verify" content="ef5dd1233e9c6c3b680d45ea3cc08152">
+  <meta name="baidu-site-verification" content="I0euCfIurk" />
+  <meta name="google-site-verification" content="m0p-a0okAt1MwO56eE6sbGs65BHNMtkvLh_4dIgyIC4" />
+  <meta name="360-site-verification" content="d55d6c2714ed28ec6778769094ccd0d4" />
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
 </head>

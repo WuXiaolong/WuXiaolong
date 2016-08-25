@@ -1,7 +1,7 @@
 title: Android zxing
 date: 2016-04-22 10:22:51
 tags: zxing
-category: zxing
+category: SourceAnalysis
 ---
 > 二维码一般在项目都会用到，今天分享下我开发二维码的一些心得。
 

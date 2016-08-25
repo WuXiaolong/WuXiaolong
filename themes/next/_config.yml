@@ -226,7 +226,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: night blue
+highlight_theme: normal
 
 
 # Automatically scroll page to section which is under <!-- more --> mark.
@@ -282,7 +282,7 @@ duoshuo_share: true
 # Baidu Share
 # Available value:
 #    button | slide
-#baidushare:
+#baidushare: true
 ##  type: button
 
 # Share
