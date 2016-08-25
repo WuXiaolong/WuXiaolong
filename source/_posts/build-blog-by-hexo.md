@@ -307,11 +307,11 @@ npm install hexo-clean-css --save
 ```
 JS压缩
 ```
-npm install hexo-html-minifier --save
+npm install hexo-uglify --save
 ```
 imagages压缩
 ```
-npm install hexo-html-minifier --save
+npm install hexo-imagemin --save
 ```
 ## 插件开启配置
 根目录下的 _config.yml，添加以下代码:
@@ -356,7 +356,8 @@ image_minifier:
   pngquant: false
   progressive: false   
 ```
-node_modules目录可以看安装了哪些插件。
+package.json可以看安装了哪些插件。
+
 [Hexo Seo优化让你的博客在google搜索排名第一](http://www.jianshu.com/p/86557c34b671)
 [搭建 Hexo 博客--增强篇](http://www.jianshu.com/p/2640561e96f8)
 

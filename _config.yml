@@ -78,26 +78,24 @@ baidusitemap:
 html_minifier:
   exclude:     
 # css压缩
-css_minifier:
-  enable: true
+clean_css:
   exclude: 
-    - '*.min.css'
+    - *.min.css
 # js压缩   
-js_minifier:
-  enable: true
+uglify:
   mangle: true
   output:
   compress:
   exclude: 
-    - '*.min.js'
+    - *.min.js
 # image压缩    
-image_minifier:
-  enable: true
-  interlaced: false
-  multipass: false
+imagemin:
+  enable     : true
+  interlaced : false
+  multipass  : false
   optimizationLevel: 2
-  pngquant: false
-  progressive: false    
+  pngquant   : false
+  progressive: false  
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
