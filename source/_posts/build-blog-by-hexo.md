@@ -295,7 +295,7 @@ npm install hexo-generator-baidu-sitemap --save
 ```
 SEO优化
 ```
-npm install hexo-generator-seo-friendly-sitemap
+npm install hexo-generator-seo-friendly-sitemap --save
 ```
 HTML, CSS, JS 和 imagages压缩
 ```
