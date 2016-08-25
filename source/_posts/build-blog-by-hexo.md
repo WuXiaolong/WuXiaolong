@@ -297,9 +297,21 @@ SEO优化
 ```
 npm install hexo-generator-seo-friendly-sitemap --save
 ```
-HTML, CSS, JS 和 imagages压缩
+HTML压缩
 ```
-npm install hexo-all-minifier --save
+npm install hexo-html-minifier --save
+```
+CSS压缩
+```
+npm install hexo-clean-css --save
+```
+JS压缩
+```
+npm install hexo-html-minifier --save
+```
+imagages压缩
+```
+npm install hexo-html-minifier --save
 ```
 ## 插件开启配置
 根目录下的 _config.yml，添加以下代码:

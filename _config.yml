@@ -76,7 +76,6 @@ baidusitemap:
 
 # HTML压缩
 html_minifier:
-  enable: true
   exclude:     
 # css压缩
 css_minifier:
