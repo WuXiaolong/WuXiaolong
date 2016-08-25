@@ -88,6 +88,15 @@ uglify:
   compress:
   exclude: 
     - '*.min.js'
+# image压缩    
+imagemin:
+  enable     : true
+  interlaced : false
+  multipass  : false
+  optimizationLevel: 2
+  pngquant   : false
+  progressive: false
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
