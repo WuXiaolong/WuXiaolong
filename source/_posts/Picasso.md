@@ -1,7 +1,7 @@
 title: github之Picasso使用
 date: 2015-09-14 11:32:12
-tags: [Android,Picasso,github]
-category: github
+tags: Picasso
+category: Library
 ---
 >github地址：[https://github.com/square/picasso](https://github.com/square/picasso)
 

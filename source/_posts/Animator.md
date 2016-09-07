@@ -1,7 +1,7 @@
 title: Android之属性动画Animator
 date: 2015-11-23 11:21:35
 tags: Animator
-category: Android
+category: CustomView
 ---
 > Android 3.0之前已有动画框架Animation（详见：[Android之视图动画Animation](http://wuxiaolong.me/2015/09/08/ViewAnimation/)），但存在一些局限性，当某个元素发生视图动画后，其响应事件位置还在动画前的地方。于是3.0之后，Google提出了属性动画。
 
@@ -44,72 +44,72 @@ x和y：描述view在容器最终位置
 
 ## 动画监听
 ```java
- ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(imageView, "alpha", 0.5f, 1f);
-                objectAnimator1.addListener(new Animator.AnimatorListener() {
-                    @Override
-                    public void onAnimationStart(Animator animation) {
-                        
-                    }
+ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(imageView, "alpha", 0.5f, 1f);
+objectAnimator1.addListener(new Animator.AnimatorListener() {
+    @Override
+    public void onAnimationStart(Animator animation) {
 
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
+    }
 
-                    }
+    @Override
+    public void onAnimationEnd(Animator animation) {
 
-                    @Override
-                    public void onAnimationCancel(Animator animation) {
+    }
 
-                    }
+    @Override
+    public void onAnimationCancel(Animator animation) {
 
-                    @Override
-                    public void onAnimationRepeat(Animator animation) {
+    }
 
-                    }
-                });
+    @Override
+    public void onAnimationRepeat(Animator animation) {
+
+    }
+});
 ```
 一般我们只关心onAnimationEnd，所以Android提供了AnimatorListenerAdapter：
 ```java
  ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(imageView, "alpha", 0.5f, 1f);
-                objectAnimator1.addListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        super.onAnimationEnd(animation);
-                    }
-                });
+ objectAnimator1.addListener(new AnimatorListenerAdapter() {
+     @Override
+     public void onAnimationEnd(Animator animation) {
+         super.onAnimationEnd(animation);
+     }
+ });
 ```
-# ValueAnimator 
+# ValueAnimator
 ValueAnimator 本身不提供任何动画效果，像个数值 发生器，用来产生具有一点规律数字。
 ```java
 ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 100);
-                valueAnimator.setTarget(imageView);
-                valueAnimator.setDuration(2000).start();
-                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                    @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        Int value = (Integer) animation.getAnimatedValue();
-                        //TODO use the value
-                        Toast.makeText(getApplicationContext(), "value=" + value, Toast.LENGTH_LONG).show();
-                    }
-                });
+valueAnimator.setTarget(imageView);
+valueAnimator.setDuration(2000).start();
+valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+    @Override
+    public void onAnimationUpdate(ValueAnimator animation) {
+        Int value = (Integer) animation.getAnimatedValue();
+        //TODO use the value
+        Toast.makeText(getApplicationContext(), "value=" + value, Toast.LENGTH_LONG).show();
+    }
+});
 ```
 
 # PropertyValuesHolder
 针对同一个对象多个属性，同时作用多种动画
 ```java
 PropertyValuesHolder propertyValuesHolder1 = PropertyValuesHolder.ofFloat("translationX", 300f);
-                PropertyValuesHolder propertyValuesHolder2 = PropertyValuesHolder.ofFloat("alpha", 1f, 0.5f);
-                PropertyValuesHolder propertyValuesHolder3 = PropertyValuesHolder.ofFloat("scaleX", 1f, 0, 1f);
-                PropertyValuesHolder propertyValuesHolder4 = PropertyValuesHolder.ofFloat("scaleY", 1f, 0, 1f);
-                ObjectAnimator.ofPropertyValuesHolder(imageView, propertyValuesHolder1, propertyValuesHolder2, propertyValuesHolder3, propertyValuesHolder4)
-                        .setDuration(5000).start();
+PropertyValuesHolder propertyValuesHolder2 = PropertyValuesHolder.ofFloat("alpha", 1f, 0.5f);
+PropertyValuesHolder propertyValuesHolder3 = PropertyValuesHolder.ofFloat("scaleX", 1f, 0, 1f);
+PropertyValuesHolder propertyValuesHolder4 = PropertyValuesHolder.ofFloat("scaleY", 1f, 0, 1f);
+ObjectAnimator.ofPropertyValuesHolder(imageView, propertyValuesHolder1, propertyValuesHolder2, propertyValuesHolder3, propertyValuesHolder4)
+        .setDuration(5000).start();
 ```
 
-# AnimatorSet 
+# AnimatorSet
 与PropertyValuesHolder类似，但AnimatorSet多了playTogether（同时执行）、playSequentially（顺序执行）、play(objectAnimator1).with(objectAnimator2)、before、after这些方法协同工作。
 ```java
 ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(imageView, "alpha", 1f, 0.5f);
-                ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(imageView, "translationY", 300);
-                ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 0, 1f);
+ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(imageView, "translationY", 300);
+ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(imageView, "scaleX", 1f, 0, 1f);
 AnimatorSet animatorSet = new AnimatorSet();
 animatorSet.setDuration(5000);
 animatorSet.playTogether(objectAnimator1, objectAnimator2,objectAnimator3);
@@ -118,14 +118,14 @@ animatorSet.start();
 
 # xml使用属性动画
 res下建立animator文件夹，然后建立res/animator/set_animator.xml
-```js
+```java
 <?xml version="1.0" encoding="utf-8"?>
 <objectAnimator xmlns:android="http://schemas.android.com/apk/res/android"
-    android:duration="2000"
-    android:propertyName="alpha"
-    android:valueFrom="0.1"
-    android:valueTo="1.0"
-    android:valueType="floatType" />
+android:duration="2000"
+android:propertyName="alpha"
+android:valueFrom="0.1"
+android:valueTo="1.0"
+android:valueType="floatType" />
 ```
 调用:
 ```java
@@ -135,7 +135,7 @@ animator.start();
 ```
 动画组合
 set标签，有一个orderring属性设置为together，还有另一个值：sequentially（表示一个接一个执行）。
-```js
+```java
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:ordering="together">
@@ -155,28 +155,28 @@ set标签，有一个orderring属性设置为together，还有另一个值：seq
 Android 3.0后，谷歌给View增加animate方法直接驱动属性动画。
 ```java
  imageView.animate()
-                .alpha(0.5f)
-                .y(300)
-                .setDuration(2000)
-                //api min is 16
-                .withStartAction(new Runnable() {
-                    @Override
-                    public void run() {
+ .alpha(0.5f)
+ .y(300)
+ .setDuration(2000)
+ //api min is 16
+ .withStartAction(new Runnable() {
+     @Override
+     public void run() {
 
-                    }
-                })
-                //api min is 16
-                .withEndAction(new Runnable() {
-                    @Override
-                    public void run() {
+     }
+ })
+ //api min is 16
+ .withEndAction(new Runnable() {
+     @Override
+     public void run() {
 
-                    }
-                })
-                .start();
+     }
+ })
+ .start();
 ```
 # 布局动画
 设置子View过渡动画
-```js
+```java
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/parentLayout"
@@ -194,11 +194,11 @@ Android 3.0后，谷歌给View增加animate方法直接驱动属性动画。
 ```
 ```java
  LinearLayout parentLayout = (LinearLayout) findViewById(R.id.parentLayout);
-        ScaleAnimation scaleAnimation=new ScaleAnimation(0,1,0,1);
-        scaleAnimation.setDuration(2000);
-        LayoutAnimationController layoutAnimationController=new LayoutAnimationController(scaleAnimation,0.5f);
-        layoutAnimationController.setOrder(LayoutAnimationController.ORDER_NORMAL);
-        parentLayout.setLayoutAnimation(layoutAnimationController);
+ ScaleAnimation scaleAnimation=new ScaleAnimation(0,1,0,1);
+ scaleAnimation.setDuration(2000);
+ LayoutAnimationController layoutAnimationController=new LayoutAnimationController(scaleAnimation,0.5f);
+ layoutAnimationController.setOrder(LayoutAnimationController.ORDER_NORMAL);
+ parentLayout.setLayoutAnimation(layoutAnimationController);
 ```
 
 # 关于作者

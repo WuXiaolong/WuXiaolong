@@ -1,6 +1,6 @@
 title: 使用七牛作为github博客的图床
 date: 2014-10-30 
-categories: [github]
+categories: hexo
 tags: [github]
 ---
 

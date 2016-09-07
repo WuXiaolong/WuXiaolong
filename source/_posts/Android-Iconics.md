@@ -1,7 +1,7 @@
 title: github之Android-Iconics使用
 date: 2015-07-29 
-categories: [github]
-tags: [Android,Iconics,github]
+categories: Library
+tags: Iconics
 ---
 源码地址：[https://github.com/mikepenz/Android-Iconics](https://github.com/mikepenz/Android-Iconics)
 
