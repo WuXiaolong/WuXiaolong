@@ -9,6 +9,7 @@ category: Library
 
 # MVP模式
 <!--more-->
+![](http://7q5c2h.com1.z0.glb.clouddn.com/mvp.jpg?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 ## MVP
 ### 简介
 Android MVP Sample，MVP+Retrofit+RxJava实践小结
@@ -178,7 +179,7 @@ RxJava – Reactive Extensions for the JVM – a library for composing asynchron
 # 下拉刷新
 
 ## PullLoadMoreRecyclerView
-![](https://raw.githubusercontent.com/WuXiaolong/PullLoadMoreRecyclerView/master/screenshots/screenshots.gif)
+![](http://7q5c2h.com1.z0.glb.clouddn.com/PullLoadMoreRecyclerView.gif?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 
 ### 简介
 实现RecyclerView下拉刷新和上拉加载更多以及RecyclerView线性、网格、瀑布流效果演示。适用于只需要简单地实现下拉刷新和上拉加载效果。
