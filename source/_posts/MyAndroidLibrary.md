@@ -7,8 +7,21 @@ category: Library
 
 > 现在做Android开发，已经是大好时机，网上有很多成熟的框架，我们应充分利用好这些，所谓前人种树后人好乘凉，很多时候压根不需要了解太多原理，只需站在巨人的丁丁上即可，当然您说您能力强，非要重复造轮子，无可厚非。
 
-# 依赖注入
+# MVP模式
 <!--more-->
+## MVP
+### 简介
+Android MVP Sample，MVP+Retrofit+RxJava实践小结
+
+### github地址
+[https://github.com/WuXiaolong/AndroidMVPSample](https://github.com/WuXiaolong/AndroidMVPSample)
+
+### 相关博客
+[Android MVP+Retrofit+RxJava实践小结](http://wuxiaolong.me/2016/06/12/mvpRetrofitRxjava/)
+[Android MVP 实例](http://wuxiaolong.me/2015/09/23/AndroidMVPSample/)
+
+# 依赖注入
+
 ## butterknife
 
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/butterknife.png?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
@@ -161,6 +174,20 @@ RxJava – Reactive Extensions for the JVM – a library for composing asynchron
 
 ### 相关博客
 [RxBus](http://wuxiaolong.me/2016/04/07/rxbus/)
+
+# 下拉刷新
+
+## PullLoadMoreRecyclerView
+![](https://raw.githubusercontent.com/WuXiaolong/PullLoadMoreRecyclerView/master/screenshots/screenshots.gif)
+
+### 简介
+实现RecyclerView下拉刷新和上拉加载更多以及RecyclerView线性、网格、瀑布流效果演示。适用于只需要简单地实现下拉刷新和上拉加载效果。
+
+### github地址
+[https://github.com/WuXiaolong/PullLoadMoreRecyclerView](https://github.com/WuXiaolong/PullLoadMoreRecyclerView)
+
+### 相关博客
+[PullLoadMoreRecyclerView](https://github.com/WuXiaolong/PullLoadMoreRecyclerView/blob/master/README.md)
 
 # 最后
 知道了解以上开源框架，开发又何忧！我总结的可能还不够全，如果您觉得实际项目中还有必用到的库，欢迎留言哈。
