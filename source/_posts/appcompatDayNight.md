@@ -55,6 +55,10 @@ AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 recreate();
 ```
 
+# 微信公众号
+我的微信公众号：吴小龙同学。不止于技术分享，每天进步一点点，欢迎微信扫一扫关注。
+![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
+
 # 注意事项
 ## setDefaultNightMode()与setLocalNightMode()区别
 AppCompatDelegate.setDefaultNightMode()是对整个App中theme为DayNight主题生效
@@ -88,11 +92,6 @@ switch (currentNightMode) {
 系统默认的背景颜色
 
 * ?attr/colorControlNormal. 系统默认的图标颜色
-
-# 微信公众号
-我的微信公众号：吴小龙同学，不止于技术分享，每天进步一点点，欢迎微信扫一扫关注。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
-
 
 # 源码地址
 https://github.com/WuXiaolong/DesignSupportLibrarySample
