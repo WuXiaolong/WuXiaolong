@@ -8,6 +8,7 @@ category: [Android]
 
 <!--more-->
 # Android Activity做成对话框效果
+设置透明主题
 ```java
  <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
      <!-- Customize your theme here. -->
