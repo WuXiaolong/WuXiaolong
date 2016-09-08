@@ -144,10 +144,10 @@ A circular ImageView for Android 圆头像
 Realm is a mobile database: a replacement for SQLite & ORMs
 
 ### github地址
-[https://github.com/realm/realm-java](https://realm.io/cn/docs/java/latest/#getting-started)
+[https://github.com/realm/realm-java](https://github.com/realm/realm-java)
 
 ### 相关博客
-[Realm官网](http://wuxiaolong.me/2016/06/18/retrofits/)
+[Realm官网](https://realm.io/cn/docs/java/latest/#getting-started)
 
 # 响应式编程
 
