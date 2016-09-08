@@ -7,6 +7,35 @@ category: [Android]
 
 
 <!--more-->
+# Android Activity做成对话框效果
+```java
+ <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+     <!-- Customize your theme here. -->
+     <item name="colorPrimary">@color/colorPrimary</item>
+     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+     <item name="colorAccent">@color/colorAccent</item>    
+ </style>
+ <style name="ActivityDialog" parent="AppTheme">
+     <!--透明主题android:theme="@android:style/Theme.Translucent"-->
+     <item name="android:windowBackground">@color/transparent</item>
+     <item name="android:colorBackgroundCacheHint">@null</item>
+     <item name="android:windowIsTranslucent">true</item>
+     <item name="android:windowAnimationStyle">@android:style/Animation</item>
+ </style>
+```
+颜色值
+```java 
+ <color name="transparent">#9000</color>
+```
+主题引用
+```java 
+ <activity
+    android:name=".views.activitys.useraddress.ActivityDialogActivity"
+    android:screenOrientation="portrait"
+    android:theme="@style/ActivityDialog">
+</activity>
+```
+
 # The APK file does not exist on disk.Error while Installing APK
 解决方案：
 ![](http://i.stack.imgur.com/2KSyU.png)
