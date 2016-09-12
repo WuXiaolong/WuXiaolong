@@ -7,6 +7,13 @@ category: [Android]
 
 
 <!--more-->
+
+# android studio svn commit changelist delete
+如图，强迫症犯了，就想删掉
+![](http://7q5c2h.com1.z0.glb.clouddn.com/changelist1.jpg)
+解决方案：
+![](http://7q5c2h.com1.z0.glb.clouddn.com/changelist2.jpg)
+
 # Android Activity做成对话框效果
 设置透明主题
 ```java
