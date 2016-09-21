@@ -7,6 +7,56 @@ category: [Android]
 
 
 <!--more-->
+# Android 6.0 Dialog text doesn't appear
+
+```
+AlertDialog.Builder builder = new AlertDialog.Builder(this);
+builder.setTitle("退出登录");
+builder.setMessage("您确定要退出登录吗？");
+builder.setNegativeButton("取消", null);
+builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+    @Override
+    public void onClick(DialogInterface dialog, int which) {
+        HashMap<String, String> params = new HashMap<String, String>();
+        postData(API.LOGOUT, params, false, new ResponseCallBack<String>(Settingctivity.this) {
+            @Override
+            public void onSuccessResponse(String bean, String msg) {
+               
+            }
+            @Override
+            public void onFailResponse(String msg) {
+               
+            }
+        }, null, null, true);
+    }
+});
+builder.create().show();
+```
+正常这样是没问题，但是在Android 6.0发现文本不显示，如图：
+![](http://7q5c2h.com1.z0.glb.clouddn.com/AlertDialog.jpg)
+
+解决方案:
+```
+/**
+ * http://stackoverflow.com/questions/33228454/android-6-0-dialog-text-doesnt-appear
+ *
+ * @param context
+ * @return
+ */
+public static AlertDialog.Builder alertDialogBuilder(Context context) {
+    AlertDialog.Builder builder;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Light_Dialog_Alert);
+    } else {
+        builder = new AlertDialog.Builder(context);
+    }
+    return builder;
+}
+```
+然后初始化
+```
+AlertDialog.Builder builder = alertDialogBuilder(this);
+```
 
 # android studio svn commit changelist delete
 如图，强迫症犯了，就想删掉
