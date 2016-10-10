@@ -106,38 +106,56 @@ compile 'com.android.support:design:23.1.0'
 
 ```
 说明
+
 1、app:layout_scrollFlags="scroll|exitUntilCollapsed"
+
 这是两个Flag控制滚动时候CollapsingToolbarLayout的表现。 
+
 **Scroll**：表示向下滚动列表时候，CollapsingToolbarLayout会滚出屏幕并且消失
+
 **exitUntilCollapsed**：表示这个layout会一直滚动离开屏幕范围，直到它收折成它的最小高度
 
 2、设置折叠后Toolbar的颜色
+
 app:contentScrim="?attr/colorPrimary"
+
 不设置将是imageview最后保留的背景
 
 3、设置视差模式
+
 app:layout_collapseMode="parallax"
+
 **parallax**：表示滚动过程中，会一直保持可见区域在正中间，一般配合app:layout_collapseParallaxMultiplier="0.7"，介于 0.0-1.0之间，设置视差的系数，0表示Imageview跟着滑动，1表示Imageview不动。
+
 **pin**：表示不会被滚出屏幕范围。
 
 
 4、设置展开状态改变标题文字的位置
+
 app:expandedTitleMargin
+
 app:expandedTitleMarginBottom
+
 app:expandedTitleMarginEnd
+
 app:expandedTitleMarginStart
 
 5、设置在折叠和展开状态时改变文本的显示
+
 app:collapsedTitleTextAppearance 和 app:expandedTitleTextAppearance 
 
 
 
 6、设置锚点属性
+
 app:layout_anchor="@id/appbar"
+
 FloatingActionButton浮动按钮显示在哪个布局区域。 
 
 7、设置当前锚点的位置
+
 app:layout_anchorGravity=”bottom|end|right”
+
 FloatingActionButton浮动按钮在这个布局区域的具体位置。 
 
 app:layout_anchor和app:layout_anchorGravity两个属性共同作用可以使FAB 浮动按钮能折叠消失和出现。
