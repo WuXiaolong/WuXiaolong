@@ -113,7 +113,11 @@ compile 'com.android.support:design:23.1.0'
 
 **Scroll**：表示向下滚动列表时候，CollapsingToolbarLayout会滚出屏幕并且消失
 
+**enterAlways**：实现quick return效果, 当向下移动时，立即显示View（比如Toolbar)。
+
 **exitUntilCollapsed**：表示这个layout会一直滚动离开屏幕范围，直到它收折成它的最小高度
+
+**enterAlwaysCollapsed**：当你的View已经设置minHeight属性又使用此标志时，你的View只能以最小高度进入，只有当滚动视图到达顶部时才扩大到完整高度。
 
 2、设置折叠后Toolbar的颜色
 
