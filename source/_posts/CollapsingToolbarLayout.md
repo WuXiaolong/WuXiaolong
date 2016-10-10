@@ -3,19 +3,20 @@ date: 2015-11-17 14:18:22
 tags: CollapsingToolbarLayout
 category: SupportLibrary
 ---
-## 效果预览
+# 效果预览
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/designsupportlibrarysample.gif)
 
 <!--more-->
 
-## 实例App
+# 实例App
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/dashishuoDownload.png)
-## 使用方法
+
+# 使用方法
 Gradle 中添加下面依赖
 ```java
 compile 'com.android.support:design:23.1.0'
 ```
-## CollapsingToolbarLayout
+# CollapsingToolbarLayout
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
