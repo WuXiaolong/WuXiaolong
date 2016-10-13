@@ -88,8 +88,15 @@ switch (currentNightMode) {
 * android:textColor="?android:attr/textColorPrimary" 或者android:textColor="?android:textColorPrimary"
 系统默认的文字颜色。在亮色（light）主题下，颜色接近黑色，在暗色（dark）主题下，颜色接近白色。
 
+android:textColor="?android:attr/textColorSecondary" 次标题
+
+android:textColor="?android:attr/textColorTertiary" 第三次标题
+
 * android:background="?android:colorBackground"
 系统默认的背景颜色
+
+*  android:foreground="?attr/selectableItemBackground"
+点击效果
 
 * ?attr/colorControlNormal. 系统默认的图标颜色
 
