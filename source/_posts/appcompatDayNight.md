@@ -85,20 +85,41 @@ switch (currentNightMode) {
 ## 适配文字图片
 尽可能的使用主题属性（theme attributes）
 
-* android:textColor="?android:attr/textColorPrimary" 或者android:textColor="?android:textColorPrimary"
-系统默认的文字颜色。在亮色（light）主题下，颜色接近黑色，在暗色（dark）主题下，颜色接近白色。
+**文字颜色**
+```
+android:textColor="?android:attr/textColorPrimary" 
+android:textColor="?android:textColorPrimary"
+```
+系统默认的文字颜色。在亮色（light）主题下，颜色接近黑色，在暗色（dark）主题下，颜色接近白色。有两种写法，次标题和三标题同样。
 
-android:textColor="?android:attr/textColorSecondary" 次标题
+次标题
+```
+android:textColor="?android:attr/textColorSecondary" 
 
-android:textColor="?android:attr/textColorTertiary" 第三次标题
+```
 
-* android:background="?android:colorBackground"
-系统默认的背景颜色
+三标题
+```
+android:textColor="?android:attr/textColorTertiary" 
+```
 
-*  android:foreground="?attr/selectableItemBackground"
-点击效果
+**系统默认的背景颜色**
+```
+android:background="?android:attr/colorBackground"
+android:background="?android:colorBackground"
+```
 
-* ?attr/colorControlNormal. 系统默认的图标颜色
+**点击效果**
+```
+android:background="?android:attr/selectableItemBackground"
+android:background="?android:selectableItemBackground"
+android:background="?attr/selectableItemBackground"
+```
+
+**系统默认的图标颜色**
+```
+?attr/colorControlNormal
+```
 
 # 源码地址
 https://github.com/WuXiaolong/DesignSupportLibrarySample
