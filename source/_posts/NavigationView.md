@@ -175,11 +175,6 @@ private void initDrawer() {
 ```
 
 
-
-# AndroidProgrammer
-我的微信公众号：Android高手进阶之路，让我们共同学习，每天进步一点点。欢迎微信扫一扫关注。
-![](http://7q5c2h.com1.z0.glb.clouddn.com/AndroidProgrammerLogo.jpg)
-
 # 源码地址
 [https://github.com/WuXiaolong/DesignSupportLibrarySample](https://github.com/WuXiaolong/DesignSupportLibrarySample)
 
