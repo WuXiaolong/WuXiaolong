@@ -117,8 +117,9 @@ android:background="?attr/selectableItemBackground"
 ```
 
 **系统默认的图标颜色**
+如vector里颜色：
 ```
-?attr/colorControlNormal
+android:fillColor="?attr/colorControlNormal"
 ```
 
 # 源码地址
