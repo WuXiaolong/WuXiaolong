@@ -117,6 +117,7 @@ android:background="?attr/selectableItemBackground"
 ```
 
 **系统默认的图标颜色**
+
 如vector里颜色：
 ```
 android:fillColor="?attr/colorControlNormal"
