@@ -111,6 +111,13 @@ ViewCompat.setTransitionName(backdrop, AppConstants.TRANSITION_PIC);
 
 使用方法：[Android Design Support Library之CollapsingToolbarLayout](http://wuxiaolong.me/2015/11/17/CollapsingToolbarLayout/)
 
+## Bottom Navigation
+3个菜单：
+![](http://7q5c2h.com1.z0.glb.clouddn.com/bottomNavigation3.gif?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
+5个菜单：
+![](http://7q5c2h.com1.z0.glb.clouddn.com/bottomNavigation4.gif?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
+使用方法：[http://wuxiaolong.me/2016/10/21/BottomNavigation/](http://wuxiaolong.me/2016/10/21/BottomNavigation/)
+
 ## TextInputLayout
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/DesignSupportLibrary8.jpg?watermark/2/text/5ZC05bCP6b6Z5ZCM5a24/font/5qW35L2T/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10)
 ```
@@ -135,6 +142,7 @@ ViewCompat.setTransitionName(backdrop, AppConstants.TRANSITION_PIC);
 [https://github.com/WuXiaolong/DesignSupportLibrarySample](https://github.com/WuXiaolong/DesignSupportLibrarySample)，Material design规范文档内容很多，很多东西是要细致推敲，值得产品经理或UI设计师，乃至开发人员好好学习，目前这个sample，Material design风格的效果都有了，相当一个空壳子，您只需在实际开发中塞真实数据就是一个perfect app，个人能力和精力有限，只能分享这么多了，over。
 
 # 更新日志
+* 2016/10/21 修改
 * 2016/10/17 修改
 * 2015/11/06 撰笔
 
